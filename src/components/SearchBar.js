@@ -19,6 +19,7 @@ import SendIcon from '@mui/icons-material/Send'
 import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
 import StarBorder from '@mui/icons-material/StarBorder'
+import CallIcon from '@mui/icons-material/Call'
 import { Link } from 'react-router-dom'
 const useStyles = makeStyles((theme) => ({
  List_1: {
@@ -40,7 +41,7 @@ export default function PrimarySearchAppBar() {
   <Wrapper>
    <List className={classes.List_1} component="nav">
     <ListItemButton onClick={handleClick} sx={{ color: 'white' }}>
-     <h3> Areas of Focus </h3>
+     <p style={{fontSize: '1.5rem'}}> Areas of Focus </p>
      {open ? <ExpandLess /> : <ExpandMore />}
     </ListItemButton>
 
@@ -96,21 +97,23 @@ export default function PrimarySearchAppBar() {
       </ListItemButton>
      </List>
     </Collapse>
-   </List>
+   </List>{' '}
+   <a href="tel:+2155991400" className="call-toggle">
+    <CallIcon />
+   </a>
    <div className="items">
     <ul>
      <Link to="/">
-      <li>Lawyer Portal</li>
+      <li style={{ marginRight: '1rem' }}>Lawyer Portal</li>
      </Link>
      <Link to="/">
-      <li>Client Portal</li>
+      <li style={{ marginLeft: '1rem', marginRight: '1rem' }}>Client Portal</li>
      </Link>
      <Link to="/">
-      <li>Employee Portal</li>
+      <li style={{ marginRight: '1rem' }}>Employee Portal</li>
      </Link>
     </ul>
    </div>
-
    {/* <div className="div-3">
     <form className="search-form">
      <input type="text" placeholder="search" className="form-input" />
@@ -128,11 +131,25 @@ const Wrapper = styled.div`
  width: 100%;
  display: flex;
  justify-content: center;
-
+ .call-toggle {
+  right: 20px;
+   margin-top: 0.5rem;
+  background: transparent;
+  border: transparent;
+  color: white;
+  cursor: pointer;
+  svg {
+   font-size: 3.2rem;
+  }
+ }
+ .call-toggle:hover {
+  color: lightblue;
+ }
  .items {
-  width: 50vh;
+  width: 80vh;
 
   display: grid;
+
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -146,7 +163,14 @@ const Wrapper = styled.div`
    }
   }
  }
+ @media (max-width: 600px) {
+    .items {
+        display: none;
+    }
+
+ }
 
  @media only screen and (min-width: 600px) {
+
  }
 `

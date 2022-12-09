@@ -4,11 +4,15 @@ import styled from 'styled-components'
 const HomePage = () => {
  return (
   <Wrapper>
-   <main>
+
     <Hero />
-   </main>
+
   </Wrapper>
  )
 }
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+height: 50vh;
+
+
+`
 export default HomePage

@@ -22,7 +22,7 @@ const Sidebar = () => {
       alt="elpawl"
      />
     </Link>
-
+     
     <SocialButtons />
     <ul className="links">
      {links.map(({ id, text, url }) => {
@@ -51,7 +51,7 @@ const Sidebar = () => {
 
 const SidebarContainer = styled.div`
  text-align: center;
- 
+
  .linksclass {
   display: grid;
   justify-content: center;

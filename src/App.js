@@ -5,9 +5,10 @@ import React from 'react'
 function App() {
  return (
   <Router>
+
+   <SearchBar />
    <Navbar />
-   <Sidebar/>
-   <SearchBar/>
+   <Sidebar />
    <Switch>
     <Route exact path="/">
      <Home />
@@ -42,9 +43,7 @@ function App() {
      <ErrorPage />
     </Route>
    </Switch>
-   
    <Footer/>
-   
   </Router>
  )
 }

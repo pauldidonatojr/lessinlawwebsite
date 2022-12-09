@@ -20,11 +20,10 @@ const Hero = () => {
    <div className="content">
     <div className="image-holder">
      <img src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"></img>
+     <Button className='contactBtn' variant="contained" onClick={openModal} style={{ margin: '5rem' }}>
+      Contact us today
+     </Button>
     </div>
-
-    <Button variant="contained" onClick={openModal} style={{ margin: '5rem' }}>
-     Contact us today
-    </Button>
    </div>
    <div
     className={`${isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'}`}
@@ -39,9 +38,9 @@ const Hero = () => {
     </div>
    </div>
 
-   <Article />
+   {/* <Article />
    <Filler />
-   <Section />
+   <Section /> */}
   </Wrapper>
  )
 }
@@ -51,24 +50,33 @@ export default Hero
 const Wrapper = styled.section`
  align-items: center;
  width: 100%;
- height: 100%;
+ height: 80vh;
  position: relative;
- /* background-color: rgb(20, 39, 79); */
+ background-color: rgb(20, 39, 79);
 
  .image-holder {
   display: grid;
   justify-content: center;
   align-items: center;
+
+  width: 50vw;
+  position: relative;
+  top: 0;
+  left: 0;
  }
 
  img {
-    margin-top: 4rem;
   position: relative;
-  width: 100%;
-  height: 70vh;
-
-  left: 0px;
+ 
   object-fit: cover;
+  top: 0;
+  left: 0;
+ }
+ .contactBtn {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 30vw;
  }
  .submit-btn-1 {
   background: var(--clr-black);
@@ -96,6 +104,7 @@ const Wrapper = styled.section`
   text-align: center;
   color: #fff;
   transition: var(--transition);
+  width: 100%;
   p {
    color: #fff;
    font-size: 1.5rem;
@@ -165,15 +174,45 @@ const Wrapper = styled.section`
  @media (min-width: 576px) {
  }
  @media only screen and (max-width: 600px) {
+  img {
+   width: 100vw;
+   height: 50vh;
+   padding: 1rem;
+   margin-top: 6rem;
+  }
  }
  @media only screen and (min-width: 600px) {
+  img {
+   width: 100%;
+   height: 40vh;
+   margin-top: 5rem;
+   left: 0px;
+  }
  }
 
  @media only screen and (min-width: 768px) {
+  img {
+   width: 100%;
+   height: 40vh;
+   margin-top: 5rem;
+   left: 0px;
+  }
  }
 
  @media (min-width: 992px) {
+  img {
+   width: 100%;
+   height: 40vh;
+   margin-top: 5rem;
+   left: 0px;
+  }
  }
  @media (min-width: 1280px) {
+  img {
+   width: 100%;
+   height: 40vh;
+   margin-top: 5rem;
+   left: 0px;
+  }
  }
 `

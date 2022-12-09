@@ -57,15 +57,27 @@ export default function Navbar() {
       <FaBars className="faIcon" />
      </button>
     </div>
-
+    <div className="items">
+     <ul>
+      <Link to="/">
+       <li style={{ marginRight: '1rem' }}>Lawyer Portal</li>
+      </Link>
+      <Link to="/">
+       <li style={{ marginLeft: '1rem', marginRight: '1rem' }}>
+        Client Portal
+       </li>
+      </Link>
+      <Link to="/">
+       <li style={{ marginRight: '1rem' }}>Employee Portal</li>
+      </Link>
+     </ul>
+    </div>
     {/* <img
       src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657399779/Jeffrey_R._Lessin_Associates_P.C._1_tyxapa.png"
       alt="elpawl"
       className='logo'
      /> */}
     <div className="navbar-holder">
-     <div className="logo-div"></div>
-
      <Tabs
       className={classes.nav_links}
       value={value}
@@ -83,10 +95,6 @@ export default function Navbar() {
      </Tabs>
     </div>
 
-    <a href="tel:+2155991400" className="call-toggle">
-     <CallIcon />
-    </a>
-
     {/* <ul className="nav-links">
      {links.map((link) => {
       const { id, text, url } = link
@@ -103,10 +111,10 @@ export default function Navbar() {
 }
 
 const NavContainer = styled.nav`
- height: 10rem;
+ height: 5vh;
+
  left: 0;
  display: flex;
-
  .navbar-holder {
   position: relative;
   display: grid;
@@ -114,12 +122,9 @@ const NavContainer = styled.nav`
   height: 100%;
  }
 
- .logo-div {
- }
-
  .logo {
   max-width: 100%;
-  max-height: 300px;
+  /* max-height: 300px; */
   display: block;
   position: absolute;
   object-fit: cover;
@@ -132,8 +137,7 @@ const NavContainer = styled.nav`
  .nav-center {
   width: 90vw;
   margin: 0 auto;
-  max-width: var(--max-width);
-  padding: 1rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -149,7 +153,7 @@ const NavContainer = styled.nav`
   color: black;
   cursor: pointer;
   svg {
-   font-size: 2rem;
+   font-size: 1.3rem;
   }
  }
  .call-toggle {
@@ -191,11 +195,8 @@ const NavContainer = styled.nav`
  }
 
  @media (min-width: 1050px) {
-  height: 18rem;
-
-  .navbar-holder {
-   height: 165px;
-  }
+  display:none;
+  height: 5vh;
 
   .nav-toggle {
    display: none;
@@ -254,6 +255,7 @@ const NavContainer = styled.nav`
   .social-icons a:hover {
    color: grey;
   } */
+
   .nav-links {
    display: flex;
    justify-content: center;
@@ -277,7 +279,6 @@ const NavContainer = styled.nav`
  }
 
  @media (max-width: 600px) {
-
   .logo {
    max-width: 100%;
    max-height: 300px;
@@ -286,15 +287,10 @@ const NavContainer = styled.nav`
    object-fit: cover;
    margin-left: 0%;
   }
+  height: 5vh;
  }
 
  @media (min-width: 1280px) {
-  height: 16rem;
-
-  .navbar-holder {
-   height: 200px;
-  }
-
   .nav-links {
    grid-column: 1/3;
    grid-row: 3/4;
@@ -303,6 +299,23 @@ const NavContainer = styled.nav`
   h4 {
    font-size: 1.2rem;
    margin-top: 0.5rem;
+  }
+ }
+ .items {
+  width: 300vh;
+  display: grid;
+  margin-left: 3rem;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  ul {
+   display: flex;
+   justify-content: space-evenly;
+   font-size: 15px;
+   li {
+    color: black;
+   }
   }
  }
 `
