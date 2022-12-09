@@ -7,58 +7,69 @@ import Article from './Article'
 import Filler from './Filler'
 import Section from './Section'
 import { Footer } from '.'
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button'
+import Stack from '@mui/material/Stack'
 
 const Hero = () => {
  const { openModal } = useModalContext()
 
  const { isModalOpen, closeModal } = useModalContext()
 
-
  return (
   <Wrapper>
-   <div className="content"> 
-
-    <div className='image-holder'>
-        <img src='https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg' style={{ position: 'relative', width: '100%', height: '70vh', top: '0px', left: '0px', objectFit: 'cover' }}></img>
+   <div className="content">
+    <div className="image-holder">
+     <img src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"></img>
     </div>
 
-    <Button variant="contained" onClick={openModal} style={{margin:'5rem'}}>Contact us today</Button>
-
+    <Button variant="contained" onClick={openModal} style={{ margin: '5rem' }}>
+     Contact us today
+    </Button>
    </div>
    <div
     className={`${isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'}`}
    >
     <div className="modal-container">
      <button className="close-modal-btn" onClick={closeModal}>
-      <FaWindowClose style={{position:'relative', zIndex: '1', top: '0', right: '0'}}></FaWindowClose>
+      <FaWindowClose
+       style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
+      ></FaWindowClose>
      </button>
-     <Contact/>
+     <Contact />
     </div>
-    
    </div>
 
-   <Article/>
-   <Filler/>
-   <Section/>
-
-
-
+   <Article />
+   <Filler />
+   <Section />
   </Wrapper>
  )
 }
 
-export default Hero;
+export default Hero
 
 const Wrapper = styled.section`
  align-items: center;
  width: 100%;
  height: 100%;
  position: relative;
- background-color: rgb(20, 39, 79);
- 
+ /* background-color: rgb(20, 39, 79); */
 
+ .image-holder {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+ }
+
+ img {
+    margin-top: 4rem;
+  position: relative;
+  width: 100%;
+  height: 70vh;
+
+  left: 0px;
+  object-fit: cover;
+ }
  .submit-btn-1 {
   background: var(--clr-black);
   text-transform: capitalize;
@@ -70,7 +81,7 @@ const Wrapper = styled.section`
   bottom: 0;
   z-index: 1;
  }
- 
+
  input {
   text-align: center;
   font-family: roboto;
@@ -109,7 +120,7 @@ const Wrapper = styled.section`
   color: var(--clr-black);
   text-transform: capitalize;
  }
- 
+
  .submit-btn:hover {
   color: var(--clr-white);
  }
@@ -147,28 +158,22 @@ const Wrapper = styled.section`
   color: var(--clr-font);
  }
 
- .img-content{
+ .img-content {
   width: 100%;
  }
 
-
  @media (min-width: 576px) {
-  
  }
  @media only screen and (max-width: 600px) {
-  
  }
  @media only screen and (min-width: 600px) {
-  
  }
 
  @media only screen and (min-width: 768px) {
-  
  }
 
  @media (min-width: 992px) {
-  
  }
  @media (min-width: 1280px) {
-  
- }`
+ }
+`

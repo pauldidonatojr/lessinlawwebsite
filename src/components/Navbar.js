@@ -5,50 +5,49 @@ import { Link } from 'react-router-dom'
 import { links, social } from '../utils/constants'
 import { useSideContext } from '../context/sidebar_context'
 import { useModalContext } from '../context/modal_context'
-import CallIcon from '@mui/icons-material/Call';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import { Typography, makeStyles, useTheme, useMediaQuery } from '@material-ui/core';
+import CallIcon from '@mui/icons-material/Call'
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
+import {
+ Typography,
+ makeStyles,
+ useTheme,
+ useMediaQuery,
+} from '@material-ui/core'
 
-
-const useStyles = makeStyles(theme => ({
-      nav_links: {
-            width: '100%',
-            position: 'absolute',
-            display: 'grid',
-            alignContent: 'center',
-            alignItems: 'center',
-            placeContent: 'center',
-            justifyContent: 'center',
-            padding: '0.2rem',
-            bottom: '0'
-        },
-      "@media (max-width: 900px)": {
-      nav_links: {
-            visibility: 'hidden'
-        }
-      }
-  }));
-  
-
+const useStyles = makeStyles((theme) => ({
+ nav_links: {
+  width: '100%',
+  position: 'absolute',
+  display: 'grid',
+  alignContent: 'center',
+  alignItems: 'center',
+  placeContent: 'center',
+  justifyContent: 'center',
+  padding: '0.2rem',
+  bottom: '0',
+ },
+ '@media (max-width: 900px)': {
+  nav_links: {
+   visibility: 'hidden',
+  },
+ },
+}))
 
 export default function Navbar() {
- const classes = useStyles();
+ const classes = useStyles()
  const { openModal } = useModalContext()
  const { openSidebar } = useSideContext()
 
- const [value, setValue] = React.useState(2);
+ const [value, setValue] = React.useState(2)
 
  const handleChange = (event, newValue) => {
-      setValue(newValue);
- };
+  setValue(newValue)
+ }
 
  const handleClick = (event, message) => {
-      // 👇️ refers to the image element
-      
-    };
-  
-
+  // 👇️ refers to the image element
+ }
 
  return (
   <NavContainer>
@@ -64,34 +63,29 @@ export default function Navbar() {
       alt="elpawl"
       className='logo'
      /> */}
-    <div className='navbar-holder'>
-    <div className="logo-div">
-      </div>
+    <div className="navbar-holder">
+     <div className="logo-div"></div>
 
-      <Tabs className={classes.nav_links} value={value} onChange={handleChange} centered>
-            {links.map((link) => {
-            const { id, text, url } = link
-            return (
-                        <Tab label={text} to={url} component={Link} >{value}</Tab>
-            )
-            })}
-    </Tabs>
-      
-
-    
+     <Tabs
+      className={classes.nav_links}
+      value={value}
+      onChange={handleChange}
+      centered
+     >
+      {links.map((link) => {
+       const { id, text, url } = link
+       return (
+        <Tab label={text} to={url} component={Link}>
+         {value}
+        </Tab>
+       )
+      })}
+     </Tabs>
     </div>
 
-      
-
-
-    
-    
-     <a href="tel:+2155991400" className="call-toggle">
-      <CallIcon/>
-     </a>
-
-
-     
+    <a href="tel:+2155991400" className="call-toggle">
+     <CallIcon />
+    </a>
 
     {/* <ul className="nav-links">
      {links.map((link) => {
@@ -113,7 +107,7 @@ const NavContainer = styled.nav`
  left: 0;
  display: flex;
 
- .navbar-holder{
+ .navbar-holder {
   position: relative;
   display: grid;
   width: 100%;
@@ -121,18 +115,16 @@ const NavContainer = styled.nav`
  }
 
  .logo-div {
-    
-  }
+ }
 
-  .logo {
-    max-width: 100%;
-    max-height: 300px;
-    display: block;
-    position: absolute;
-    objectFit: cover;
-    margin-left: 30%;
-   }
-  
+ .logo {
+  max-width: 100%;
+  max-height: 300px;
+  display: block;
+  position: absolute;
+  object-fit: cover;
+  margin-left: 30%;
+ }
 
  .faIcon:hover {
   opacity: 0.3;
@@ -198,15 +190,12 @@ const NavContainer = styled.nav`
   opacity: 0.3;
  }
 
- 
-
  @media (min-width: 1050px) {
   height: 18rem;
 
-
-  .navbar-holder{
-     height: 165px;
-   }
+  .navbar-holder {
+   height: 165px;
+  }
 
   .nav-toggle {
    display: none;
@@ -288,24 +277,22 @@ const NavContainer = styled.nav`
  }
 
  @media (max-width: 600px) {
-      navbar-holder:{
-            background-color: black;
-      }
-      .logo {
-        max-width: 100%;
-        max-height: 300px;
-        display: block;
-        position: absolute;
-        objectFit: cover;
-        margin-left: 0%;
-       }
-     }
+
+  .logo {
+   max-width: 100%;
+   max-height: 300px;
+   display: block;
+   position: absolute;
+   object-fit: cover;
+   margin-left: 0%;
+  }
+ }
 
  @media (min-width: 1280px) {
   height: 16rem;
 
-  .navbar-holder{
-      height: 200px;
+  .navbar-holder {
+   height: 200px;
   }
 
   .nav-links {
