@@ -86,9 +86,9 @@ export default function Navbar() {
 
     
     
-     {/* <a href="tel:+2155991400" className="call-toggle">
+     <a href="tel:+2155991400" className="call-toggle">
       <CallIcon/>
-     </a> */}
+     </a>
 
 
      

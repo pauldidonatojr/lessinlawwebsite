@@ -19,18 +19,10 @@ const Hero = () => {
  return (
   <Wrapper>
    <div className="content"> 
-    {/* <img
-     className="img-content"
-     src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"
-    /> */}
 
-    {/* <div className='image-holder'>
+    <div className='image-holder'>
         <img src='https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg' style={{ position: 'relative', width: '100%', height: '70vh', top: '0px', left: '0px', objectFit: 'cover' }}></img>
-    </div> */}
-
-    <button type="button" className="submit-btn-1" onClick={openModal}>
-     Contact us today
-    </button>
+    </div>
 
     <Button variant="contained" onClick={openModal} style={{margin:'5rem'}}>Contact us today</Button>
 
@@ -64,6 +56,7 @@ const Wrapper = styled.section`
  width: 100%;
  height: 100%;
  position: relative;
+ background-color: rgb(20, 39, 79);
  
 
  .submit-btn-1 {

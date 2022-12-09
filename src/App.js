@@ -6,6 +6,8 @@ function App() {
  return (
   <Router>
    <Navbar />
+   <Sidebar/>
+   <SearchBar/>
    <Switch>
     <Route exact path="/">
      <Home />
