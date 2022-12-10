@@ -52,13 +52,11 @@ const Wrapper = styled.section`
  width: 100%;
  height: 80vh;
  position: relative;
- /* background-color: rgb(20, 39, 79); */
+ background-color: rgb(20, 39, 79);
 
  .image-holder {
   display: grid;
   justify-content: center;
-  align-items: center;
-  background-color: purple;
   width: 60vw;
   position: relative;
   top: 0;
@@ -75,8 +73,9 @@ const Wrapper = styled.section`
   position: absolute;
   bottom: 0px;
   left: 20px;
-
+   height: 5vh;
   width: 40vw;
+  padding: 1rem;
  }
  .submit-btn-1 {
   background: var(--clr-black);
@@ -181,12 +180,12 @@ const Wrapper = styled.section`
   background-color: red;
  }
  @media only screen and (max-width: 600px) {
-  background-color: orange;
+
 
   img {
-   width: 100vw;
+   width: 90vw;
    height: 75vh;
-
+    padding: 1rem;
   }
  }
  @media only screen and (min-width: 600px) {

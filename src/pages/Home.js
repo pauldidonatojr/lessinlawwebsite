@@ -12,7 +12,7 @@ const HomePage = () => {
 }
 const Wrapper = styled.div`
 height: 50vh;
-
-
+width: 100%;
+display: grid;
 `
 export default HomePage

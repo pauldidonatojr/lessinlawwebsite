@@ -139,7 +139,8 @@ const Wrapper = styled.div`
   color: white;
   cursor: pointer;
   svg {
-   font-size: 3.2rem;
+   font-size: 3rem;
+   margin-right: 4rem;
   }
  }
  .call-toggle:hover {
