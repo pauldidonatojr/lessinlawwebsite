@@ -112,7 +112,7 @@ export default function Navbar() {
 
 const NavContainer = styled.nav`
  height: 5vh;
-
+ width: 100%;
  left: 0;
  display: flex;
  .navbar-holder {

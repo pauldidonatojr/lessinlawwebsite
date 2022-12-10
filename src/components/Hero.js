@@ -58,8 +58,8 @@ const Wrapper = styled.section`
   display: grid;
   justify-content: center;
   align-items: center;
-
-  width: 50vw;
+  background-color: purple;
+  width: 60vw;
   position: relative;
   top: 0;
   left: 0;
@@ -68,17 +68,15 @@ const Wrapper = styled.section`
  img {
   position: relative;
 
-  object-fit: cover;
   top: 0;
   left: 0;
  }
  .contactBtn {
   position: absolute;
-top: 0px;
+  bottom: 0px;
   left: 20px;
+
   width: 40vw;
-
-
  }
  .submit-btn-1 {
   background: var(--clr-black);
@@ -187,9 +185,8 @@ top: 0px;
 
   img {
    width: 100vw;
-   height: 60vh;
-   padding: 1rem;
-   margin-top: 4rem;
+   height: 75vh;
+
   }
  }
  @media only screen and (min-width: 600px) {
