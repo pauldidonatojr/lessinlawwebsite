@@ -115,7 +115,7 @@ const NavContainer = styled.nav`
  width: 100%;
  left: 0;
  display: flex;
- 
+ background-color: red;
  .navbar-holder {
   position: relative;
   display: grid;

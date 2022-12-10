@@ -48,12 +48,13 @@ const Hero = () => {
 export default Hero
 
 const Wrapper = styled.section`
+display: grid;
  align-items: center;
- width: 100%;
+ justify-content: center;
+ width: 85vw;
  height: 80vh;
  position: relative;
  background-color: rgb(20, 39, 79);
-
  .image-holder {
   display: grid;
   justify-content: center;
@@ -66,8 +67,7 @@ const Wrapper = styled.section`
  img {
   position: relative;
 
-  top: 0;
-  left: 0;
+
  }
  .contactBtn {
   position: absolute;
@@ -175,7 +175,7 @@ const Wrapper = styled.section`
    width: 100vw;
    height: 50vh;
    padding: 1rem;
-   margin-top: 6rem;
+
   }
   background-color: red;
  }
@@ -184,7 +184,7 @@ const Wrapper = styled.section`
 
   img {
    width: 90vw;
-   height: 75vh;
+   height: 50vh;
     padding: 1rem;
   }
  }
@@ -194,7 +194,7 @@ const Wrapper = styled.section`
   img {
    width: 100%;
    height: 40vh;
-   margin-top: 5rem;
+  
    left: 0px;
   }
  }
