@@ -52,7 +52,7 @@ const Wrapper = styled.section`
  width: 100%;
  height: 80vh;
  position: relative;
- background-color: rgb(20, 39, 79);
+ /* background-color: rgb(20, 39, 79); */
 
  .image-holder {
   display: grid;
@@ -67,16 +67,18 @@ const Wrapper = styled.section`
 
  img {
   position: relative;
- 
+
   object-fit: cover;
   top: 0;
   left: 0;
  }
  .contactBtn {
   position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 30vw;
+top: 0px;
+  left: 20px;
+  width: 40vw;
+
+
  }
  .submit-btn-1 {
   background: var(--clr-black);
@@ -172,16 +174,27 @@ const Wrapper = styled.section`
  }
 
  @media (min-width: 576px) {
- }
- @media only screen and (max-width: 600px) {
   img {
    width: 100vw;
    height: 50vh;
    padding: 1rem;
    margin-top: 6rem;
   }
+  background-color: red;
+ }
+ @media only screen and (max-width: 600px) {
+  background-color: orange;
+
+  img {
+   width: 100vw;
+   height: 60vh;
+   padding: 1rem;
+   margin-top: 4rem;
+  }
  }
  @media only screen and (min-width: 600px) {
+  background-color: green;
+
   img {
    width: 100%;
    height: 40vh;
