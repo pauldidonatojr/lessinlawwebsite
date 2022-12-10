@@ -110,7 +110,7 @@ export default function PrimarySearchAppBar() {
       <li style={{ marginLeft: '1rem', marginRight: '1rem' }}>Client Portal</li>
      </Link>
      <Link to="/">
-      <li style={{ marginRight: '1rem' }}>Employee Portal</li>
+      <li>Employee Portal</li>
      </Link>
     </ul>
    </div>
