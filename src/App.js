@@ -14,7 +14,7 @@ import {
  ContactUs,
 } from './components'
 import React, { useState, useEffect } from 'react'
-function App(data) {
+function App() {
  const [loading, setLoading] = useState(true)
 
  useEffect(() => {
@@ -22,7 +22,7 @@ function App(data) {
  }, [])
  return (
   <>
-   {loading == { data } ? (
+   {loading == false ? (
     <Router>
      <SearchBar />
      <Navbar />
