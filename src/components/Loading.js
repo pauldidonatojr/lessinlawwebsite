@@ -12,9 +12,17 @@ const Loading = () => {
     />
 
     <button type="button" className="btn">
-     Enter
+     Client Portal
     </button>
-
+    <button type="button" className="btn">
+     Employee Portal
+    </button>
+    <button type="button" className="btn">
+     New Client Chat
+    </button>
+    <button type="button" className="btn">
+     Contact us
+    </button>
     {/* <img
      src="https://res.cloudinary.com/elpawl-llc/image/upload/v1658531377/octane7_pjddh7.png
 "
