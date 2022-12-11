@@ -20,7 +20,12 @@ const Hero = () => {
    <div className="content">
     <div className="image-holder">
      <img src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"></img>
-     <Button className='contactBtn' variant="contained" onClick={openModal} style={{ margin: '5rem' }}>
+     <Button
+      className="contactBtn"
+      variant="contained"
+      onClick={openModal}
+      style={{ margin: '5rem' }}
+     >
       Contact us today
      </Button>
     </div>
@@ -47,14 +52,14 @@ const Hero = () => {
 
 export default Hero
 
-const Wrapper = styled.section`
-display: grid;
- align-items: center;
+const Wrapper = styled.div`
+ display: flex;
  justify-content: center;
- width: 85vw;
- height: 80vh;
- position: relative;
- background-color: rgb(20, 39, 79);
+ align-items: center;
+ width: 50vw;
+ height: 50vh;
+
+ /* background-color: rgb(20, 39, 79); */
  .image-holder {
   display: grid;
   justify-content: center;
@@ -66,14 +71,12 @@ display: grid;
 
  img {
   position: relative;
-
-
  }
  .contactBtn {
   position: absolute;
   bottom: 0px;
   left: 20px;
-   height: 5vh;
+  height: 5vh;
   width: 40vw;
   padding: 1rem;
  }
@@ -172,29 +175,24 @@ display: grid;
 
  @media (min-width: 576px) {
   img {
-   width: 100vw;
+   width: 50vw;
    height: 50vh;
    padding: 1rem;
-
   }
   background-color: red;
  }
  @media only screen and (max-width: 600px) {
-
-
   img {
    width: 90vw;
    height: 50vh;
-    padding: 1rem;
+   padding: 1rem;
   }
  }
  @media only screen and (min-width: 600px) {
-  background-color: green;
-
   img {
    width: 100%;
    height: 40vh;
-  
+
    left: 0px;
   }
  }

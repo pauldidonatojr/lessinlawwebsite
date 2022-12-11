@@ -40,12 +40,12 @@ align-items: center;
 .image-holder{
    display: inline;
    justify-content: center;
-   align-items: center; 
+   align-items: center;
    width: 100%;
    height: auto;
    position: relative;
  }
- 
+
  .info-holder{
    top: 0;
    display: grid;
@@ -58,21 +58,21 @@ align-items: center;
    border-radius: 25px;
    z-index: 1;
  }
- 
+
  .article-holder{
      height: 100%;
      width: 100%;
      color: white;
-     borderBottom: 2px solid #dadada;
-     borderColor: 'white';
+     border-bottom: 2px solid #dadada;
+     border: 'white';
      opacity: 1;
-     
+
  }
 
  .form-holder{
    display: grid;
    justify-content: center;
-   align-items: center; 
+   align-items: center;
    width: 100%;
    height: 120vh;
    position: relative;
@@ -87,7 +87,7 @@ align-items: center;
    padding: 20px;
    width: 320px;
  }
- 
+
  .title {
    color: #eee;
    font-family: sans-serif;
@@ -95,7 +95,7 @@ align-items: center;
    font-weight: 600;
    margin-top: 30px;
  }
- 
+
  .subtitle {
    color: #eee;
    font-family: sans-serif;
@@ -103,7 +103,7 @@ align-items: center;
    font-weight: 600;
    margin-top: 10px;
  }
- 
+
  .input-container {
    height: 50px;
    position: relative;
@@ -116,15 +116,15 @@ align-items: center;
    width: 100%;
    margin-top: 30px;
  }
- 
+
  .ic1 {
    margin-top: 40px;
  }
- 
+
  .ic2 {
    margin-top: 30px;
  }
- 
+
  .input {
    background-color: #303245;
    border-radius: 12px;
@@ -137,7 +137,7 @@ align-items: center;
    padding: 4px 20px 0;
    width: 100%;
  }
- 
+
  .cut {
    background-color: #15172b;
    border-radius: 10px;
@@ -149,16 +149,16 @@ align-items: center;
    transition: transform 200ms;
    width: 76px;
  }
- 
+
  .cut-short {
    width: 70px;
  }
- 
+
  .input:focus ~ .cut,
  .input:not(:placeholder-shown) ~ .cut {
    transform: translateY(8px);
  }
- 
+
  .placeholder {
    color: #65657b;
    font-family: sans-serif;
@@ -170,20 +170,20 @@ align-items: center;
    transition: transform 200ms, color 200ms;
    top: 20px;
  }
- 
+
  .input:focus ~ .placeholder,
  .input:not(:placeholder-shown) ~ .placeholder {
    transform: translateY(-30px) translateX(10px) scale(0.75);
  }
- 
+
  .input:not(:placeholder-shown) ~ .placeholder {
    color: #808097;
  }
- 
+
  .input:focus ~ .placeholder {
    color: #dc2f55;
  }
- 
+
  .submit {
    background-color: #08d;
    border-radius: 12px;
@@ -198,13 +198,13 @@ align-items: center;
    text-align: center;
    width: 100%;
  }
- 
+
  .submit:active {
    background-color: #06b;
  }
 
  @media only screen and (max-width: 600px) {
- 
+
  }
 `
 

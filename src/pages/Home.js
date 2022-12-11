@@ -4,17 +4,16 @@ import styled from 'styled-components'
 const HomePage = () => {
  return (
   <Wrapper>
-   <Hero />
+    <Hero />
   </Wrapper>
  )
 }
 const Wrapper = styled.div`
- height: 90vh;
+ height: 50%;
  width: 100%;
- display: grid;
- padding: 5rem;
+ display: flex;
  justify-content: center;
  align-items: center;
- background-color: blue;
+ border: 5px black solid;
 `
 export default HomePage

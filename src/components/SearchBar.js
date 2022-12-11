@@ -41,7 +41,7 @@ export default function PrimarySearchAppBar() {
   <Wrapper>
    <List className={classes.List_1} component="nav">
     <ListItemButton onClick={handleClick} sx={{ color: 'white' }}>
-     <p style={{fontSize: '1.5rem'}}> Areas of Focus </p>
+     <p style={{fontSize: '1.2rem'}}> Areas of Focus </p>
      {open ? <ExpandLess /> : <ExpandMore />}
     </ListItemButton>
 
@@ -101,7 +101,7 @@ export default function PrimarySearchAppBar() {
    <a href="tel:+2155991400" className="call-toggle">
     <CallIcon />
    </a>
-   <div className="items">
+   {/* <div className="items">
     <ul>
      <Link to="/">
       <li style={{ marginRight: '1rem' }}>Lawyer Portal</li>
@@ -113,7 +113,7 @@ export default function PrimarySearchAppBar() {
       <li>Employee Portal</li>
      </Link>
     </ul>
-   </div>
+   </div> */}
    {/* <div className="div-3">
     <form className="search-form">
      <input type="text" placeholder="search" className="form-input" />

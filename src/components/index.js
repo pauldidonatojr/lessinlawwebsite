@@ -1,4 +1,5 @@
 import Navbar from './Navbar.js'
+import Loading from './Loading.js'
 import Hero from './Hero.js'
 import Sidebar from './Sidebar.js'
 import SearchBar from './SearchBar.js'
@@ -13,6 +14,7 @@ import ContactUs from './ContactUs'
 
 export {
  Navbar,
+ Loading,
  Sidebar,
  Hero,
  Profiles,
@@ -23,5 +25,5 @@ export {
  AttorneyProfiles,
  ResourceLinks,
  Communities,
- ContactUs
+ ContactUs,
 }

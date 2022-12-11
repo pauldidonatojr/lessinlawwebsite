@@ -57,7 +57,7 @@ export default function Navbar() {
       <FaBars className="faIcon" />
      </button>
     </div>
-    <div className="items">
+    {/* <div className="items">
      <ul>
       <Link to="/">
        <li style={{ marginRight: '1rem' }}>Lawyer Portal</li>
@@ -71,8 +71,8 @@ export default function Navbar() {
        <li style={{ marginRight: '1rem' }}>Employee Portal</li>
       </Link>
      </ul>
-    </div>
-    {/* <img
+    </div> */}
+     {/* <img
       src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657399779/Jeffrey_R._Lessin_Associates_P.C._1_tyxapa.png"
       alt="elpawl"
       className='logo'
@@ -196,7 +196,7 @@ const NavContainer = styled.nav`
  }
 
  @media (min-width: 1050px) {
-  display:none;
+
   height: 5vh;
 
   .nav-toggle {
