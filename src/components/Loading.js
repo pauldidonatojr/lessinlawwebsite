@@ -11,10 +11,9 @@ const Loading = () => {
      alt="elpawl"
     />
 
-
-     <button type="button" className="btn">
-      Enter
-     </button>
+    <button type="button" className="btn">
+     Enter
+    </button>
 
     {/* <img
      src="https://res.cloudinary.com/elpawl-llc/image/upload/v1658531377/octane7_pjddh7.png
@@ -37,7 +36,7 @@ const Wrapper = styled.div`
  }
  .logo1 {
   margin-bottom: 5rem;
-  width: 600px;
+  width: 300px;
   height: 500px;
  }
  /* .logo2 {
