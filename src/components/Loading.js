@@ -11,9 +11,10 @@ const Loading = () => {
      alt="elpawl"
     />
 
-    <button type="button" className="btn">
-     Client Portal
-    </button>
+     <button type="button" className="btn">
+      Client Portal
+     </button>
+   
     <button type="button" className="btn">
      Employee Portal
     </button>

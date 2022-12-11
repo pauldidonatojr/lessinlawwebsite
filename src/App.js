@@ -18,7 +18,7 @@ function App() {
  const [loading, setLoading] = useState(true)
 
  useEffect(() => {
-  setTimeout(() => setLoading(false), 15000)
+  setTimeout(() => setLoading(false), 10000)
  }, [])
  return (
   <>
@@ -28,7 +28,7 @@ function App() {
      <Navbar />
      <Sidebar />
      <Switch>
-      <Route exact path="/">
+      <Route exact path="/homepage">
        <Home />
       </Route>
 
