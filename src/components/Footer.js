@@ -124,11 +124,9 @@ const CardWrapper = styled.section`
  height: 100%;
 `
 
-
 const Wrapper = styled.footer`
-
  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
- min-height: 24rem;
+ min-height: 15rem;
  width: 100%;
  justify-content: center;
  align-items: center;
