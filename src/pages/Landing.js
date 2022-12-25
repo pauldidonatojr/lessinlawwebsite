@@ -13,7 +13,7 @@ const Landing = () => {
 
    <div className="container page ">
     <div className="info">
-     <h1>
+     <h1 style={{fontSize: '3rem'}}>
       Lessin <span>Lessin</span>
      </h1>
      <div className="bio">
@@ -44,8 +44,14 @@ const Landing = () => {
   </Wrapper>
  )
 }
+
+
 const Wrapper = styled.main`
- height: 80vh;
+ height: 110vh;
+
+ .container {
+    z-index: 1;
+ }
  nav {
   width: var(--fluid-width);
   max-width: var(--max-width);
@@ -114,6 +120,7 @@ const Wrapper = styled.main`
    font-size: 2rem;
   }
  }
+
  @media only screen and (max-width: 600px) {
   .container {
   }
@@ -126,16 +133,17 @@ const Wrapper = styled.main`
   }
   .info {
    padding: 0.5rem;
-   background-color: lightblue;
+   margin-top: 6rem;
+   background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
   }
   .bio {
    transition: var(--transition);
-   font-size: 1.4rem;
-   height: 550px;
-   width: 415px;
+   font-size: 1.2rem;
+   height: 400px;
+   width: 350px;
   }
   .btn-groups {
    padding: 2rem;
