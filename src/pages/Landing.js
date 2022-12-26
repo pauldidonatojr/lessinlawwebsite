@@ -274,6 +274,8 @@ const Wrapper = styled.main`
   }
  }
  @media only screen and (min-width: 600px) {
+  .container {
+  }
   .page {
    min-height: calc(100vh - var(--nav-height));
    display: flex;
@@ -282,28 +284,47 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 10rem;
-   background-color: red;
+   padding: 0.5rem;
+   margin-top: 5rem;
+   background-color: var(--white);
+   border-radius: 3%;
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 650px;
+   width: 375px;
+   margin-top: 7rem;
   }
   .bio {
-   background-color: darkblue;
-   font-size: 2rem;
    transition: var(--transition);
+   font-size: 1rem;
+
+   height: 500px;
+   width: 350px;
+   max-width: 800px;
+   font-weight: 500px;
+   margin: 0 auto;
+   text-align: center;
+   position: relative;
+   display: grid;
+   overflow: hidden;
+   justify-content: center;
   }
   .btn-groups {
-   background-color: purple;
-   padding: 2rem;
    display: grid;
-   grid-gap: 2rem;
+   grid-gap: 1rem;
    text-align: center;
+   height: 10px;
+   margin-top: 15rem;
+   margin-bottom: 8rem;
   }
-
   .btn-hero {
-   font-size: 1.5rem;
+   font-size: 1rem;
   }
  }
 
  @media only screen and (min-width: 768px) {
+  .container {
+  }
   .page {
    min-height: calc(100vh - var(--nav-height));
    display: flex;
@@ -312,28 +333,47 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 10rem;
-   background-color: red;
+   padding: 0.5rem;
+   margin-top: 5rem;
+   background-color: var(--white);
+   border-radius: 3%;
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 650px;
+   width: 375px;
+   margin-top: 7rem;
   }
   .bio {
-   background-color: hotpink;
-   font-size: 2rem;
    transition: var(--transition);
+   font-size: 1rem;
+
+   height: 500px;
+   width: 350px;
+   max-width: 800px;
+   font-weight: 500px;
+   margin: 0 auto;
+   text-align: center;
+   position: relative;
+   display: grid;
+   overflow: hidden;
+   justify-content: center;
   }
   .btn-groups {
-   background-color: purple;
-   padding: 2rem;
    display: grid;
-   grid-gap: 2rem;
+   grid-gap: 1rem;
    text-align: center;
+   height: 10px;
+   margin-top: 15rem;
+   margin-bottom: 8rem;
   }
-
   .btn-hero {
-   font-size: 2rem;
+   font-size: 1rem;
   }
  }
 
  @media (min-width: 992px) {
+  .container {
+  }
   .page {
    min-height: calc(100vh - var(--nav-height));
    display: flex;
@@ -342,34 +382,46 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 10rem;
-   background-color: red;
+   padding: 0.5rem;
+   margin-top: 5rem;
+   background-color: var(--white);
+   border-radius: 3%;
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 650px;
+   width: 375px;
+   margin-top: 7rem;
   }
   .bio {
-   background-color: hotpink;
-   font-size: 2rem;
    transition: var(--transition);
+   font-size: 1rem;
+
+   height: 500px;
+   width: 350px;
+   max-width: 800px;
+   font-weight: 500px;
+   margin: 0 auto;
+   text-align: center;
+   position: relative;
+   display: grid;
+   overflow: hidden;
+   justify-content: center;
   }
   .btn-groups {
-   background-color: purple;
-   padding: 2rem;
    display: grid;
-   grid-gap: 2rem;
+   grid-gap: 1rem;
    text-align: center;
+   height: 10px;
+   margin-top: 15rem;
+   margin-bottom: 8rem;
   }
-
   .btn-hero {
-   font-size: 2rem;
-  }
-  .page {
-   grid-template-columns: 1fr 1fr;
-   column-gap: 3rem;
-  }
-  .main-img {
-   display: block;
+   font-size: 1rem;
   }
  }
  @media (min-width: 1280px) {
+  .container {
+  }
   .page {
    min-height: calc(100vh - var(--nav-height));
    display: flex;
@@ -378,24 +430,41 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 10rem;
-   background-color: red;
+   padding: 0.5rem;
+   margin-top: 5rem;
+   background-color: var(--white);
+   border-radius: 3%;
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 650px;
+   width: 375px;
+   margin-top: 7rem;
   }
   .bio {
-   background-color: hotpink;
-   font-size: 2rem;
    transition: var(--transition);
+   font-size: 1rem;
+
+   height: 500px;
+   width: 350px;
+   max-width: 800px;
+   font-weight: 500px;
+   margin: 0 auto;
+   text-align: center;
+   position: relative;
+   display: grid;
+   overflow: hidden;
+   justify-content: center;
   }
   .btn-groups {
-   background-color: purple;
-   padding: 2rem;
    display: grid;
-   grid-gap: 2rem;
+   grid-gap: 1rem;
    text-align: center;
+   height: 10px;
+   margin-top: 15rem;
+   margin-bottom: 8rem;
   }
-
   .btn-hero {
-   font-size: 2rem;
+   font-size: 1rem;
   }
  }
 `

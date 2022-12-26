@@ -5,18 +5,20 @@ import { useForm, ValidationError } from '@formspree/react'
 const Contact = () => {
  const [state, handleSubmit] = useForm('xpznvabl')
  if (state.succeeded) {
-    return (
-       <div style={{
-          height: '100vh', width: "50vh",
-          backgroundColor: 'lightblue',
-          display: 'grid',
-          justifyContent: 'center',
-          alignItems: 'center'
-
-       }}>
-       <p style={{ fontSize: '1.6rem' }}>We will be in contact shortly!</p>
-  </div>
-    )
+  return (
+   <div
+    style={{
+     height: '100vh',
+     width: '50vh',
+     backgroundColor: 'lightblue',
+     display: 'grid',
+     justifyContent: 'center',
+     alignItems: 'center',
+    }}
+   >
+    <p style={{ fontSize: '1.6rem' }}>We will be in contact shortly!</p>
+   </div>
+  )
  }
  return (
   <Wrapper>
@@ -41,7 +43,7 @@ const Contact = () => {
      </div>
      <div class="input-container ic2">
       <input id="number" type="number" name="number" class="input" />
-      <div class="cut"></div>
+      <div class="cut "></div>
 
       <label htmlFor="number" class="placeholder">
        Phone Number
@@ -50,10 +52,10 @@ const Contact = () => {
      </div>
 
      <div class="input-container ic2">
-      <input id="email" class="input" type="text" placeholder=" " />
+      <input id="email" type="email" name="email" className="input" />
       <div class="cut cut-short"></div>
-      <label htmlFor="email" class="placeholder">
-       Email
+      <label htmlFor="email" className="placeholder">
+       Email Address
       </label>
       <ValidationError prefix="Email" field="email" errors={state.errors} />
      </div>
@@ -166,11 +168,11 @@ const Wrapper = styled.section`
   top: -20px;
   transform: translateY(0);
   transition: transform 200ms;
-  width: 76px;
+  width: 90px;
  }
 
  .cut-short {
-  width: 70px;
+  width:100px;
  }
 
  .input:focus ~ .cut,
