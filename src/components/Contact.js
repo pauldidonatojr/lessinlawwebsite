@@ -95,7 +95,7 @@ const Wrapper = styled.section`
   height: auto;
   padding: 20px;
   height: 800px;
-  width: 380px;
+  width: 300px;
   margin-bottom: 0.5rem;
  }
 
