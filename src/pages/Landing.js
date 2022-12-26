@@ -229,7 +229,7 @@ const Wrapper = styled.main`
   .container {
   }
   .page {
-   min-height: calc(150vh - var(--nav-height));
+   min-height: calc(100vh - var(--nav-height));
    display: flex;
    justify-content: center;
    align-items: center;

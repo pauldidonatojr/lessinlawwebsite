@@ -10,7 +10,6 @@ const Contact = () => {
  return (
   <Wrapper>
    <div class="form">
-    <div class="title">Welcome</div>
     <div class="subtitle">Fill the form we will contact you</div>
 
     <div className="overstop">
