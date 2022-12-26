@@ -35,18 +35,18 @@ const Contact = () => {
     </div>
 
     <div class="input-container2">
+     <div class="cut cut-short"></div>
 
      <textarea
-      class='input'
+      className="input"
       name="description"
       rows="5"
-           cols="50"
-           style={{height: '24rem'}}
+      cols="50"
+      style={{ height: '15rem' }}
      ></textarea>
-     <div class="cut cut-short"></div>
-     <label for="message" class="placeholder">
+     {/* <label for="message" class="placeholder">
       Message
-     </label>
+     </label> */}
     </div>
 
     <button type="text" class="submit">
@@ -87,21 +87,22 @@ const Wrapper = styled.section`
  background-color: transparent;
  display: flex;
  justify-content: center;
+
  .form {
   background-color: #15172b;
   border-radius: 20px;
   box-sizing: border-box;
   height: auto;
-  margin-top: 4rem;
-  padding: 15px;
-  width: 440px;
-  height: 1050px;
+  padding: 20px;
+  height: 800px;
+  width: 380px;
+  margin-bottom: 0.5rem;
  }
 
  .title {
   color: #eee;
   font-family: sans-serif;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 600;
   margin-top: 30px;
  }
@@ -109,20 +110,19 @@ const Wrapper = styled.section`
  .subtitle {
   color: #eee;
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   margin-top: 10px;
  }
 
  .input-container {
-  height: 100px;
+  height: 50px;
   position: relative;
   width: 100%;
  }
 
-
  .input-container2 {
-  height: 360px;
+  height: 230px;
   position: relative;
   width: 100%;
   margin-top: 30px;
@@ -140,15 +140,13 @@ const Wrapper = styled.section`
   background-color: #303245;
   border-radius: 12px;
   border: 0;
-
-  word-wrap: break-word;
+  box-sizing: border-box;
   color: #eee;
-  font-size: 25px;
+  font-size: 22px;
   height: 100%;
   outline: 0;
   padding: 4px 20px 0;
   width: 100%;
-
  }
 
  .cut {
@@ -164,7 +162,7 @@ const Wrapper = styled.section`
  }
 
  .cut-short {
-  width: 95px;
+  width: 70px;
  }
 
  .input:focus ~ .cut,
@@ -179,7 +177,6 @@ const Wrapper = styled.section`
   line-height: 14px;
   pointer-events: none;
   position: absolute;
-  font-size: 25px;
   transform-origin: 0 50%;
   transition: transform 200ms, color 200ms;
   top: 20px;
@@ -206,7 +203,7 @@ const Wrapper = styled.section`
   color: #eee;
   cursor: pointer;
   font-size: 18px;
-  height: 50px;
+  height: 60px;
   margin-top: 38px;
   // outline: 0;
   text-align: center;

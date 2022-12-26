@@ -91,21 +91,24 @@ const Landing = () => {
      </div>
 
      <div className="btn-groups">
-      <Button variant="contained" onClick={openModal} className="btn btn-hero">
-       new client click here
-      </Button>
-      <Link to="register">
-       {' '}
-       <Button variant="contained" className="btn btn-hero">
-        current client click here
-       </Button>
-      </Link>
 
-      <Link>
-       <Button variant="contained" className="btn btn-hero">
-        click here to view our website
-       </Button>{' '}
-      </Link>
+       <Button variant="contained" onClick={openModal} className="btn btn-hero">
+        new client click here
+       </Button>
+
+
+        {' '}
+        <Button variant="contained" className="btn btn-hero">
+         current client click here
+        </Button>
+
+
+
+
+        <Button variant="contained" className="btn btn-hero">
+         click here to view our website
+        </Button>{' '}
+
      </div>
      <div
       className={`${
@@ -128,7 +131,7 @@ const Landing = () => {
 }
 
 const Wrapper = styled.main`
- height: 80vh;
+ height: 60vh;
 
  .container {
   z-index: 1;
@@ -153,10 +156,6 @@ const Wrapper = styled.main`
  .bio {
   transition: var(--transition);
  }
- .btn-groups {
-  display: grid;
-  text-align: center;
- }
 
  h1 {
   font-weight: 700;
@@ -169,6 +168,7 @@ const Wrapper = styled.main`
  }
  .btn-groups {
   display: flex;
+
   flex-direction: column;
   margin-top: 2rem;
  }
@@ -235,33 +235,37 @@ const Wrapper = styled.main`
   }
   .info {
    padding: 0.5rem;
-   margin-top: 7rem;
+  margin-top: 4rem;
    background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
+   width: 375px;
+
   }
   .bio {
    transition: var(--transition);
-   font-size: 1.3rem;
-   height: 500px;
+   font-size: 1.30rem;
+   margin-top: 2rem;
+   height: 550px;
    width: 350px;
    max-width: 800px;
+   font-weight: 500px;
    margin: 0 auto;
    text-align: center;
    position: relative;
    display: flex;
    overflow: hidden;
+
+   margin-bottom: 5rem;
   }
   .btn-groups {
-   padding: 2rem;
-
    display: grid;
-   grid-gap: 2rem;
+   grid-gap: 1rem;
    text-align: center;
   }
   .btn-hero {
-   font-size: 1.2rem;
+   font-size: 1rem;
   }
  }
  @media only screen and (min-width: 600px) {

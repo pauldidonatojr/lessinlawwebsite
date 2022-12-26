@@ -17,7 +17,12 @@ export const heroData = [
  {
   id: 4,
   text:
-   ' To view your information and speak with a paralegal, please check your email for a login link. Click on the link and follow the instructions to access your account. Once you have logged in, you will be able to view your information and communicate with a paralegal through a live chat feature. Our team of experienced paralegals is here to help you understand your legal options and connect you with the right lawyer for your case. We understand that finding a lawyer can be a stressful process, but with our help, you can make an informed decision about your legal needs. We look forward to speaking with you and helping you find the legal representation you deserve',
+   ' To view your information and speak with a paralegal, please check your email for a login link. Click on the link and follow the instructions to access your account. Once you have logged in, you will be able to view your information and communicate with a paralegal through a live chat feature. Our team of experienced paralegals is here to help you understand your legal options and connect you with the right lawyer for your case.',
+ },
+ {
+  id: 5,
+  text:
+   ' We understand that finding a lawyer can be a stressful process, but with our help, you can make an informed decision about your legal needs. We look forward to speaking with you and helping you find the legal representation you deserve',
  },
 ]
 
