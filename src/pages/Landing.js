@@ -1,10 +1,33 @@
 import main from '../assets/images/main.svg'
 // import Wrapper from '../assets/wrappers/LandingPage'
 import { Logo } from '../components'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { heroData } from '../utils/data.js'
 const Landing = () => {
+ const [data, setData] = useState(heroData)
+ const [index, setIndex] = useState(0)
+
+ useEffect(() => {
+  const lastIndex = data.length - 1
+  if (index < 0) {
+   setIndex(lastIndex)
+  }
+  if (index > lastIndex) {
+   setIndex(0)
+  }
+ }, [index, data])
+
+ useEffect(() => {
+  let slider = setInterval(() => {
+   setIndex(index + 1)
+  }, 8000)
+  return () => {
+   clearInterval(slider)
+  }
+ }, [index])
+
  return (
   <Wrapper>
    {/* <nav>
@@ -13,30 +36,63 @@ const Landing = () => {
 
    <div className="container page ">
     <div className="info">
-     <h1 style={{fontSize: '3rem'}}>
+     <h1 style={{ fontSize: '3rem' }}>
       Lessin <span>Lessin</span>
      </h1>
      <div className="bio">
-      <p>
-       Welcome to the website of Jeffrey R. Lessin, Personal Injury Lawyer. Our
-       firm is proud to serve the greater Philadelphia community with legal
-       counsel on all kinds of civil rights cases as well as slip and falls,
-       motor vehicle accidents, premises liability, and product liability. We
-       understand that suffering an injury can be a traumatic and costly
-       experience. Our team of dedicated attorneys is committed to ensuring that
-       our clients receive the justice and compensation they deserve.
-      </p>
+      {data.map((info, infoIndex) => {
+       const { id, text } = info
+       let position = 'nextSlide'
+       if (infoIndex === index) {
+        position = 'activeSlide'
+       }
+       if (
+        infoIndex === index - 1 ||
+        (index === 0 && infoIndex === data.length - 1)
+       ) {
+        position = 'lastSlide'
+       }
+
+       return (
+        <div>
+         <article className={position} key={id}>
+          <i>
+           {' '}
+           <p className="text">{text}</p>
+          </i>
+         </article>
+        </div>
+       )
+      })}
+      {/* <p>
+       <i>
+        {' '}
+        <b>
+         {' '}
+         Welcome to the website of Jeffrey R. Lessin, Personal Injury Lawyer.
+         Our firm is proud to serve the greater Philadelphia community with
+         legal counsel on all kinds of civil rights cases as well as slip and
+         falls, motor vehicle accidents, premises liability, and product
+         liability. We understand that suffering an injury can be a traumatic
+         and costly experience. Our team of dedicated attorneys is committed to
+         ensuring that our clients receive the justice and compensation they
+         deserve. To learn more click <Link to="/home"> here.</Link>
+        </b>{' '}
+       </i>{' '}
+        To learn more click <Link to="/home"> here.</Link>
+      </p> */}
      </div>
 
      <div className="btn-groups">
       <Link to="/register" className="btn btn-hero">
-       Are you a new client?
-      </Link>
-      <Link to="/home" className="btn btn-hero">
-       Are you a current client?
+       new client click here
       </Link>
       <Link to="/register" className="btn btn-hero">
-       Enter to view home page
+       current client click here
+      </Link>
+
+      <Link to="/home" className="btn btn-hero">
+       click here to view our website
       </Link>
      </div>
     </div>
@@ -45,12 +101,11 @@ const Landing = () => {
  )
 }
 
-
 const Wrapper = styled.main`
  height: 110vh;
 
  .container {
-    z-index: 1;
+  z-index: 1;
  }
  nav {
   width: var(--fluid-width);
@@ -89,6 +144,27 @@ const Wrapper = styled.main`
  .btn-groups {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
+ }
+
+ article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: var(--transition);
+ }
+ article.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+ }
+ article.lastSlide {
+  transform: translateX(-100%);
+ }
+ article.nextSlide {
+  transform: translateX(100%);
  }
 
  @media (min-width: 576px) {
@@ -117,7 +193,7 @@ const Wrapper = styled.main`
   }
 
   .btn-hero {
-   font-size: 2rem;
+   font-size: 1.5rem;
   }
  }
 
@@ -141,15 +217,25 @@ const Wrapper = styled.main`
   }
   .bio {
    transition: var(--transition);
-   font-size: 1.2rem;
-   height: 400px;
+   font-size: 1.3rem;
+   height: 500px;
    width: 350px;
+   max-width: 800px;
+   margin: 0 auto;
+   text-align: center;
+   position: relative;
+   display: flex;
+   overflow: hidden;
   }
   .btn-groups {
    padding: 2rem;
+
    display: grid;
    grid-gap: 2rem;
    text-align: center;
+  }
+  .btn-hero {
+    font-size: 1.2rem;
   }
  }
  @media only screen and (min-width: 600px) {
@@ -178,7 +264,7 @@ const Wrapper = styled.main`
   }
 
   .btn-hero {
-   font-size: 2rem;
+   font-size: 1.5rem;
   }
  }
 
