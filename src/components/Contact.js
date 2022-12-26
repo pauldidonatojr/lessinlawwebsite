@@ -12,46 +12,49 @@ const Contact = () => {
    <div class="form">
     <div class="title">Welcome</div>
     <div class="subtitle">Fill the form we will contact you</div>
-    <div class="input-container ic1">
-     <input id="firstname" class="input" type="text" placeholder=" " />
-     <div class="cut"></div>
-     <label for="firstname" class="placeholder">
-      Name
-     </label>
-    </div>
-    <div class="input-container ic2">
-     <input id="phone" class="input" type="text" placeholder=" " />
-     <div class="cut"></div>
-     <label for="phone" class="placeholder">
-      Phone
-     </label>
-    </div>
-    <div class="input-container ic2">
-     <input id="email" class="input" type="text" placeholder=" " />
-     <div class="cut cut-short"></div>
-     <label for="email" class="placeholder">
-      Email
-     </label>
-    </div>
 
-    <div class="input-container2">
-     <div class="cut cut-short"></div>
+    <div className="overstop">
+     <div class="input-container ic1">
+      <input id="firstname" class="input" type="text" placeholder=" " />
+      <div class="cut"></div>
+      <label for="firstname" class="placeholder">
+       Name
+      </label>
+     </div>
+     <div class="input-container ic2">
+      <input id="phone" class="input" type="text" placeholder=" " />
+      <div class="cut"></div>
+      <label for="phone" class="placeholder">
+       Phone
+      </label>
+     </div>
+     <div class="input-container ic2">
+      <input id="email" class="input" type="text" placeholder=" " />
+      <div class="cut cut-short"></div>
+      <label for="email" class="placeholder">
+       Email
+      </label>
+     </div>
 
-     <textarea
-      className="input"
-      name="description"
-      rows="5"
-      cols="50"
-      style={{ height: '15rem' }}
-     ></textarea>
-     {/* <label for="message" class="placeholder">
+     <div class="input-container2">
+      <div class="cut cut-short"></div>
+
+      <textarea
+       className="input"
+       name="description"
+       rows="5"
+       cols="50"
+       style={{ height: '15rem' }}
+      ></textarea>
+      {/* <label for="message" class="placeholder">
       Message
      </label> */}
-    </div>
+     </div>
 
-    <button type="text" class="submit">
-     submit
-    </button>
+     <button type="text" class="submit">
+      submit
+     </button>
+    </div>
    </div>
 
    {/* <form
@@ -87,7 +90,9 @@ const Wrapper = styled.section`
  background-color: transparent;
  display: flex;
  justify-content: center;
-
+ .overflowstop {
+  overflow: scroll;
+ }
  .form {
   background-color: #15172b;
   border-radius: 20px;
