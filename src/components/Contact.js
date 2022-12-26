@@ -94,9 +94,9 @@ const Wrapper = styled.section`
   box-sizing: border-box;
   height: auto;
   padding: 20px;
-  height: 800px;
-  width: 300px;
-  margin-bottom: 0.5rem;
+  height: 850px;
+  width: 100%;
+  margin-bottom: 5.5rem;
  }
 
  .title {

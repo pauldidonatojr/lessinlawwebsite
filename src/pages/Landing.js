@@ -131,7 +131,7 @@ const Landing = () => {
 }
 
 const Wrapper = styled.main`
- height: 60vh;
+ height: 100vh;
 
  .container {
   z-index: 1;
