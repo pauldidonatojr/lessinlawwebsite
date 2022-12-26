@@ -88,42 +88,45 @@ const Landing = () => {
        </i>{' '}
         To learn more click <Link to="/home"> here.</Link>
       </p> */}
-     </div>
 
-     <div className="btn-groups">
-
+      <div className="btn-groups">
        <Button variant="contained" onClick={openModal} className="btn btn-hero">
         new client click here
+       </Button>{' '}
+       <Button variant="contained" className="btn btn-hero">
+        current client click here
        </Button>
-
-
-        {' '}
-        <Button variant="contained" className="btn btn-hero">
-         current client click here
-        </Button>
-
-
-
-
-        <Button variant="contained" className="btn btn-hero">
-         click here to view our website
-        </Button>{' '}
-
-     </div>
-     <div
-      className={`${
-       isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
-      }`}
-     >
-      <div className="modal-container">
-       <button className="close-modal-btn" onClick={closeModal}>
-        <FaWindowClose
-         style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
-        ></FaWindowClose>
-       </button>
-       <Contact />
+       <Button variant="contained" className="btn btn-hero">
+        click here to view our website
+       </Button>{' '}
+      </div>
+      <div
+       className={`${
+        isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
+       }`}
+      >
+       <div className="modal-container">
+        <button className="close-modal-btn" onClick={closeModal}>
+         <FaWindowClose
+          style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
+         ></FaWindowClose>
+        </button>
+        <Contact />
+       </div>
       </div>
      </div>
+     {/*
+     <div className="btn-groups">
+      <Button variant="contained" onClick={openModal} className="btn btn-hero">
+       new client click here
+      </Button>{' '}
+      <Button variant="contained" className="btn btn-hero">
+       current client click here
+      </Button>
+      <Button variant="contained" className="btn btn-hero">
+       click here to view our website
+      </Button>{' '}
+     </div> */}
     </div>
    </div>
   </Wrapper>
@@ -170,7 +173,6 @@ const Wrapper = styled.main`
   display: flex;
 
   flex-direction: column;
-  margin-top: 2rem;
  }
 
  article {
@@ -235,34 +237,37 @@ const Wrapper = styled.main`
   }
   .info {
    padding: 0.5rem;
-  margin-top: 4rem;
+   margin-top: 5rem;
    background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
+   height: 650px;
    width: 375px;
-
+   margin-top: 7rem;
   }
   .bio {
    transition: var(--transition);
-   font-size: 1.30rem;
-   margin-top: 2rem;
-   height: 550px;
+   font-size: 1rem;
+
+   height: 500px;
    width: 350px;
    max-width: 800px;
    font-weight: 500px;
    margin: 0 auto;
    text-align: center;
    position: relative;
-   display: flex;
+   display: grid;
    overflow: hidden;
-
-   margin-bottom: 5rem;
+   justify-content: center;
   }
   .btn-groups {
    display: grid;
    grid-gap: 1rem;
    text-align: center;
+   height: 10px;
+   margin-top: 15rem;
+   margin-bottom: 8rem;
   }
   .btn-hero {
    font-size: 1rem;

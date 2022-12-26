@@ -44,7 +44,7 @@ const Contact = () => {
        name="description"
        rows="5"
        cols="50"
-       style={{ height: '15rem' }}
+       style={{ height: '12rem' }}
       ></textarea>
       {/* <label for="message" class="placeholder">
       Message
@@ -109,7 +109,7 @@ const Wrapper = styled.section`
   font-family: sans-serif;
   font-size: 40px;
   font-weight: 600;
-  margin-top: 30px;
+
  }
 
  .subtitle {
@@ -122,7 +122,7 @@ const Wrapper = styled.section`
 
  .input-container {
   height: 50px;
-  position: relative;
+  position: relative; -
   width: 100%;
  }
 
@@ -208,8 +208,8 @@ const Wrapper = styled.section`
   color: #eee;
   cursor: pointer;
   font-size: 18px;
-  height: 60px;
-  margin-top: 38px;
+  height: 80px;
+  margin-top: 10px;
   // outline: 0;
   text-align: center;
   width: 100%;
