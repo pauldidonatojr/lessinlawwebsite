@@ -1,14 +1,21 @@
 import main from '../assets/images/main.svg'
 // import Wrapper from '../assets/wrappers/LandingPage'
 import { Logo } from '../components'
+import { useModalContext } from '../context/modal_context'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { heroData } from '../utils/data.js'
+import Button from '@mui/material/Button'
+import { FaWindowClose } from 'react-icons/fa'
+import Contact from '../components/Contact.js'
+
 const Landing = () => {
  const [data, setData] = useState(heroData)
  const [index, setIndex] = useState(0)
+ const { openModal } = useModalContext()
 
+ const { isModalOpen, closeModal } = useModalContext()
  useEffect(() => {
   const lastIndex = data.length - 1
   if (index < 0) {
@@ -84,16 +91,35 @@ const Landing = () => {
      </div>
 
      <div className="btn-groups">
-      <Link to="/register" className="btn btn-hero">
+      <Button variant="contained" onClick={openModal} className="btn btn-hero">
        new client click here
-      </Link>
-      <Link to="/register" className="btn btn-hero">
-       current client click here
+      </Button>
+      <Link to="register">
+       {' '}
+       <Button variant="contained" className="btn btn-hero">
+        current client click here
+       </Button>
       </Link>
 
-      <Link to="/home" className="btn btn-hero">
-       click here to view our website
+      <Link>
+       <Button variant="contained" className="btn btn-hero">
+        click here to view our website
+       </Button>{' '}
       </Link>
+     </div>
+     <div
+      className={`${
+       isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
+      }`}
+     >
+      <div className="modal-container">
+       <button className="close-modal-btn" onClick={closeModal}>
+        <FaWindowClose
+         style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
+        ></FaWindowClose>
+       </button>
+       <Contact />
+      </div>
      </div>
     </div>
    </div>
@@ -102,7 +128,7 @@ const Landing = () => {
 }
 
 const Wrapper = styled.main`
- height: 110vh;
+ height: 80vh;
 
  .container {
   z-index: 1;
@@ -209,7 +235,7 @@ const Wrapper = styled.main`
   }
   .info {
    padding: 0.5rem;
-   margin-top: 6rem;
+   margin-top: 7rem;
    background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
@@ -235,7 +261,7 @@ const Wrapper = styled.main`
    text-align: center;
   }
   .btn-hero {
-    font-size: 1.2rem;
+   font-size: 1.2rem;
   }
  }
  @media only screen and (min-width: 600px) {
