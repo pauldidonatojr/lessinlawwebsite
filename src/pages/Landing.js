@@ -93,12 +93,12 @@ const Landing = () => {
        <Button variant="contained" onClick={openModal} className="btn btn-hero">
         new client? click here
        </Button>{' '}
-       {/* <Button variant="contained" className="btn btn-hero">
+       <Button variant="contained" className="btn btn-hero">
         current client click here
        </Button>
        <Button variant="contained" className="btn btn-hero">
         click here to view our website
-       </Button>{' '} */}
+       </Button>
       </div>
       <div
        className={`${
