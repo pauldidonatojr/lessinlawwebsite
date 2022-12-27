@@ -41,7 +41,7 @@ function App() {
     </Route>
     {/*
     <Route path="/home" element={<Home />} /> */}
-    <Route path="landing" element={<Landing />} />
+    <Route path="/landing" element={<Landing />} />
     <Route path="register" element={<Register />} />
     <Route path="*" element={<Error />} />
 
