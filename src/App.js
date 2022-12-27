@@ -39,16 +39,8 @@ function App() {
      <Route path="add-job" element={<AddJob />} />
      <Route path="profile" element={<Profile />} />
     </Route>
-
-    <Route path="/home" element={<Home />} />
-    {/* <Route path="/home" element={<HomeRoutes>
-
-
-
-
-
-             </HomeRoutes> */}
-
+    {/*
+    <Route path="/home" element={<Home />} /> */}
     <Route path="landing" element={<Landing />} />
     <Route path="register" element={<Register />} />
     <Route path="*" element={<Error />} />
