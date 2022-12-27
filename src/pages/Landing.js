@@ -91,14 +91,14 @@ const Landing = () => {
 
       <div className="btn-groups">
        <Button variant="contained" onClick={openModal} className="btn btn-hero">
-        new client click here
+        new client? click here
        </Button>{' '}
-       <Button variant="contained" className="btn btn-hero">
+       {/* <Button variant="contained" className="btn btn-hero">
         current client click here
        </Button>
        <Button variant="contained" className="btn btn-hero">
         click here to view our website
-       </Button>{' '}
+       </Button>{' '} */}
       </div>
       <div
        className={`${
@@ -208,12 +208,10 @@ const Wrapper = styled.main`
    background-color: red;
   }
   .bio {
-   background-color: hotpink;
    font-size: 2rem;
    transition: var(--transition);
   }
   .btn-groups {
-   background-color: purple;
    padding: 2rem;
    display: grid;
    grid-gap: 2rem;
