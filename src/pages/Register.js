@@ -53,7 +53,6 @@ function Register() {
   <Wrapper className="full-page">
    <form className="form" onSubmit={onSubmit}>
     <Link to="/landing">
-    
      <Logo />
     </Link>
     <h3>{values.isMember ? 'Login' : 'Register'}</h3>

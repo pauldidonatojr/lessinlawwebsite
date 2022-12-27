@@ -94,10 +94,15 @@ const Landing = () => {
         new client? click here
        </Button>{' '}
        <Button variant="contained" className="btn btn-hero">
-        current client click here
+        <Link to="/register" style={{ color: 'white' }}>
+         current client click here
+        </Link>
        </Button>
        <Button variant="contained" className="btn btn-hero">
-        click here to view our website
+        <Link to="/home" style={{ color: 'white' }}>
+         {' '}
+         click here to view our website
+        </Link>
        </Button>
       </div>
       <div

@@ -9,7 +9,7 @@ import Section from './Section'
 import { Footer } from '.'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
-
+import {Link} from 'react-router-dom'
 const Hero = () => {
  const { openModal } = useModalContext()
 
@@ -19,15 +19,17 @@ const Hero = () => {
   <Wrapper>
    <div className="content">
     <div className="image-holder">
-     <img src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"></img>
-     <Button
-      className="contactBtn"
-      variant="contained"
-      onClick={openModal}
-      style={{ margin: '5rem' }}
-     >
-      Contact us today
-     </Button>
+     <img src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"></img>{' '}
+     <Link to="/landing">
+      <Button
+       className="contactBtn"
+       variant="contained"
+       //    onClick={openModal}
+       style={{ margin: '5rem' }}
+      >
+       Contact us today
+      </Button>
+     </Link>
     </div>
    </div>
    <div
