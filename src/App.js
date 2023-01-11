@@ -21,6 +21,9 @@ import {
     AttorneyProfiles,
     ResourceLinks,
     Communities,
+    ContactUs,
+    Header,
+    Footer
 } from './components/'
 
 import { ToastContainer } from 'react-toastify'
@@ -48,15 +51,19 @@ function App() {
                     <Route path="profile" element={<Profile />} />
                 </Route>
 
+                
                 <Route path="/home" element={<Home />} />
                 <Route path="/firmoverview" element={<FirmOverview />} />
                 <Route path="/practiceareas" element={<PracticeAreas />} />
                 <Route path="/attorneyprofiles" element={<AttorneyProfiles />} />
                 <Route path="/resourcelinks" element={<ResourceLinks />} />
                 <Route path="/communities" element={<Communities />} />
+                <Route path="/contactus" element={<ContactUs />} />
                 <Route path="/landing" element={<Landing />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="*" element={<Error />} />
+
+                
 
                 {/* ///////////////////////////*/}
             </Routes>

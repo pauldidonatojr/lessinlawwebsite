@@ -6,7 +6,8 @@ import Contact from './Contact'
 import Article from './Article'
 import Filler from './Filler'
 import Section from './Section'
-import { Footer } from '.'
+import Footer from './Footer'
+import Header from './Header'
 
 const FirmOverview = () => {
     const { openModal } = useModalContext()
@@ -14,6 +15,7 @@ const FirmOverview = () => {
     const { isModalOpen, closeModal } = useModalContext()
     return (
         <Wrapper>
+          <Header/>
             <div className='image-holder'>
                 <img src='./firm.jpg' style={{ position: 'relative', width: '100%', height: '50vh', top: '0px', left: '0px', objectFit: 'cover' }}></img>
                 <div
@@ -25,7 +27,7 @@ const FirmOverview = () => {
                     </div>
                 </div>
             </div>
-
+          <Footer/>
         </Wrapper>
     )
 }
@@ -34,8 +36,8 @@ const FirmOverview = () => {
 export default FirmOverview
 
 const Wrapper = styled.section`
-display: grid;
-align-items: center;
+height: 100vh;
+ width: 100%;
 
 
 .image-holder{

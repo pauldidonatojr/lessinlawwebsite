@@ -48,12 +48,13 @@ const Header = () => {
             <div className='bottom'>
                 <div className="div-1">
                     <ul>
-                        <li> Home </li>
-                        <li> Firm Overview </li>
-                        <li> Practice Areas Overview </li>
-                        <li> Attorney Profiles </li>
-                        <li> Resource Links</li>
-                        <li> Contact </li>
+                        <Link to='/home'><li> Home </li></Link>
+                        <Link to='/firmoverview'><li> Firm Overview </li></Link>
+                        <Link to='/practiceareas'><li> Practice Areas Overview </li></Link>
+                        <Link to='/attorneyprofiles'><li> Attorney Profiles </li></Link>
+                        <Link to='/resourcelinks'><li> Resource Links</li></Link>
+                        <Link to='/communities'><li> Communities</li></Link>
+                        <Link to='/contactus'><li> Contact </li></Link>
                     </ul>
                 </div>
             </div>

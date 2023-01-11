@@ -6,7 +6,9 @@ import Contact from './Contact'
 import Article from './Article'
 import Filler from './Filler'
 import Section from './Section'
-import { Footer } from '.'
+import Footer from './Footer'
+import Header from './Header'
+
 
 const ContactUs = () => {
     const { openModal } = useModalContext()
@@ -14,7 +16,7 @@ const ContactUs = () => {
     const { isModalOpen, closeModal } = useModalContext()
     return (
         <Wrapper>
-
+          <Header/>
             <div className='image-holder'>
                 <img src='./pen.jpg' style={{ position: 'relative', width: '100%', height: '50vh', top: '0px', left: '0px', objectFit: 'cover' }}></img>
                 <div
@@ -57,6 +59,7 @@ const ContactUs = () => {
                     <button type="text" class="submit">submit</button>
                 </div>
             </div>
+            <Footer/>
         </Wrapper>
     )
 }
@@ -65,8 +68,8 @@ const ContactUs = () => {
 export default ContactUs
 
 const Wrapper = styled.section`
- display: grid;
- align-items: center;
+ height: 100vh;
+ width: 100%;
  
  
  .image-holder{

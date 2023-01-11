@@ -6,7 +6,8 @@ import Contact from './Contact'
 import Article from './Article'
 import Filler from './Filler'
 import Section from './Section'
-import { Footer } from '.'
+import Header from './Header'
+import Footer from './Footer'
 
 const AttorneyProfiles = () => {
  const { openModal } = useModalContext()
@@ -14,6 +15,7 @@ const AttorneyProfiles = () => {
  const { isModalOpen, closeModal } = useModalContext()
  return (
   <Wrapper>
+    <Header/>
    <div className='image-holder'>
                 <img src='./attorney.jpg' style={{ position: 'relative', width: '100%', height: '50vh', top: '0px', left: '0px', objectFit: 'cover' }}></img>
                 <div
@@ -25,6 +27,7 @@ const AttorneyProfiles = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
   </Wrapper>
  )
 }
@@ -32,9 +35,8 @@ const AttorneyProfiles = () => {
 
 export default AttorneyProfiles
 const Wrapper = styled.section`
-display: grid;
-align-items: center;
-
+height: 100vh;
+ width: 100%;
 
 .image-holder{
    display: inline;

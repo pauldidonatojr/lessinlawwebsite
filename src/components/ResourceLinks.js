@@ -6,7 +6,8 @@ import Contact from './Contact'
 import Article from './Article'
 import Filler from './Filler'
 import Section from './Section'
-import { Footer } from '.'
+import Footer from './Footer'
+import Header from './Header'
 
 const ResourceLinks = () => {
  const { openModal } = useModalContext()
@@ -14,6 +15,7 @@ const ResourceLinks = () => {
  const { isModalOpen, closeModal } = useModalContext()
  return (
   <Wrapper>
+    <Header/>
    <div className='image-holder'>
                 <img src='./links.jpg' style={{ position: 'relative', width: '100%', height: '50vh', top: '0px', left: '0px', objectFit: 'cover' }}></img>
                 <div
@@ -21,12 +23,12 @@ const ResourceLinks = () => {
                 >
 
                     <div className='article-holder'>
-                        <h2 style={{ opacity: '1' }}> Attorney Profiles </h2>
+                        <h2 style={{ opacity: '1' }}> Resource Links </h2>
                     </div>
                 </div>
             </div>
    
-
+    <Footer/>
   </Wrapper>
  )
 }
@@ -34,8 +36,8 @@ const ResourceLinks = () => {
 
 export default ResourceLinks
 const Wrapper = styled.section`
-display: grid;
-align-items: center;
+height: 100vh;
+ width: 100%;
 
 
 .image-holder{
