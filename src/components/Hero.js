@@ -1,227 +1,259 @@
-import styled from 'styled-components'
 import React, { useState, useEffect } from 'react'
-import { FaWindowClose } from 'react-icons/fa'
-import { useModalContext } from '../context/modal_context'
-import Contact from './Contact'
-import Article from './Article'
-import Filler from './Filler'
-import Section from './Section'
-import { Footer } from '.'
-import Button from '@mui/material/Button'
-import Stack from '@mui/material/Stack'
-import {Link} from 'react-router-dom'
-const Hero = () => {
- const { openModal } = useModalContext()
+import { Button, Fab, AddIcon, Grid, Itemm, Box, Text, Paper } from '@mui/material'
+import { styled } from '@mui/material/styles';
+import styles from 'styled-components'
+import Footer from './Footer'
+import Header from './Header'
+import Carousel from 'react-material-ui-carousel'
+import Card from '@mui/joy/Card';
+import CardCover from '@mui/joy/CardCover';
+import CardContent from '@mui/joy/CardContent';
+import Typography from '@mui/joy/Typography';
 
- const { isModalOpen, closeModal } = useModalContext()
 
- return (
-  <Wrapper>
-   <div className="content">
-    <div className="image-holder">
-     <img src="https://res.cloudinary.com/elpawl-llc/image/upload/v1657311447/lessin_law-logos_yddbqn.jpg"></img>{' '}
-     <Link to="/landing">
-      <Button
-       className="contactBtn"
-       variant="contained"
-       //    onClick={openModal}
-       style={{ margin: '5rem' }}
-      >
-       Contact us today
-      </Button>
-     </Link>
-    </div>
-   </div>
-   <div
-    className={`${isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'}`}
-   >
-    <div className="modal-container">
-     <button className="close-modal-btn" onClick={closeModal}>
-      <FaWindowClose
-       style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
-      ></FaWindowClose>
-     </button>
-     <Contact />
-    </div>
-   </div>
+function CarouselItems(props) {
+    return (
+        <CardWrapper>
+            <div className='cardHolder'>
+                <Card sx={{ minHeight: '280px', width: 320 }}>
+                    <CardCover>
+                        <img
+                            src={props.item.source}
+                            srcSet={props.item.source}
+                            loading="lazy"
+                            alt=""
+                        />
+                    </CardCover>
+                    <CardCover
+                        sx={{
+                            background:
+                                'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+                        }}
+                    />
+                    <CardContent sx={{ justifyContent: 'flex-end' }}>
+                        <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
+                        {props.item.name}
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </div>
 
-   {/* <Article />
-   <Filler />
-   <Section /> */}
-  </Wrapper>
- )
+        </CardWrapper>
+    )
 }
 
-export default Hero
+const Hero = () => {
+    const Item = styled(Paper)(({ theme }) => ({
+        backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+        ...theme.typography.body2,
+        padding: theme.spacing(1),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    }));
 
-const Wrapper = styled.div`
- display: flex;
- justify-content: center;
- align-items: center;
- width: 50vw;
- height: 50vh;
+    var items = [
+        {
+            name: "Civil Rigts",
+            source: "/attorney.jpg"
+        },
+        {
+            name: "Police Brutality",
+            source: "/pen.jpg"
+        },
+        {
+            name: "Wrongful Detainment",
+            source: "/books.jpg"
+        },
+        {
+            name: "Exessive Force",
+            source: "/dining.jpg"
+        },
+        {
+            name: "False Imprisonment",
+            source: "https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+        }
+    ]
 
- /* background-color: rgb(20, 39, 79); */
- .image-holder {
-  display: grid;
-  justify-content: center;
-  width: 60vw;
-  position: relative;
-  top: 0;
-  left: 0;
+    function LoginClicked() {
+        alert('CONTACT US CLICKED');
+
+    }
+
+    function ContactUsClicked() {
+        alert('CONTACT US CLICKED');
+    }
+
+    return (
+        <Wrapper>
+            <Header />
+            <div>
+                <div className='backg'>
+                    <div style={{ width: '70%', height: '100%', display: 'grid' }}>
+                        <div style={{ fontStyle: 'italic', fontFamily: 'sans', width: '60%', color: 'white', height: '100%' }}>
+                            Our attorneys are dedicated to protecting the civil rights of our clients. We do this by aggressively pursuing compensation for them in court, seeking payment for the damage caused by police and other public employees.
+                        </div>
+                        <div className='contactButton'>Contact US</div>
+                    </div>
+                    <img style={{ width: '20%' }} src='/android-chrome-512x512.png'></img>
+                </div>
+
+
+                <div className='carouselHolder'>
+                    <div className='carouselBackground'></div>
+                    <div className='carouselBackgroundTop'>
+                        <div className='carouselTitleHolder'>
+                            <h3 style={{ color: 'white' }}>Areas of Focus</h3>
+                        </div>
+
+                        <Carousel>
+                            {
+                                items.map((item, i) => <CarouselItems key={i} item={item} />)
+                            }
+                        </Carousel>
+
+                    </div>
+                </div>
+
+                {/* <div className='gridHolder'>
+                    <Grid container spacing={2}>
+                        <Grid item lg={6}>
+                            <Item><img style={{ width: '100%', height: '80%' }} src='/attorney.jpg'></img></Item>
+                        </Grid>
+                        <Grid item lg={6}>
+                            <Item><img style={{ width: '100%', height: '80%' }} src='/Books.jpg'></img></Item>
+                        </Grid>
+                        <Grid item lg={6}>
+                            <Item><img style={{ width: '100%', height: '80%' }} src='/Filler.jpg'></img></Item>
+                        </Grid>
+                        <Grid item lg={6}>
+                            <Item><img style={{ width: '100%', height: '80%' }} src='/injury law.jpg'></img></Item>
+                        </Grid>
+
+                    </Grid>
+
+                    <div className='gridHolder2'>
+                        <Grid container spacing={3}>
+                            <Grid item lg={10}>
+                                <Item> <text style={{ fontFamily: 'Trattatello', fontSize: '200%', marginLeft: '2%' }}>Make an Inquiry Now !</text>
+                                    <Button style={{ fontFamily: 'Trattatello', marginBottom: '1%', marginLeft: '2%' }} variant="contained">Inquiry Page</Button>
+
+                                </Item>
+                            </Grid>
+                        </Grid>
+                    </div>
+                </div> */}
+
+            </div>
+            <Footer />
+        </Wrapper>
+
+    )
+
+}
+
+const CardWrapper = styles.div`
+height: 100%;
+width: 100%;
+
+.cardHolder{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+`
+
+const Wrapper = styles.main`
+ height: 100vh;
+ width: 100%;
+.backg{
+    height: 100%;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 5%;
+    background-color: rgb(20, 39, 79);
+}
+
+ 
+ .gridHolder{
+  margin: 10%;
+  marginLeft : 10%,
+  opacity: 1;
+  padding : 05%;
  }
 
- img {
-  position: relative;
- }
- .contactBtn {
-  position: absolute;
-  bottom: 0px;
-  left: 20px;
-  height: 5vh;
-  width: 40vw;
-  padding: 1rem;
- }
- .submit-btn-1 {
-  background: var(--clr-black);
-  text-transform: capitalize;
-  letter-spacing: var(--spacing);
-  cursor: pointer;
-  transition: var(--transition);
-  color: var(--clr-grey-9);
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
- }
+ .gridHolder2{
 
- input {
-  text-align: center;
-  font-family: roboto;
- }
- .section-center {
-  background-color: var(--clr-primary-1);
-  transition: var(--transition);
- }
- .content {
-  display: grid;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  transition: var(--transition);
-  width: 100%;
-  p {
-   color: #fff;
-   font-size: 1.5rem;
-   text-transform: capitalize;
-  }
- }
- .contact-form {
-  display: grid;
+  opacity: 1;
+  padding : 05%;
   justify-content: center;
   align-items: center;
- }
+  marginLeft :  80%;
+  width :  120%;
+  background-color: black;
+}
 
- .form-input,
- .submit-btn {
-  border: 2px solid var(--clr-black);
-  z-index: 1;
- }
- .form-input {
-  color: var(--clr-black);
- }
- .form-input::placeholder {
-  color: var(--clr-black);
-  text-transform: capitalize;
- }
+.contactButton{
+    width: 60%;
+    color: white;
+    height: 100%;
+    padding-top: 2rem;
+    place-content:center;
+    display: grid; 
+    transition: var(--transition);
+    cursor: pointer;
+    &:hover {
+        color: white;
+        box-shadow: 0 2px var(--clr-primary-10);
+       }
+}
 
- .submit-btn:hover {
-  color: var(--clr-white);
- }
- .btn {
-  background: var(--clr-grey-5);
-  color: var(--clr-bcg);
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
-  border-color: transparent;
-  text-transform: capitalize;
-  transition: all 0.3s linear;
-  font-weight: bold;
-  letter-spacing: 2px;
-  cursor: pointer;
- }
+.carouselHolder{
+    height: 500px;
+    width: 100%;
+    display: grid;
+    background-color: rgb(20, 39, 79);
+}
 
- .btn,
- .btn-white,
- .btn-primary {
-  text-transform: uppercase;
-  letter-spacing: var(--mainSpacing);
-  color: var(--clr-font);
-  border: 2px solid var(--clr-primary);
-  padding: 0.45rem 0.8rem;
-  display: inline-block;
-  transition: var(--Transition);
-  cursor: pointer;
-  font-size: 0.8rem;
+.carouselTitleHolder{
+    height: 20%;
+    width: 100%;
+    text-align: center;
+}
+.carouselBackground{
+    position: absolute;
+    background-color: black;
+    height: 450px;
+    width: 99%;
+    opacity: 0.5;
+    border-radius: 20px;
+    margin-left: 0.5%;
+}
 
-  border-radius: var(--mainBorderRadius);
-  border-color: transparent;
- }
- .btn:hover {
-  background: var(--clr-bcg);
-  color: var(--clr-font);
- }
-
- .img-content {
-  width: 100%;
- }
+.carouselBackgroundTop{
+    z-index: 1;
+}
 
  @media (min-width: 576px) {
-  img {
-   width: 50vw;
-   height: 50vh;
-   padding: 1rem;
-  }
-  background-color: red;
+  
  }
+
  @media only screen and (max-width: 600px) {
-  img {
-   width: 90vw;
-   height: 50vh;
-   padding: 1rem;
+  .button1{
   }
  }
  @media only screen and (min-width: 600px) {
-  img {
-   width: 100%;
-   height: 40vh;
-
-   left: 0px;
-  }
  }
 
  @media only screen and (min-width: 768px) {
-  img {
-   width: 100%;
-   height: 40vh;
-   margin-top: 5rem;
-   left: 0px;
-  }
  }
 
  @media (min-width: 992px) {
-  img {
-   width: 100%;
-   height: 40vh;
-   margin-top: 5rem;
-   left: 0px;
-  }
  }
  @media (min-width: 1280px) {
-  img {
-   width: 100%;
-   height: 40vh;
-   margin-top: 5rem;
-   left: 0px;
-  }
  }
 `
+
+export default Hero

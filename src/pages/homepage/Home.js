@@ -18,6 +18,5 @@ const Wrapper = styled.div`
  display: flex;
  justify-content: center;
  align-items: center;
- border: 5px black solid;
 `
 export default HomePage

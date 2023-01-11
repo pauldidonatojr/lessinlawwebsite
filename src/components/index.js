@@ -23,6 +23,7 @@ import JobsContainer from './JobsContainer'
 import SearchContainer from './SearchContainer'
 import StatsContainer from './StatsContainer'
 import AreaChart from './AreaChart'
+import Header from './Header'
 export {
  Loading,
  Navbar,
@@ -49,4 +50,5 @@ export {
  StatsContainer,
  ChartsContainer,
  Navlinks,
+ Header
 }
