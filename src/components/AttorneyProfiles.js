@@ -1,11 +1,5 @@
 import styled from 'styled-components'
 import React, { useState, useEffect } from 'react'
-import { FaWindowClose } from 'react-icons/fa'
-import { useModalContext } from '../context/modal_context'
-import Contact from './Contact'
-import Article from './Article'
-import Filler from './Filler'
-import Section from './Section'
 import Header from './Header'
 import Footer from './Footer'
 import { Button, Fab, AddIcon, Grid, Itemm, Box, Text, Paper } from '@mui/material'
@@ -272,7 +266,7 @@ width: 100%;
 
 
 const Wrapper = styled.section`
-height: 150vh;
+height: 100vh;
 width: 100%;
 
 
