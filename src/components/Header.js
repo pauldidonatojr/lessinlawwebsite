@@ -9,55 +9,118 @@ import { Twitter } from '@mui/icons-material';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import { links } from '../utils/constants';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 const Header = () => {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     return (
         <Wrapper>
-            <div className='top'>
-                <div className='nameHolder'>
-                    <h4 className='companyName'>
-                        {' '}
-                        Jeffrey R. Lessin & Associates, P.C.{' '}
-                    </h4>
-                    <p className='companyDetails'>
-                        {' '}
-                        Pennsylvania Trial Lawyers . Philadelphia Civil Rights Attorneys{' '}
-                    </p>
-                </div>
-                <div className="contactButtons">
-                    <div className='callButtonHolder'>
-                        <a style={{ color: 'black' }} href="tel:+2155991400">
-                            <div className='callButtonHolderInner'>
-                                <CallIcon style={{ fontSize: 'large', marginRight: '5px' }} /><div>{' '}Phone</div>
-                            </div>
-                            <div style={{ marginTop: '5px' }}>+215591400</div>
-                        </a>
+            <div className='dekstop'>
+                <div className='top'>
+                    <div className='nameHolder'>
+                        <h4 className='companyName'>
+                            {' '}
+                            Jeffrey R. Lessin & Associates, P.C.{' '}
+                        </h4>
+                        <p className='companyDetails'>
+                            {' '}
+                            Pennsylvania Trial Lawyers . Philadelphia Civil Rights Attorneys{' '}
+                        </p>
                     </div>
-                    <div className='emailButtonHolder'>
+                    <div className="contactButtons">
                         <div className='callButtonHolder'>
-                            <a style={{ color: 'black' }} href="mailto:info@lessinlaw.com">
+                            <a style={{ color: 'black' }} href="tel:+2155991400">
                                 <div className='callButtonHolderInner'>
-                                    <EmailIcon style={{ fontSize: 'large', marginRight: '5px' }} /><div>{' '}Email</div>
+                                    <CallIcon style={{ fontSize: 'large', marginRight: '5px' }} /><div>{' '}Phone</div>
                                 </div>
-                                <div style={{ marginTop: '5px' }}>info@lessinlaw.com</div>
+                                <div style={{ marginTop: '5px' }}>+215591400</div>
                             </a>
+                        </div>
+                        <div className='emailButtonHolder'>
+                            <div className='callButtonHolder'>
+                                <a style={{ color: 'black' }} href="mailto:info@lessinlaw.com">
+                                    <div className='callButtonHolderInner'>
+                                        <EmailIcon style={{ fontSize: 'large', marginRight: '5px' }} /><div>{' '}Email</div>
+                                    </div>
+                                    <div style={{ marginTop: '5px' }}>info@lessinlaw.com</div>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                        <div className='mobContactButtons'>
+
+                            <a style={{ color: 'black' }} href="mailto:info@lessinlaw.com">
+                                <EmailIcon style={{ fontSize: 30, marginRight: '10px' }} />
+                            </a>
+
+                            <a style={{ color: 'black' }} href="tel:+2155991400">
+                                <CallIcon style={{ fontSize: 30, marginLeft: '10px' }} />
+                            </a>
+
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='bottom'>
-                <div className="div-1">
-                    <ul>
-                        <Link to='/home'><li> Home </li></Link>
-                        <Link to='/firmoverview'><li> Firm Overview </li></Link>
-                        <Link to='/practiceareas'><li> Practice Areas Overview </li></Link>
-                        <Link to='/attorneyprofiles'><li> Attorney Profiles </li></Link>
-                        <Link to='/resourcelinks'><li> Resource Links</li></Link>
-                        <Link to='/communities'><li> Communities</li></Link>
-                        <Link to='/contactus'><li> Contact </li></Link>
-                    </ul>
+                <div className='bottom'>
+                    <div className="div-1">
+                        <ul>
+                            <Link to='/home'><li> Home </li></Link>
+                            <Link to='/firmoverview'><li> Firm Overview </li></Link>
+                            <Link to='/practiceareas'><li> Practice Areas Overview </li></Link>
+                            <Link to='/attorneyprofiles'><li> Attorney Profiles </li></Link>
+                            <Link to='/resourcelinks'><li> Resource Links</li></Link>
+                            <Link to='/communities'><li> Communities</li></Link>
+                            <Link to='/contactus'><li> Contact </li></Link>
+                        </ul>
+                    </div>
+
+                    {/* Drawer for Mobile */}
+                    <div className='menuMobile'>
+                        <Button
+                            id="basic-button"
+                            aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick}
+                            style={{
+                                color: 'white',
+                                fontWeight: 'bold'
+                            }}
+                        >
+                            Menu
+                        </Button>
+                        <Menu
+                            id="basic-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
+                            MenuListProps={{
+                                'aria-labelledby': 'basic-button',
+                            }}
+                        >
+                             <Link style={{color: 'black'}} to='/home'><MenuItem onClick={handleClose}>Home</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/firmoverview'><MenuItem onClick={handleClose}>Firm Overview</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/practiceareas'><MenuItem onClick={handleClose}>Practice Areas Overview</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/attorneyprofiles'><MenuItem onClick={handleClose}>Attorney Profiles</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/resourcelinks'><MenuItem onClick={handleClose}>Resource Links</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/communities'><MenuItem onClick={handleClose}>Communities</MenuItem></Link>
+                             <Link style={{color: 'black'}} to='/contactus'><MenuItem onClick={handleClose}>Contact Us</MenuItem></Link>
+                        </Menu>
+                    </div>
+
+                    {/*  */}
                 </div>
             </div>
+
         </Wrapper>
 
     )
@@ -68,6 +131,16 @@ const Wrapper = styles.main`
  height: 30%;
  width: 100%;
  background-color: white;
+
+
+ .dekstop{
+    width: 100%;
+    height: 100%;
+ }
+ .tabMob{ 
+    width: 100%;
+    height: 100%;
+ }
 
  .top{
     width: 100%;
@@ -107,8 +180,8 @@ const Wrapper = styles.main`
 .contactButtons{
     width: 70%;
     height: 100%;
-    place-content: end;
     display: flex;
+    justify-content: end;
 }
 
 .callButtonHolder{
@@ -119,6 +192,10 @@ const Wrapper = styles.main`
     align-items: center;
     display: grid;
     padding: 2rem;
+}
+
+.mobContactButtons{
+    display: none;
 }
 
 .callButtonHolderInner{
@@ -181,6 +258,10 @@ const Wrapper = styles.main`
     }
    }
 
+   .menuMobile{
+    visibility: hidden;
+   }
+
 
   
  @media (min-width: 576px) {
@@ -188,13 +269,58 @@ const Wrapper = styles.main`
  }
 
  @media only screen and (max-width: 600px) {
-  .button1{
-  }
+    height: 40%;
+    .dekstop{
+        
+     }
+     .top{
+        display: grid;
+     }
+     .nameHolder{
+        width: 100%;
+        
+     }
+     .companyName{
+        font-size: 20px;
+        height: 100%;
+        place-content: center;
+        display: grid;
+     }
+     .companyDetails{
+        display: none;
+     }
+     .div-1{
+        display: none;
+     }
+     .contactButtons{
+        width: 100%;
+        place-content: center;
+     }
+     .callButtonHolder{
+        display: none;
+     }
+     .emailButtonHolder{
+        display: none;
+     }
+     .mobContactButtons{
+        display: unset;
+        width: 70%;
+        height: 100%;
+        display: flex;
+        place-content: center;
+     }
+     .menuMobile{
+        display: grid;
+        place-content: center;
+        visibility: visible;
+        height: 100%;
+       }
  }
  @media only screen and (min-width: 600px) {
  }
 
- @media only screen and (min-width: 768px) {
+ @media only screen and (max-width: 768px) {
+    
  }
 
  @media (min-width: 992px) {
