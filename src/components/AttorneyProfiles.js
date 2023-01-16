@@ -100,10 +100,6 @@ const AttorneyProfiles = () => {
         <div className='backimage'>
           <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
         </div>
-
-
-            
-
             <div className='transparentBackground'></div>
             <div className='header'>
               Attorney
@@ -477,7 +473,7 @@ width: 100%;
  }
 
  @media only screen and (max-width: 600px) {
-  height: 170vh;
+  height: 100vh;
   width: 100%;
 
   .dataHolder{
