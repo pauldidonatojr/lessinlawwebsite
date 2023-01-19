@@ -1,192 +1,462 @@
-import React, { useState, useEffect } from 'react'
+import React, { useRef, useEffect, useState, useMemo } from 'react'
 import { Button, Fab, AddIcon, Grid, Itemm, Box, Text, Paper } from '@mui/material'
-import { styled } from '@mui/material/styles';
-import styles from 'styled-components'
+import styled from 'styled-components'
 import Footer from './Footer'
 import Header from './Header'
-import Carousel from 'react-material-ui-carousel'
-import Card from '@mui/joy/Card';
-import CardCover from '@mui/joy/CardCover';
-import CardContent from '@mui/joy/CardContent';
+import Carousel from 'react-bootstrap/Carousel';
 import Typography from '@mui/joy/Typography';
-import Backdrop from '@mui/material/Backdrop'
+import Backdrop from '@mui/material/Backdrop';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import CloseIcon from '@mui/icons-material/Close';
+import Card from 'react-bootstrap/Card';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-function CarouselItems(props) {
-    return (
-        <CardWrapper>
+function UncontrolledExample() {
+  return (
+    <CarouselWrapper>
+      <Carousel>
+        <Carousel.Item>
+          <div className='dataHolder'>
             <div className='cardHolder'>
-                <Card sx={{ minHeight: '280px', width: '100%' }}>
-                    <CardCover>
-                        <img
-                            src={props.item.source}
-                            srcSet={props.item.source}
-                            loading="lazy"
-                            alt=""
-                        />
-                    </CardCover>
-                    <CardCover
-                        sx={{
-                            background:
-                                'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
-                        }}
-                    />
-                    <CardContent sx={{ justifyContent: 'flex-end' }}>
-                        <Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
-                            {props.item.name}
-                        </Typography>
-                    </CardContent>
-                </Card>
+              <div className='card'>
+              <img src='/pen.jpg' className='image'/>
+              <div className='transparentBackground'/>
+              <div className='header'>Police Brutality</div>
+              </div>
             </div>
-
-        </CardWrapper>
-    )
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className='dataHolder'>
+              <div className='cardHolder'>
+              <div className='card'>
+                <img src='/pen.jpg' className='image'/>
+                <div className='transparentBackground'/>
+                <div className='header'>Wrongful Detainment</div>
+              </div>
+              </div>
+            </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className='dataHolder'>
+              <div className='cardHolder'>
+              <div className='card'>
+              <img src='/pen.jpg' className='image'/>
+              <div className='transparentBackground'/>
+              <div className='header'>Excessive Force</div>
+              </div>
+              </div>
+          </div>
+        </Carousel.Item>
+      </Carousel>
+    </CarouselWrapper>
+  );
 }
 
 const Hero = () => {
 
-    const [open, setOpen] = React.useState(false)
-    const handleClose = () => {
-      setOpen(false)
-    }
-    const handleToggle = () => {
-      setOpen(!open)
-    }
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    const Item = styled(Paper)(({ theme }) => ({
-        backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-        ...theme.typography.body2,
-        padding: theme.spacing(1),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-    }));
 
-    var items = [
-        {
-            name: "Civil Rigts",
-            source: "/attorney.jpg"
-        },
-        {
-            name: "Police Brutality",
-            source: "/pen.jpg"
-        },
-        {
-            name: "Wrongful Detainment",
-            source: "/books.jpg"
-        },
-        {
-            name: "Exessive Force",
-            source: "/dining.jpg"
-        },
-        {
-            name: "False Imprisonment",
-            source: "https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-        }
-    ]
+  const card = (
+    <ContactCard>
+      <Modal size="lg"
+  aria-labelledby="contained-modal-title-vcenter"
+  centered
+  show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Contact Us</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
 
-    function LoginClicked() {
-        alert('CONTACT US CLICKED');
 
-    }
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control type="email" placeholder="Enter email" />
+            </Form.Group>
 
-    function ContactUsClicked() {
-        alert('CONTACT US CLICKED');
-    }
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Control type="text" placeholder="Name" />
+            </Form.Group>
 
-    const card = (
-        <ContactCard>
-        <div className='card'>
-        <div class="background">
-          <div class="container">
-            <div class="screen">
-              <div class="screen-body">
-                <div class="screen-body-item left">
-                <div class="screen-header-buttonClose"><CloseIcon style={{cursor: 'pointer'}} onClick={handleClose}></CloseIcon></div>
-                  <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
-                </div>
-                <div class="screen-body-item">
-                  <div class="app-form">
-                    <div class="app-form-group">
-                      <input class="app-form-control" placeholder="NAME"/>
-                    </div>
-                    <div class="app-form-group">
-                      <input class="app-form-control" placeholder="EMAIL"/>
-                    </div>
-                    <div class="app-form-group">
-                      <input class="app-form-control" placeholder="CONTACT NO"/>
-                    </div>
-                    <div class="app-form-group message">
-                      <input class="app-form-control" placeholder="MESSAGE"/>
-                    </div>
-                    <div class="app-form-group buttons">
-                      <button class="app-form-button">SEND</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Control type="phone" placeholder="Phone" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+              <Form.Control as="textarea" rows={3} placeholder="Type your message here" />
+            </Form.Group>
+
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Submit
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </ContactCard>
+  )
+
+  return (
+
+    <div style={{ width: '100%', height: '100%' }}>
+      <>{card}</>
+      <Header />
+      <Wrapper>
+        <section class='backg'>
+          <img className='dekstopImage' src='/android-chrome-512x512.png'></img>
+          <div className='detailsTextHolder'>
+            <div className='detailsText'>
+              Our attorneys are dedicated to protecting the civil rights of our clients. We do this by aggressively pursuing compensation for them in court, seeking payment for the damage caused by police and other public employees.
             </div>
-            
+            <div className='contactButtonHolder'>
+              <div onClick={handleShow} className='contactButton'>Contact US</div>
+            </div>
           </div>
-        </div>
-      </div>
-        </ContactCard>
-    )
+        </section>
 
-    return (
-        <Wrapper>
-            
-            <Backdrop
-                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                open={open}
-                
-            >
-                <Card>{card}</Card>
-            </Backdrop>
-
-            <Header />
-            <div>
-                <div className='backg'>
-                    <img className='dekstopImage' src='/android-chrome-512x512.png'></img>
-                    <div className='detailsTextHolder'>
-                        <div className='detailsText'>
-                            Our attorneys are dedicated to protecting the civil rights of our clients. We do this by aggressively pursuing compensation for them in court, seeking payment for the damage caused by police and other public employees.
-                        </div>
-                        <div className='contactButtonHolder'>
-                            <div onClick={handleToggle} className='contactButton'>Contact US</div>
-                        </div>
-                    </div>
-                </div>
+        <section className='carouselHolder'>
+          <div className='carouselTitleHolder'>
+            <h2 style={{ color: 'white' }}>Areas of Focus</h2>
+          </div>
+          <UncontrolledExample />
+          
+        </section>
 
 
-                <div className='carouselHolder'>
-                    <div className='carouselBackground'></div>
-                    <div className='carouselBackgroundTop'>
-                        <div className='carouselTitleHolder'>
-                            <h3 style={{ color: 'white' }}>Areas of Focus</h3>
-                        </div>
+        <section className='text1'>
+          <div className='t1-holder'>
+          <h2 style={{ padding: '10px',color: 'black' }}>Pennsylvania Police brutality, Illegal Search & Seizure Lawyer</h2>
+          <div className='t1-para'>
+          As Americans, we enjoy legal protections that are unknown in many other counties. However, unless something happens to violate them, our rights are easy to take for granted. Moreover, when something does happen, we often have little knowledge about our options.  Our Philadelphia PA law firm  advocates for people whose civil rights were violated by law enforcement, jail personnel and other public employees.<br/><br/><br/><br/>Our Pennsylvania civil rights lawyers support the police and know that they provide a vital service to society by protecting people from crime and violence. However, we also know that law enforcement organizations are often unwilling to police themselves with the same aggressiveness that they use when pursuing criminals. In some instances, police officers fail to operate with the integrity and fairness that the public deserves, violating citizens' rights and damaging their own reputations.
+          </div>
+          </div>
+        </section>
 
-                        <div className='carousel'>
-                            <Carousel>
-                                {
-                                    items.map((item, i) => <CarouselItems key={i} item={item} />)
-                                }
-                            </Carousel>
+        <section className='text2'>
+          <div className='t2-image'>
+          <img style={{width: "100%", height: '100%', objectFit: 'cover'}} src='attorney.jpg'/>
+          </div>
+          <div className='t2-holder'>
+          <h4 style={{ padding: '10px',color: 'white', paddingTop:'20px' }}>Our Civil Rights Practice</h4>
+          <div className='t2-para'>
+          Our Philadelphia ciivil rights attorneys assist people who suffered violations of their rights. We are aggressive advocates for our clients, believing that only by bringing civil rights claims will law enforcement begin to reform its most damaging practices. Our lawyers seek compensation for clients, including those who suffered physical and emotional damages resulting from police misconduct. Our cases involve a wide variety of matters, from illegal search and seizure to police brutality.<br/>
+          <br/>Our law firm brings claims forward under the Fourth, Fifth, Eighth and Fourteenth amendments to the U.S. Constitution. The protections offered by these amendments and numerous federal and state statutes give our clients grounds for action. Our attorneys have been successful in many cases, obtaining settlements and verdicts against city, county and state law enforcement organizations.<br/>
+          <br/>If you or a loved one has experienced a violation of your civil rights in Pennsylvania, contact our Philadelphia civil rights law firm to schedule a no-cost consultation about your situation.<br/>
+          <br/><br/>You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.
+          </div>
+          </div>
+        </section>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <Footer />
-        </Wrapper>
 
-    )
+      </Wrapper>
+      <Footer />
+    </div>
+
+  )
 
 }
 
-const ContactCard = styles.div`
+const CarouselWrapper = styled.div`
+width: 100%;
+height: 100%;
+background-color: rgb(20, 39, 79);
+
+.dataHolder{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.cardHolder{
+  width: 50rem;
+  height: 30rem;
+  background-color: rgb(20, 39, 79);
+}
+
+.card{
+  width: 100%;
+  height: 80%;
+  background-color: rgb(20, 39, 79);
+}
+
+.image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 1s;
+  border-radius: 10px; 
+}
+
+.transparentBackground{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 1s;
+  border-radius: 10px; 
+  background-color: black;
+  opacity: 0.4;
+}
+
+  .header{
+    width: 100%;
+    height: 100%;
+    color: white;
+    z-index: 1;
+    display: grid;
+    place-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    transition: box-shadow 1s;
+    font-style: italic;
+    font-family: sans;
+    &header:hover{
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(9, 55, 53, 0.08),
+      0px 16px 24px rgba(9, 55, 53, 0.1), 0px 24px 32px rgba(9, 55, 53, 0.14); 
+    }
+  }
+  .card:hover .image{
+    filter: blur(4px);
+  } 
+ 
+`
+
+
+const Wrapper = styled.section`
+height: 100%;
+width: 100%;
+background-color: rgb(20, 39, 79);
+.scroller {
+    height: 75vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.scroller section {
+    scroll-snap-align: start;
+}
+
+.backg{
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  padding: 5%;
+  background-color: rgb(20, 39, 79);
+}
+
+.dekstopImage{
+    width: 20%;
+}
+
+.detailsTextHolder{
+    width: 100%;
+    height: 100%;
+    place-content: center;
+    display: grid;
+}
+.detailsText{
+    font-style: italic;
+    font-family: 'sans';
+    width: 100%;
+    color: white;
+    height: 100%;
+    text-align: center;
+}
+.contactButtonHolder{
+    width: 100%;
+    height: 100%;
+    place-content: center;
+    text-align: center;
+    display: grid;
+}
+
+.contactButton{
+    color: white;
+    padding-top: 2rem;
+    place-content:center;
+    display: grid; 
+    transition: var(--transition);
+    cursor: pointer;
+    &:hover {
+        color: white;
+        box-shadow: 0 2px var(--clr-primary-10);
+       }
+}
+
+.carouselHolder{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(20, 39, 79);
+}
+
+.carouselTitleHolder{
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    display: grid;
+    place-content: center;
+    z-index: 1;
+}
+.carouselBackground{
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    border-radius: 20px;
+}
+
+.carouselBackgroundTop{
+    z-index: 1;
+}
+
+.text1{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.t1-holder{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  padding: 100px;
+}
+
+.t1-para{
+  font-family: sans;
+  font-style: italic;
+  width: 100%;
+}
+
+.text2{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+}
+
+.t2-image{
+  width: 50%;
+  height: 100%;
+}
+
+.t2-holder{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+
+.t2-para{
+  font-family: sans;
+  font-style: italic;
+  width: 100%;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+ @media (min-width: 576px) {
+  
+ }
+
+ @media only screen and (max-width: 600px) {
+    .backg{
+        height: 80vh;
+        align-content: center;
+        display: grid;
+        align-items: center;
+        justify-content: start;
+        padding: 5%;
+        background-color: rgb(20, 39, 79);
+    }
+
+    .dekstopImage{
+        width: 100%;
+    }
+
+    .mobImage{
+        height: 100%;
+        align-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 5%;
+        background-color: rgb(20, 39, 79);
+        visibility: visible;
+    }
+
+    .contactButton{
+        width: 100%;
+        color: white;
+        height: 100%;
+        padding-top: 2rem;
+        place-content:center;
+        display: grid; 
+        transition: var(--transition);
+        cursor: pointer;
+        &:hover {
+            color: white;
+            box-shadow: 0 2px var(--clr-primary-10);
+           }
+    }
+
+    .carouselHolder{
+      height: 100%;
+    }
+
+    .carouselTitleHolder{
+      padding-top: 50px;
+    }
+
+    .t1-holder{
+      padding: 20px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .text2{
+      display:grid;
+    }
+
+    .t2-image{
+      width: 100%;
+    }
+    .t2-holder{
+      width: 100%;
+    }
+
+    
+ }
+ @media only screen and (min-width: 600px) {
+ }
+
+ @media only screen and (min-width: 768px) {
+ }
+
+ @media (min-width: 992px) {
+ }
+ @media (min-width: 1280px) {
+ }
+`;
+
+
+const ContactCard = styled.div`
 height: 100%;
 width: 100%;
 .background {
@@ -406,190 +676,21 @@ width: 100%;
     }
   }
   
-    @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 600px) {
 
-    .app-contact{
-        display: none;
-    }
+  .app-contact{
+    display: none;
+  }
      
   .screen-body {
       padding: 40px;
-    }
+  }
   
-    .screen-body-item {
-      padding: 0;
-    }
-    }
-
-`
-
-const CardWrapper = styles.div`
-height: 100%;
-width: 100%;
-
-.cardHolder{
-    height: 100%;
-    width: 100%;
-    background-color: black;
-}
-`
-
-const Wrapper = styles.main`
- height: 100vh;
- width: 100%;
-.backg{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 5%;
-    background-color: rgb(20, 39, 79);
-}
-
-.dekstopImage{
-    width: 20%;
-}
-
-.detailsTextHolder{
-    width: 100%;
-    height: 100%;
-    place-content: center;
-    display: grid;
-}
-.detailsText{
-    font-style: italic;
-    font-family: 'sans';
-    width: 100%;
-    color: white;
-    height: 100%;
-    text-align: center;
-}
-
- .gridHolder{
-  margin: 10%;
-  marginLeft : 10%,
-  opacity: 1;
-  padding : 05%;
- }
-
- .gridHolder2{
-
-  opacity: 1;
-  padding : 05%;
-  justify-content: center;
-  align-items: center;
-  marginLeft :  80%;
-  width :  120%;
-  background-color: black;
-}
-
-.contactButtonHolder{
-    width: 100%;
-    height: 100%;
-    place-content: center;
-    text-align: center;
-    display: grid;
-}
-
-.contactButton{
-    color: white;
-    padding-top: 2rem;
-    place-content:center;
-    display: grid; 
-    transition: var(--transition);
-    cursor: pointer;
-    &:hover {
-        color: white;
-        box-shadow: 0 2px var(--clr-primary-10);
-       }
-}
-
-.carouselHolder{
-    height: 500px;
-    width: 100%;
-    display: grid;
-    background-color: rgb(20, 39, 79);
-}
-
-.carouselTitleHolder{
-    height: 20%;
-    width: 100%;
-    text-align: center;
-    display: grid;
-    place-content: center;
-}
-.carouselBackground{
-    position: absolute;
-    background-color: black;
-    height: 450px;
-    width: 100%;
-    opacity: 0.5;
-    border-radius: 20px;
-}
-.carousel{
-    height: 80%;
-    width: 100%;
-}
-
-.carouselBackgroundTop{
-    z-index: 1;
-}
-
- @media (min-width: 576px) {
-  
- }
-
- @media only screen and (max-width: 600px) {
-    .backg{
-        height: 100%;
-        align-content: center;
-        display: grid;
-        align-items: center;
-        justify-content: start;
-        padding: 5%;
-        background-color: rgb(20, 39, 79);
+  .screen-body-item {
+    padding: 0;
+  }
     }
 
-    .dekstopImage{
-        width: 100%;
-    }
-
-    .mobImage{
-        height: 100%;
-        align-content: center;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        padding: 5%;
-        background-color: rgb(20, 39, 79);
-        visibility: visible;
-    }
-
-    .contactButton{
-        width: 100%;
-        color: white;
-        height: 100%;
-        padding-top: 2rem;
-        place-content:center;
-        display: grid; 
-        transition: var(--transition);
-        cursor: pointer;
-        &:hover {
-            color: white;
-            box-shadow: 0 2px var(--clr-primary-10);
-           }
-    }
-    
- }
- @media only screen and (min-width: 600px) {
- }
-
- @media only screen and (min-width: 768px) {
- }
-
- @media (min-width: 992px) {
- }
- @media (min-width: 1280px) {
- }
 `
 
 export default Hero

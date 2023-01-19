@@ -3,42 +3,50 @@ import React, { useState, useEffect } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import { Button, Fab, AddIcon, Grid, Itemm, Box, Text, Paper } from '@mui/material'
-import Carousel from 'react-material-ui-carousel';
-import styles from 'styled-components';
+import Carousel from 'react-bootstrap/Carousel';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 
-function CarouselItems(props) {
-
-
+function UncontrolledExample() {
   return (
-    <CardWrapper>
-      <div className='cardHolder'>
-        <div className='card'>
-          <div class='imageHolder'>
-            <img class='imageInner' src='/pen.jpg'/>
-          </div>
-          <div className='employeeDetails'>
-            <div className='employeeName'>{props.item.name}</div>
-            <div className='employeeContact'><CallIcon style={{marginRight: '10px'}} /><EmailIcon/></div>
-            <div className='employeeInterest'>
-              <h3>Interests</h3>
-              {props.item.intrest}
+    <CarouselWrapper>
+      
+      <div className='transparentBackground'/>
+      <Carousel>
+        <Carousel.Item>
+
+          <div className='dataHolder'>
+            <div className='cardHolder'>
+              <div className='card'>
+              <img src='/pen.jpg' className='image'/>
+              <div className='header'>Police Brutality</div>
               </div>
-              <div className='employeeQualification'>
-              <h3>Education & Honours</h3>
-              {props.item.Education1} <br></br>
-              {props.item.Education2} <br></br>
-              {props.item.Education3} 
+            </div>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className='dataHolder'>
+              <div className='cardHolder'>
+              <div className='card'>
+                <img src='/pen.jpg' className='image'/>
+                <div className='header'>Wrongful Detainment</div>
+              </div>
+              </div>
+            </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className='dataHolder'>
+              <div className='cardHolder'>
+              <div className='card'>
+              <img src='/pen.jpg' className='image'/>
+              <div className='header'>Excessive Force</div>
+              </div>
               </div>
           </div>
-        </div>
-      </div>
-
-    </CardWrapper>
-
-
-  )
+        </Carousel.Item>
+      </Carousel>
+    </CarouselWrapper>
+  );
 }
 
 const AttorneyProfiles = () => {
@@ -93,238 +101,140 @@ const AttorneyProfiles = () => {
   ]
 
   return (
-    <Wrapper>
+
+    <div>
       <Header />
-
-      <div className='dataHolder'>
-        <div className='backimage'>
-          <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
-        </div>
-            <div className='transparentBackground'></div>
+      <Wrapper>
+          <div className='backimage'>
+            <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
+          </div>
+          <div className='transparentBackground'></div>
+            <div className='textHolder'>
             <div className='header'>
-              Attorney
+            PENNSYLVANIA CIVIL RIGHTS ATTORNEYS
             </div>
-
+            <div className='innerData'>Our team of lawyers provides experience, determination and a commitment to pursuing the best possible outcome in civil rights matters. If you have experienced police brutality, assault in prison, false arrest or other violations of your constitutional rights, you have options. Our Pennsylvania law firm can file suit against the at-fault agency, police department or prison and seek compensation for the damages you suffered.<br/>Our attorneys are long-time legal practitioners in the Philadelphia area. We are familiar with local law enforcement agencies and use this knowledge to help clients as they seek justice.</div>
+            </div>
             <div className='carousel'>
-              <Carousel>
-              {
-                items.map((item, i) => <CarouselItems key={i} item={item} />)
-              }
-            </Carousel>
+              <h3 style={{color: 'black', width: '100%', height: '100%', textAlign: 'center'}}>Our Attorneys</h3>
+              <UncontrolledExample />
             </div>
-
-
-
-      </div>
+            <div className='textHolder2'>
+            <div className='imageHolder2'>
+            <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
+            </div>
+            <div className='innerData2'>Contact our Philadelphia civil rights law firm to schedule a no-cost consultation if you or a loved one has experienced a violation of your civil rights in Pennsylvania.<br/>You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.</div>
+            </div>
+      </Wrapper>
       <Footer />
-    </Wrapper>
+    </div>
   )
 }
 
 
 export default AttorneyProfiles
-const CardWrapper = styles.section`
-height: 350px;
+const CarouselWrapper = styled.div`
 width: 100%;
+height: 100%;
 
-.imageHolder{
+.dataHolder{
+  width: 100%;
   height: 100%;
-  width: 50%;
   display: grid;
   place-content: center;
 }
 
-
-.imageInner{
-  height: 90%;
-  width: 90%;
-  object-cover: fit;
-  border-radius: 10px;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04),
-    0px 2px 6px rgba(9, 55, 53, 0.08), 0px 16px 24px rgba(9, 55, 53, 0.1),
-    0px 24px 32px rgba(9, 55, 53, 0.14);
-   background-color: white;
-}
-
 .cardHolder{
-    height: 100%;
-    width: 100%;
-    display: grid;
-    justify-content: center;
+  width: 70rem;
+  height: 30rem;
 }
-
 
 .card{
   width: 100%;
+  height: 80%;
+}
+
+.image{
+  position: absolute;
+  width: 100%;
   height: 100%;
-  background-color: white;
-  display: flex;
-  place-content: center;
-  border-radius: 10px;
+  object-fit: cover;
+  transition: filter 1s;
+  border-radius: 10px; 
 }
 
-.employeeDetails{
+.transparentBackground{
+  position: absolute;
+  width: 100%;
   height: 100%;
-  width: 50%;
+  object-fit: cover;
+  transition: filter 1s;
+  background-color: black;
+  opacity: 0.4;
 }
 
-
-.employeeName{
-  width: 100%;
-  height: 10%;
-  text-align: left;
-  color: black;
-  font-size: 20px;
-}
-.employeeContact{
-  width: 100%;
-  height: 10%;
-  text-align: left;
-  color: black;
-  font-size: 20px;
-}
-
-.employeeInterest{
-  width: 100%;
-  height: 30%;
-  text-align: left;
-  color: black;
-  font-size: 15px;
-}
-
-.employeeQualification{
-  width: 100%;
-  height: 30%;
-  text-align: left;
-  color: black;
-  font-size: 15px;
-}
-@media only screen and (max-width: 600px) {
-  height: 850px;
-  width: 100%;
-
-  .card{
+  .header{
     width: 100%;
     height: 100%;
-    background-color: white;
+    color: white;
+    z-index: 1;
     display: grid;
     place-content: center;
-    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    transition: box-shadow 1s;
+    font-style: italic;
+    font-family: sans;
+    &header:hover{
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(9, 55, 53, 0.08),
+      0px 16px 24px rgba(9, 55, 53, 0.1), 0px 24px 32px rgba(9, 55, 53, 0.14); 
+    }
   }
-
-  .imageHolder{
-    height: 100%;
-    width: 100%;
-  }
-
-  .imageInner{
-    width: 100%;
-    height: 90%;
-  }
-
-  .employeeDetails{
-    height: 100%;
-    width: 100%;
-  }
-  
-  .employeeDetails{
-  }
-  .employeeName{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  .employeeContact{
-    width: 100%;
-    height: 10%;
-    text-align: center;
-    color: black;
-    font-size: 20px;
-  }
-  
-  .employeeInterest{
-    width: 100%;
-    height: 30%;
-    text-align: center;
-    color: black;
-    font-size: 15px;
-  }
-  .employeeQualification{
-    width: 100%;
-    height: 30%;
-    text-align: center;
-    color: black;
-    font-size: 15px;
-    margin-top: 45px;
-  }
-}
+  .card:hover .image{
+    filter: blur(4px);
+  } 
+ 
 `
 
 
 const Wrapper = styled.section`
-height: 100vh;
+height: 100%;
 width: 100%;
 
 
-  .dataHolder{
-    height: 70vh;
-    width: 100%;
-  }
-
- 
- .info-holder{
-   top: 0;
-   display: grid;
-   position: absolute;
-   height: 50%;
-   width: 100%;
-   justify-content: center;
-   place-content: center;
-   align-items: center;
-   border-radius: 25px;
-   z-index: 1;
- }
- .backimage{
-      position: absolute;
-      z-index : -1;
-      height: 70vh;
-      width: 100%;
-    }
- 
- 
- .article-holder{
-     height: 100%;
-     width: 100%;
-     color: white;
-     border-bottom: 2px solid #dadada;
-     border-color: 'white';
-     opacity: 1;
-     margin-top : -280%;
-     
- }
-
- .form-holder{
-   display: grid;
-   justify-content: center;
-   align-items: center; 
-   width: 100%;
-   height: 120vh;
-   position: relative;
- }
+.backimage{
+  position: absolute;
+  z-index : -1;
+  height: 75vh;
+  width: 100%;
+}
 
 /* New */
 
 .transparentBackground{
   width: 100%;
-  height: 70vh;
+  height: 75vh;
   background-color: black;
-  opacity: 0.8;
+  opacity: 0.5;
   position: absolute;
 }
 
- .header{
-  height: 10%;
+.dataHolder{
+  height: 75vh;
   width: 100%;
+  position: relative;
+  display: grid;
+  place-content: center; 
+}
+
+.textHolder{
+  width: 100%;
+  height: 75vh;
+  display: grid;
+  place-content: center;
+}
+
+ .header{
   position: relative;
   display: grid;
   place-content: center;
@@ -334,143 +244,58 @@ width: 100%;
   color: white;
  }
 
+ .innerData{
+  position: relative;
+  display: grid;
+  place-content: center;
+  text-align:center;
+  font-size: 15px;
+  font-family: sans;
+  letter-spacing: 1px;
+  color: white;
+  font-style: italic;
+  padding: 20px;
+ }
+
+ .textHolder2{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  place-content: center;
+}
+
+.imageHolder2{
+  width: 50%;
+  height: 100%;
+}
+
+.innerData2{
+  width: 50%;
+  height: 100%;
+  position: relative;
+  display: grid;
+  place-content: center;
+  text-align:center;
+  font-size: 15px;
+  font-family: sans;
+  letter-spacing: 1px;
+  color: black;
+  font-style: italic;
+  padding: 20px;
+ }
+
+
  .carousel{
-  height: 90%;
+  height: 100%;
   width: 100%;
   position: relative;
   font-size: 30px;
   font-weight: bold;
   letter-spacing: 1px;
   color: white;
+  padding: 10px;
  }
 
-
- /*  */
-
-
- .form {
-   background-color: #15172b;
-   border-radius: 20px;
-   box-sizing: border-box;
-   height: auto;
-   padding: 20px;
-   width: 320px;
- }
- 
- .title {
-   color: #eee;
-   font-family: sans-serif;
-   font-size: 36px;
-   font-weight: 600;
-   margin-top: 30px;
- }
- 
- .subtitle {
-   color: #eee;
-   font-family: sans-serif;
-   font-size: 16px;
-   font-weight: 600;
-   margin-top: 10px;
- }
- 
- .input-container {
-   height: 50px;
-   position: relative;
-   width: 100%;
- }
-
- .input-container2 {
-   height: 100px;
-   position: relative;
-   width: 100%;
-   margin-top: 30px;
- }
- 
- .ic1 {
-   margin-top: 40px;
- }
- 
- .ic2 {
-   margin-top: 30px;
- }
- 
- .input {
-   background-color: #303245;
-   border-radius: 12px;
-   border: 0;
-   box-sizing: border-box;
-   color: #eee;
-   font-size: 18px;
-   height: 100%;
-   outline: 0;
-   padding: 4px 20px 0;
-   width: 100%;
- }
- 
- .cut {
-   background-color: #15172b;
-   border-radius: 10px;
-   height: 20px;
-   left: 20px;
-   position: absolute;
-   top: -20px;
-   transform: translateY(0);
-   transition: transform 200ms;
-   width: 76px;
- }
- 
- .cut-short {
-   width: 70px;
- }
- 
- .input:focus ~ .cut,
- .input:not(:placeholder-shown) ~ .cut {
-   transform: translateY(8px);
- }
- 
- .placeholder {
-   color: #65657b;
-   font-family: sans-serif;
-   left: 20px;
-   line-height: 14px;
-   pointer-events: none;
-   position: absolute;
-   transform-origin: 0 50%;
-   transition: transform 200ms, color 200ms;
-   top: 20px;
- }
- 
- .input:focus ~ .placeholder,
- .input:not(:placeholder-shown) ~ .placeholder {
-   transform: translateY(-30px) translateX(10px) scale(0.75);
- }
- 
- .input:not(:placeholder-shown) ~ .placeholder {
-   color: #808097;
- }
- 
- .input:focus ~ .placeholder {
-   color: #dc2f55;
- }
- 
- .submit {
-   background-color: #08d;
-   border-radius: 12px;
-   border: 0;
-   box-sizing: border-box;
-   color: #eee;
-   cursor: pointer;
-   font-size: 18px;
-   height: 50px;
-   margin-top: 38px;
-   // outline: 0;
-   text-align: center;
-   width: 100%;
- }
- 
- .submit:active {
-   background-color: #06b;
- }
 
  @media only screen and (max-width: 600px) {
   height: 100vh;
@@ -497,6 +322,10 @@ width: 100%;
   font-weight: bold;
   letter-spacing: 1px;
   color: white;
+ }
+
+ .textHolder2{
+  display: grid;
  }
 
  }

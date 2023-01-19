@@ -26,18 +26,18 @@ const Header = () => {
             <div className='dekstop'>
                 <div className='top'>
                     <div className='nameHolder'>
-                        <h4 className='companyName'>
+                        <div className='companyName'>
                             {' '}
                             Jeffrey R. Lessin & Associates, P.C.{' '}
-                        </h4>
-                        <p className='companyDetails'>
+                        </div>
+                        <div className='companyDetails'>
                             {' '}
                             Pennsylvania Trial Lawyers . Philadelphia Civil Rights Attorneys{' '}
-                        </p>
+                        </div>
                     </div>
                     <div className="contactButtons">
                         <div className='callButtonHolder'>
-                            <a style={{ color: 'black' }} href="tel:+2155991400">
+                            <a style={{ textDecoration: 'none', color: 'black' }} href="tel:+2155991400">
                                 <div className='callButtonHolderInner'>
                                     <CallIcon style={{ fontSize: 'large', marginRight: '5px' }} /><div>{' '}Phone</div>
                                 </div>
@@ -46,7 +46,7 @@ const Header = () => {
                         </div>
                         <div className='emailButtonHolder'>
                             <div className='callButtonHolder'>
-                                <a style={{ color: 'black' }} href="mailto:info@lessinlaw.com">
+                                <a style={{ textDecoration: 'none', color: 'black' }} href="mailto:info@lessinlaw.com">
                                     <div className='callButtonHolderInner'>
                                         <EmailIcon style={{ fontSize: 'large', marginRight: '5px' }} /><div>{' '}Email</div>
                                     </div>
@@ -59,11 +59,11 @@ const Header = () => {
 
                         <div className='mobContactButtons'>
 
-                            <a style={{ color: 'black' }} href="mailto:info@lessinlaw.com">
+                            <a style={{ textDecoration: 'none', color: 'black' }} href="mailto:info@lessinlaw.com">
                                 <EmailIcon style={{ fontSize: 30, marginRight: '10px' }} />
                             </a>
 
-                            <a style={{ color: 'black' }} href="tel:+2155991400">
+                            <a style={{ textDecoration: 'none', color: 'black' }} href="tel:+2155991400">
                                 <CallIcon style={{ fontSize: 30, marginLeft: '10px' }} />
                             </a>
 
@@ -73,13 +73,13 @@ const Header = () => {
                 <div className='bottom'>
                     <div className="div-1">
                         <ul>
-                            <Link to='/home'><li> Home </li></Link>
-                            <Link to='/firmoverview'><li> Firm Overview </li></Link>
-                            <Link to='/practiceareas'><li> Practice Areas Overview </li></Link>
-                            <Link to='/attorneyprofiles'><li> Attorney Profiles </li></Link>
-                            <Link to='/resourcelinks'><li> Resource Links</li></Link>
-                            <Link to='/communities'><li> Communities</li></Link>
-                            <Link to='/contactus'><li> Contact </li></Link>
+                            <Link style={{ textDecoration: 'none' }} to='/home'><li> Home </li></Link>
+                            <Link style={{ textDecoration: 'none' }} to='/firmoverview'><li> Firm Overview </li></Link>
+                            <Link style={{ textDecoration: 'none' }} to='/practiceareas'><li> Practice Areas Overview </li></Link>
+                            <Link style={{ textDecoration: 'none' }} to='/attorneyprofiles'><li> Attorney Profiles </li></Link>
+                            <Link style={{ textDecoration: 'none' }} to='/resourcelinks'><li> Resource Links</li></Link>
+                            <Link style={{ textDecoration: 'none' }} to='/communities'><li> Communities</li></Link>
+                            <Link style={{ textDecoration: 'none' }} to='/contactus'><li> Contact </li></Link>
                         </ul>
                     </div>
 
@@ -107,13 +107,13 @@ const Header = () => {
                                 'aria-labelledby': 'basic-button',
                             }}
                         >
-                             <Link style={{color: 'black'}} to='/home'><MenuItem onClick={handleClose}>Home</MenuItem></Link>
-                             <Link style={{color: 'black'}} to='/firmoverview'><MenuItem onClick={handleClose}>Firm Overview</MenuItem></Link>
-                             <Link style={{color: 'black'}} to='/practiceareas'><MenuItem onClick={handleClose}>Practice Areas Overview</MenuItem></Link>
-                             <Link style={{color: 'black'}} to='/attorneyprofiles'><MenuItem onClick={handleClose}>Attorney Profiles</MenuItem></Link>
-                             <Link style={{color: 'black'}} to='/resourcelinks'><MenuItem onClick={handleClose}>Resource Links</MenuItem></Link>
-                             <Link style={{color: 'black'}} to='/communities'><MenuItem onClick={handleClose}>Communities</MenuItem></Link>
-                             <Link style={{color: 'black'}} to='/contactus'><MenuItem onClick={handleClose}>Contact Us</MenuItem></Link>
+                             <Link style={{textDecoration: 'none', color: 'black'}} to='/home'><MenuItem onClick={handleClose}>Home</MenuItem></Link>
+                             <Link style={{textDecoration: 'none', color: 'black'}} to='/firmoverview'><MenuItem onClick={handleClose}>Firm Overview</MenuItem></Link>
+                             <Link style={{textDecoration: 'none', color: 'black'}} to='/practiceareas'><MenuItem onClick={handleClose}>Practice Areas Overview</MenuItem></Link>
+                             <Link style={{textDecoration: 'none', color: 'black'}} to='/attorneyprofiles'><MenuItem onClick={handleClose}>Attorney Profiles</MenuItem></Link>
+                             <Link style={{textDecoration: 'none', color: 'black'}} to='/resourcelinks'><MenuItem onClick={handleClose}>Resource Links</MenuItem></Link>
+                             <Link style={{textDecoration: 'none', color: 'black'}} to='/communities'><MenuItem onClick={handleClose}>Communities</MenuItem></Link>
+                             <Link style={{textDecoration: 'none', color: 'black'}} to='/contactus'><MenuItem onClick={handleClose}>Contact Us</MenuItem></Link>
                         </Menu>
                     </div>
 
@@ -122,15 +122,12 @@ const Header = () => {
             </div>
 
         </Wrapper>
-
     )
-
 }
 
 const Wrapper = styles.main`
- height: 30%;
+ height: 200px;
  width: 100%;
- background-color: white;
 
 
  .dekstop{
@@ -160,20 +157,25 @@ const Wrapper = styles.main`
     letter-spacing: .5px;
     color: black;
 }
+.companyDetails:hover{
+    cursor: pointer;
+}
 
 .companyName{
+    display: grid;
+    place-content: center;
+    font-size: 20px;
     font-family: sans;
     line-height: 150%;
     text-align: center;
     letter-spacing: .5px;
     color: black;
-    margin-top: 5%;
     transition: 700ms ease;
 }
 
 .companyName:hover{
     font-variation-settings: "wght" 582; 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     cursor: pointer;
 }
 
@@ -191,7 +193,6 @@ const Wrapper = styles.main`
     place-content: center;
     align-items: center;
     display: grid;
-    padding: 2rem;
 }
 
 .mobContactButtons{
@@ -211,9 +212,7 @@ const Wrapper = styles.main`
     place-content: center;
     align-items: center;
     display: grid;
-    padding: 2rem;
 }
-
 
  .bottom{
     width: 100%;
@@ -231,8 +230,10 @@ const Wrapper = styles.main`
     ul {
      display: flex;
      justify-content: center;
+     place-content: center;
      
      li {
+      height: 100%;
       color: white;
       margin-right: 0.5rem;
       margin-left: 0.5rem;
@@ -269,7 +270,7 @@ const Wrapper = styles.main`
  }
 
  @media only screen and (max-width: 600px) {
-    height: 40%;
+    height: 250px;
     .dekstop{
         
      }
