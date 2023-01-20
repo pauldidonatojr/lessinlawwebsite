@@ -10,16 +10,14 @@ import EmailIcon from '@mui/icons-material/Email';
 function UncontrolledExample() {
   return (
     <CarouselWrapper>
-      
-      <div className='transparentBackground'/>
       <Carousel>
         <Carousel.Item>
 
           <div className='dataHolder'>
             <div className='cardHolder'>
               <div className='card'>
-              <img src='/pen.jpg' className='image'/>
-              <div className='header'>Police Brutality</div>
+              <img src='/human.png' className='image'/>
+              <div className='header'>THOMAS A. KARPINK</div>
               </div>
             </div>
           </div>
@@ -28,7 +26,7 @@ function UncontrolledExample() {
           <div className='dataHolder'>
               <div className='cardHolder'>
               <div className='card'>
-                <img src='/pen.jpg' className='image'/>
+                <img src='/human.png' className='image'/>
                 <div className='header'>Wrongful Detainment</div>
               </div>
               </div>
@@ -38,7 +36,7 @@ function UncontrolledExample() {
           <div className='dataHolder'>
               <div className='cardHolder'>
               <div className='card'>
-              <img src='/pen.jpg' className='image'/>
+              <img src='/human.png' className='image'/>
               <div className='header'>Excessive Force</div>
               </div>
               </div>
@@ -116,12 +114,13 @@ const AttorneyProfiles = () => {
             <div className='innerData'>Our team of lawyers provides experience, determination and a commitment to pursuing the best possible outcome in civil rights matters. If you have experienced police brutality, assault in prison, false arrest or other violations of your constitutional rights, you have options. Our Pennsylvania law firm can file suit against the at-fault agency, police department or prison and seek compensation for the damages you suffered.<br/>Our attorneys are long-time legal practitioners in the Philadelphia area. We are familiar with local law enforcement agencies and use this knowledge to help clients as they seek justice.</div>
             </div>
             <div className='carousel'>
-              <h3 style={{color: 'black', width: '100%', height: '100%', textAlign: 'center'}}>Our Attorneys</h3>
+              <div className='transparentBackgroundC'/>
+              <h3 style={{color: 'white', width: '100%', height: '100%', textAlign: 'center'}}>Our Attorneys</h3>
               <UncontrolledExample />
             </div>
             <div className='textHolder2'>
             <div className='imageHolder2'>
-            <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
+            <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover', borderRadius: '20px' }}></img>
             </div>
             <div className='innerData2'>Contact our Philadelphia civil rights law firm to schedule a no-cost consultation if you or a loved one has experienced a violation of your civil rights in Pennsylvania.<br/>You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.</div>
             </div>
@@ -152,26 +151,20 @@ height: 100%;
 .card{
   width: 100%;
   height: 80%;
+  border-radius: 10px;
 }
 
 .image{
   position: absolute;
-  width: 100%;
+  width: 30%;
   height: 100%;
   object-fit: cover;
   transition: filter 1s;
-  border-radius: 10px; 
+  border-radius: 20px; 
+  padding: 30px;
 }
 
-.transparentBackground{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: filter 1s;
-  background-color: black;
-  opacity: 0.4;
-}
+
 
   .header{
     width: 100%;
@@ -190,9 +183,6 @@ height: 100%;
       0px 16px 24px rgba(9, 55, 53, 0.1), 0px 24px 32px rgba(9, 55, 53, 0.14); 
     }
   }
-  .card:hover .image{
-    filter: blur(4px);
-  } 
  
 `
 
@@ -200,6 +190,7 @@ height: 100%;
 const Wrapper = styled.section`
 height: 100%;
 width: 100%;
+
 
 
 .backimage{
@@ -262,11 +253,13 @@ width: 100%;
   height: 500px;
   display: flex;
   place-content: center;
+  background-color: rgb(20, 39, 79);
 }
 
 .imageHolder2{
   width: 50%;
   height: 100%;
+  padding: 20px;
 }
 
 .innerData2{
@@ -279,7 +272,7 @@ width: 100%;
   font-size: 15px;
   font-family: sans;
   letter-spacing: 1px;
-  color: black;
+  color: white;
   font-style: italic;
   padding: 20px;
  }
@@ -292,9 +285,18 @@ width: 100%;
   font-size: 30px;
   font-weight: bold;
   letter-spacing: 1px;
-  color: white;
-  padding: 10px;
  }
+
+ 
+
+.transparentBackgroundC{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(20, 39, 79);
+  
+  z-index: -1;
+}
 
 
  @media only screen and (max-width: 600px) {
