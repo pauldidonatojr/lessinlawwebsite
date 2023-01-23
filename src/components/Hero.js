@@ -22,7 +22,6 @@ function UncontrolledExample() {
           <div className='dataHolder'>
             <div className='cardHolder'>
               <div className='card'>
-              <img src='/pen.jpg' className='image'/>
               <div className='transparentBackground'/>
               <div className='header'>Police Brutality</div>
               </div>
@@ -33,7 +32,6 @@ function UncontrolledExample() {
           <div className='dataHolder'>
               <div className='cardHolder'>
               <div className='card'>
-                <img src='/pen.jpg' className='image'/>
                 <div className='transparentBackground'/>
                 <div className='header'>Wrongful Detainment</div>
               </div>
@@ -44,7 +42,6 @@ function UncontrolledExample() {
           <div className='dataHolder'>
               <div className='cardHolder'>
               <div className='card'>
-              <img src='/pen.jpg' className='image'/>
               <div className='transparentBackground'/>
               <div className='header'>Excessive Force</div>
               </div>
@@ -124,7 +121,7 @@ const Hero = () => {
           </div>
         </section>
 
-        <section className='carouselHolder'>
+        <section className='carousel'>
           <div className='carouselTitleHolder'>
             <h2 style={{ color: 'white' }}>Areas of Focus</h2>
           </div>
@@ -169,34 +166,25 @@ const Hero = () => {
 const CarouselWrapper = styled.div`
 width: 100%;
 height: 100%;
-background-color: rgb(20, 39, 79);
 
 .dataHolder{
   width: 100%;
   height: 100%;
-  display: grid;
-  place-content: center;
 }
 
 .cardHolder{
-  width: 50rem;
+  width: 100%;
   height: 30rem;
-  background-color: rgb(20, 39, 79);
 }
 
 .card{
   width: 100%;
-  height: 80%;
-  background-color: rgb(20, 39, 79);
-}
-
-.image{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: filter 1s;
-  border-radius: 10px; 
+  height: 90%;
+  border-radius: 10px;
+  background : rgba(255,255,255,.2);
+  display: flex;
+  justify-content: flex-start;
+  place-content: center;
 }
 
 .transparentBackground{
@@ -231,6 +219,20 @@ background-color: rgb(20, 39, 79);
     filter: blur(4px);
   } 
  
+
+
+  @media only screen and (max-width: 600px) {
+    .cardHolder{
+      width: 100%;
+      height: 30rem;
+    }
+    .card{
+      width: 100%;
+      height: 90%;
+    }
+
+  }
+ 
 `
 
 
@@ -238,15 +240,6 @@ const Wrapper = styled.section`
 height: 100%;
 width: 100%;
 background-color: rgb(20, 39, 79);
-.scroller {
-    height: 75vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-}
-
-.scroller section {
-    scroll-snap-align: start;
-}
 
 .backg{
   width: 100%;
@@ -295,6 +288,15 @@ background-color: rgb(20, 39, 79);
         box-shadow: 0 2px var(--clr-primary-10);
        }
 }
+
+.carousel{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+ }
 
 .carouselHolder{
     height: 100%;

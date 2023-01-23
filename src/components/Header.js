@@ -217,7 +217,8 @@ const Wrapper = styles.main`
  .bottom{
     width: 100%;
     height: 30%;
-    background-color: brown;
+    background-color: rgb(20, 39, 79);
+    
  }
 
  .div-1 {
