@@ -572,7 +572,9 @@ width: 100%;
 
 
 
- 
+
+
+
  .sectionCenter {
   display: grid;
   justify-items: center;
@@ -580,6 +582,7 @@ width: 100%;
   background-color: var(--blue);
   color: cornsilk;
   border-radius: 20px;
+  margin: 10px;
 }
 
 .product-card {
@@ -685,6 +688,9 @@ width: 100%;
  @media only screen and (max-width: 600px) {
   .cardsHolder{
     display: grid;
+   }
+   .section{
+    margin: 0px;
    }
  }
 `

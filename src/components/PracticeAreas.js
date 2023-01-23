@@ -33,7 +33,6 @@ const PracticeAreas = () => {
 
         <div className="sectionCenter">
           <article className="product-card">
-              <img className="card-image" src='/pen.jpg' />
               <div className="overlay-product" />
               <div className="product-details">
                 <header className='product-header'>
@@ -46,7 +45,6 @@ const PracticeAreas = () => {
 
       <div className="sectionCenter">
           <article className="product-card">
-              <img className="card-image" src='/pen.jpg' />
               <div className="overlay-product" />
               <div className="product-details">
                 <header className='product-header'>
@@ -59,7 +57,6 @@ const PracticeAreas = () => {
 
       <div className="sectionCenter">
           <article className="product-card">
-              <img className="card-image" src='/pen.jpg' />
               <div className="overlay-product" />
               <div className="product-details">
                 <header className='product-header'>
@@ -77,7 +74,6 @@ const PracticeAreas = () => {
 
 <div className="sectionCenter">
   <article className="product-card">
-      <img className="card-image" src='/pen.jpg' />
       <div className="overlay-product" />
       <div className="product-details">
         <header className='product-header'>
@@ -90,7 +86,6 @@ const PracticeAreas = () => {
 
 <div className="sectionCenter">
   <article className="product-card">
-      <img className="card-image" src='/pen.jpg' />
       <div className="overlay-product" />
       <div className="product-details">
         <header className='product-header'>
@@ -103,7 +98,6 @@ const PracticeAreas = () => {
 
 <div className="sectionCenter">
   <article className="product-card">
-      <img className="card-image" src='/pen.jpg' />
       <div className="overlay-product" />
       <div className="product-details">
         <header className='product-header'>
@@ -120,7 +114,6 @@ const PracticeAreas = () => {
 
 <div className="sectionCenter">
   <article className="product-card">
-      <img className="card-image" src='/pen.jpg' />
       <div className="overlay-product" />
       <div className="product-details">
         <header className='product-header'>
@@ -133,7 +126,6 @@ const PracticeAreas = () => {
 
 <div className="sectionCenter">
   <article className="product-card">
-      <img className="card-image" src='/pen.jpg' />
       <div className="overlay-product" />
       <div className="product-details">
         <header className='product-header'>
@@ -146,7 +138,6 @@ const PracticeAreas = () => {
 
 <div className="sectionCenter">
   <article className="product-card">
-      <img className="card-image" src='/pen.jpg' />
       <div className="overlay-product" />
       <div className="product-details">
         <header className='product-header'>
@@ -274,6 +265,7 @@ width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     background-color: var(--blue);
     color: cornsilk;
+    margin: 10px;
   }
 
   .product-card {
@@ -282,6 +274,7 @@ width: 100%;
     width: 50vh;
     margin-top: 4rem;
     margin-bottom: 1rem;
+    background-color: rgb(20, 39, 79);
     /* transition: all 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22); */
     transition: box-shadow 0.3s;
     &:hover{
