@@ -376,6 +376,14 @@ width: 100%;
   width: 100%;
 
 }
+
+.links{
+    display : grid;
+    padding : 10px;
+    width: 100%;
+    height: 80%;
+ }
+
 .link {
   width: 100%;
   text-decoration: none;
@@ -414,12 +422,7 @@ width: 100%;
     padding:10%;
   }
 
- .links{
-    display : grid;
-    padding : 10px;
-    width: 100%;
-    height: 90%;
- }
+
  
  .article-holder{
      height: 100%;
