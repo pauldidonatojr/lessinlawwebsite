@@ -29,7 +29,7 @@ const PracticeAreas = () => {
         <div className='innerData'>Our attorneys are dedicated to helping people obtain compensation after experiencing violations of their constitutionally protected rights. Many of these cases are complex, involving multiple areas of constitutional law. At the law firm of Jeffrey R. Lessin & Associates, P.C., we have both the knowledge and the determination to pursue your case as far as necessary to obtain justice.</div>
         </div>
 
-        <div style={{display: 'flex', width: '100%', height: '100%', placeContent: 'center'}}>
+        <div className='cardsHolder'>
 
         <div className="sectionCenter">
           <article className="product-card">
@@ -73,7 +73,7 @@ const PracticeAreas = () => {
       </div>
 
 
-      <div style={{display: 'flex', width: '100%', height: '100%', placeContent: 'center'}}>
+      <div className='cardsHolder'>
 
 <div className="sectionCenter">
   <article className="product-card">
@@ -116,7 +116,7 @@ const PracticeAreas = () => {
 
 </div>
 
-<div style={{display: 'flex', width: '100%', height: '100%', placeContent: 'center'}}>
+<div className='cardsHolder'>
 
 <div className="sectionCenter">
   <article className="product-card">
@@ -393,35 +393,23 @@ width: 100%;
     color: white;
   }
 
-
- @media only screen and (max-width: 600px) {
-  height: 100vh;
-  width: 100%;
-
-  .dataHolder{
-    height: 150vh;
+  .cardsHolder{
     width: 100%;
+    height: 100%;
+    display: flex;
+    place-content: center;
   }
 
-  .transparentBackground{
-  width: 100%;
-  height: 150vh;
-  background-color: black;
-  opacity: 0.8;
-  position: absolute;
-}
 
-.carousel{
-  height: 100%;
-  width: 100%;
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: white;
+ @media only screen and (max-width: 600px) {
+  .transparentBackground{
+  opacity: 0.6;
+}
+ .textHolder2{
+  display: grid;
  }
 
- .textHolder2{
+ .cardsHolder{
   display: grid;
  }
 

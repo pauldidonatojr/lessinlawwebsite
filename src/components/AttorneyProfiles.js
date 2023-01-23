@@ -11,37 +11,63 @@ function UncontrolledExample() {
   return (
     <CarouselWrapper>
       <Carousel>
-        <Carousel.Item>
 
+        <Carousel.Item>
           <div className='dataHolder'>
             <div className='cardHolder'>
               <div className='card'>
-              <img src='/human.png' className='image'/>
-              <div className='header'>THOMAS A. KARPINK</div>
+
+                <div className='imageC'>
+                  <img src='/pen.jpg' style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />
+                </div>
+                <div className='dataT'>
+                  <div className='name'><h3>MARK T. RICHTER</h3></div>
+                  <div className='interest'><h3>Specialization</h3>Personal Injury,Slip and Fall Injuries,Injury from dangerous Products, Medical Malpratice, Bad Faith Insurence Litigation and Disputes,Civil Rights Violation, Boating Accident Injuries, Fire Injuries</div>
+                  <div className='contact'><CallIcon/><EmailIcon/></div>
+                </div>
+
               </div>
             </div>
           </div>
         </Carousel.Item>
+
         <Carousel.Item>
           <div className='dataHolder'>
-              <div className='cardHolder'>
+            <div className='cardHolder'>
               <div className='card'>
-                <img src='/human.png' className='image'/>
-                <div className='header'>Wrongful Detainment</div>
-              </div>
+
+              <div className='imageC'>
+                  <img src='/pen.jpg' style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />
+                </div>
+                <div className='dataT'>
+                  <div className='name'><h3>MARK T. RICHTER</h3></div>
+                  <div className='interest'><h3>Specialization</h3>Personal Injury,Slip and Fall Injuries,Injury from dangerous Products, Medical Malpratice, Bad Faith Insurence Litigation and Disputes,Civil Rights Violation, Boating Accident Injuries, Fire Injuries</div>
+                  <div className='contact'><CallIcon/><EmailIcon/></div>
+                </div>
               </div>
             </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div className='dataHolder'>
-              <div className='cardHolder'>
-              <div className='card'>
-              <img src='/human.png' className='image'/>
-              <div className='header'>Excessive Force</div>
-              </div>
-              </div>
           </div>
         </Carousel.Item>
+
+
+        <Carousel.Item>
+          <div className='dataHolder'>
+            <div className='cardHolder'>
+              <div className='card'>
+
+              <div className='imageC'>
+                  <img src='/pen.jpg' style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px' }} />
+                </div>
+                <div className='dataT'>
+                  <div className='name'><h3>MARK T. RICHTER</h3></div>
+                  <div className='interest'><h3>Specialization</h3>Personal Injury,Slip and Fall Injuries,Injury from dangerous Products, Medical Malpratice, Bad Faith Insurence Litigation and Disputes,Civil Rights Violation, Boating Accident Injuries, Fire Injuries</div>
+                  <div className='contact'><CallIcon/><EmailIcon/></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Carousel.Item>
+
       </Carousel>
     </CarouselWrapper>
   );
@@ -103,27 +129,27 @@ const AttorneyProfiles = () => {
     <div>
       <Header />
       <Wrapper>
-          <div className='backimage'>
-            <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
+        <div className='backimage'>
+          <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
+        </div>
+        <div className='transparentBackground'></div>
+        <div className='textHolder'>
+          <div className='header'>
+            ATTORNEYS
           </div>
-          <div className='transparentBackground'></div>
-            <div className='textHolder'>
-            <div className='header'>
-            PENNSYLVANIA CIVIL RIGHTS ATTORNEYS
-            </div>
-            <div className='innerData'>Our team of lawyers provides experience, determination and a commitment to pursuing the best possible outcome in civil rights matters. If you have experienced police brutality, assault in prison, false arrest or other violations of your constitutional rights, you have options. Our Pennsylvania law firm can file suit against the at-fault agency, police department or prison and seek compensation for the damages you suffered.<br/>Our attorneys are long-time legal practitioners in the Philadelphia area. We are familiar with local law enforcement agencies and use this knowledge to help clients as they seek justice.</div>
-            </div>
-            <div className='carousel'>
-              <div className='transparentBackgroundC'/>
-              <h3 style={{color: 'white', width: '100%', height: '100%', textAlign: 'center'}}>Our Attorneys</h3>
-              <UncontrolledExample />
-            </div>
-            <div className='textHolder2'>
-            <div className='imageHolder2'>
+          <div className='innerData'>Our team of lawyers provides experience, determination and a commitment to pursuing the best possible outcome in civil rights matters. If you have experienced police brutality, assault in prison, false arrest or other violations of your constitutional rights, you have options. Our Pennsylvania law firm can file suit against the at-fault agency, police department or prison and seek compensation for the damages you suffered.<br />Our attorneys are long-time legal practitioners in the Philadelphia area. We are familiar with local law enforcement agencies and use this knowledge to help clients as they seek justice.</div>
+        </div>
+        <div className='carousel'>
+          <div className='transparentBackgroundC' />
+          <h3 style={{ color: 'white', width: '100%', height: '100%', textAlign: 'center' }}>Our Attorneys</h3>
+          <UncontrolledExample />
+        </div>
+        <div className='textHolder2'>
+          <div className='imageHolder2'>
             <img src='/attorney.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover', borderRadius: '20px' }}></img>
-            </div>
-            <div className='innerData2'>Contact our Philadelphia civil rights law firm to schedule a no-cost consultation if you or a loved one has experienced a violation of your civil rights in Pennsylvania.<br/>You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.</div>
-            </div>
+          </div>
+          <div className='innerData2'>Contact our Philadelphia civil rights law firm to schedule a no-cost consultation if you or a loved one has experienced a violation of your civil rights in Pennsylvania.<br />You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.</div>
+        </div>
       </Wrapper>
       <Footer />
     </div>
@@ -150,38 +176,75 @@ height: 100%;
 
 .card{
   width: 100%;
-  height: 80%;
-  border-radius: 10px;
-}
-
-.image{
-  position: absolute;
-  width: 30%;
   height: 100%;
-  object-fit: cover;
-  transition: filter 1s;
-  border-radius: 20px; 
+  border-radius: 10px;
+  background : rgba(255,255,255,.2);
+  display: flex;
+  justify-content: flex-start;
+  place-content: center;
+}
+
+.imageC{
+  position: relative;
+  width: 30%;
+  height: 50%;
+  border-radius: 20px;
   padding: 30px;
+  display: flex;
 }
 
 
 
-  .header{
+  .dataT{
+    height: 70%;
     width: 100%;
-    height: 100%;
-    color: white;
-    z-index: 1;
+  }
+
+  .name{
+    font-size: large;
+    width: 100%;
+    height: 20%;
     display: grid;
     place-content: center;
-    font-size: 30px;
-    font-weight: bold;
-    transition: box-shadow 1s;
-    font-style: italic;
-    font-family: sans;
-    &header:hover{
-      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(9, 55, 53, 0.08),
-      0px 16px 24px rgba(9, 55, 53, 0.1), 0px 24px 32px rgba(9, 55, 53, 0.14); 
+    color: white;
+    position: relative;
+  }
+
+  .interest{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    font-size: 15px;
+    color: white;
+    padding: 20px;
+  }
+
+  .contact{
+    position: relative;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    place-content: center;
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .cardHolder{
+      width: 100%;
+      height: 30rem;
     }
+    .card{
+      width: 100%;
+      height: 90%;
+    }
+    .interest{
+      display: none;
+    }
+    .imageC{
+      width: 100%;
+      height: 50%;
+    }
+
   }
  
 `
@@ -300,21 +363,10 @@ width: 100%;
 
 
  @media only screen and (max-width: 600px) {
-  height: 100vh;
-  width: 100%;
-
-  .dataHolder{
-    height: 150vh;
-    width: 100%;
-  }
-
+  
   .transparentBackground{
-  width: 100%;
-  height: 150vh;
-  background-color: black;
-  opacity: 0.8;
-  position: absolute;
-}
+    opacity: 0.6;
+  }
 
 .carousel{
   height: 100%;
@@ -327,7 +379,17 @@ width: 100%;
  }
 
  .textHolder2{
+  height: 500px;
   display: grid;
+ }
+
+ .imageHolder2{
+  margin-top: 10px;
+  width: 100%;
+ }
+
+ .innerData2{
+  width: 100%;
  }
 
  }

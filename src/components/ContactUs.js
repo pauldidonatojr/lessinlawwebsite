@@ -2,6 +2,13 @@ import styled from 'styled-components'
 import React, { useState, useEffect } from 'react'
 import Footer from './Footer'
 import Header from './Header'
+import { Card } from '@material-ui/core';
+import Button from '@mui/material/Button';
+
+import Box from '@mui/material/Box';
+
+import CallIcon from '@mui/icons-material/Call';
+                
 
 
 const ContactUs = () => {
@@ -20,41 +27,77 @@ const ContactUs = () => {
         <div className='header'>
               Contact Us
             </div>
+      </div>
+      <div className='contactus-main'>
 
-        <div className='card'>
-        <div class="background">
-          <div class="container">
-            <div class="screen">
-              <div class="screen-body">
-                <div class="screen-body-item left">
-                  <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
-                </div>
-                <div class="screen-body-item">
-                  <div class="app-form">
-                    <div class="app-form-group">
-                      <input class="app-form-control" placeholder="NAME"/>
-                    </div>
-                    <div class="app-form-group">
-                      <input class="app-form-control" placeholder="EMAIL"/>
-                    </div>
-                    <div class="app-form-group">
-                      <input class="app-form-control" placeholder="CONTACT NO"/>
-                    </div>
-                    <div class="app-form-group message">
-                      <input class="app-form-control" placeholder="MESSAGE"/>
-                    </div>
-                    <div class="app-form-group buttons">
-                      <button class="app-form-button">SEND</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          </div>
+      <div className='infoholder'>
+        <Box className='hold1'>
+         <h2>Call a Pennsylvania Civil Rights Attorney</h2>
+         <p style={{color:'white'}}>If you have experienced discrimination, police misconduct or other violations of your civil rights, you do have recourse. Our Philadelphia attorneys are available to advise you and help you take action to uphold your rights and obtain compensation for your damages and losses. With more than 60 years of combined experience, our lawyers are aggressive advocates who do not give up. Call us today.
+
+You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.
+
+The use of the Internet or this form for communication with the firm or any individual member of the firm does not establish an attorney-client relationship. Confidential or time-sensitive information should not be sent through this form.
+
+</p>
+<a style={{ color: 'black' }} href="tel:+2155991400">
+      <div style={{ justifyContent :'center',display:'grid'}}>
+      <h2 style={{color: 'white'}}>CALL US NOW</h2>
+      <div style={{display: 'flex'}}>
+      <CallIcon style={{ fontSize: '200%', marginRight: '0px',color:'white'}}/>
+      <p style={{color: 'white',marginLeft:'02%',fontSize:'28px'}}>215-599-1400</p>
+      </div>
+      </div>
+      </a>
+        </Box>
+         </div>
+
+      <div className='formholder'>
+        <div className='questiontitle'>
+          <h2 style={{fontSize:'32px',  fontFamily: 'optima'}}>WHAT CAN WE HELP YOU WITH ?</h2>
         </div>
+        
+        <hr  className='line'style={{
+    height: '.1',
+    borderColor : '#DDDDDD',
+    width:'70%',
+  display: 'flex',
+  marginLeft:'15%',
+                   }}/>
+
+        <div className='subTitle'>
+              <h3 style={{fontFamily: 'Optima' ,fontSize:'20px'}}>CONTACT DETAILS</h3>
+        </div>
+        <div className='input-field'>
+        <input  style={{fontFamily: 'Lato, sans-serif'}} className='input-item'  type="text" name="name" placeholder='Full Name'/>
+        <input className='input-item'  type="text" name="name" placeholder='Email'/>
+        <input  className='input-item'  type="text" name="name" placeholder='Mobile Phone'/>
+        </div>
+        
+        <hr  className='line'style={{
+    height: .1,
+    borderColor : '#DDDDDD',
+    width:'70%',
+  display: 'flex',
+  marginLeft:'15%',
+                   }}/>
+      <div className='messageTitle'>
+
+       <h3 style={{fontFamily: 'Optima',fontSize:'20px'}}>MESSAGE</h3>
+      </div>
+      <div className='messageAreaHolder'>
+      <input className='messageArea' type="textarea" 
+          name="textValue"
+          placeholder='Message'
+        />
+
+      </div>
+      <div className='buttonHolder'>
+      <Button className = 'submitButton'variant="contained">Submit</Button>
       </div>
       </div>
+      </div>
+      
       <Footer />
     </Wrapper>
   )
@@ -67,22 +110,150 @@ const Wrapper = styled.section`
  height: 100vh;
  width: 100%;
  
- 
+.messageAreaHolder{
+  height:100%;
+  width:100%;
+  display: flex;
+  justify-content: center;  
+
+}
+.messageArea{
+  
+  height:200px;
+  width:72%;
+  margin-left:5%;
+  margin-bottom:2.5%;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  border-radius:2px;
+}
+.questiontitle{
+  align-items: center;
+  margin:auto;
+  margin-top:05%;
+  margin-bottom:03%;
+  padding:02%;
+  display: flex;
+  justify-content: center;  
+  font-family: "Optima";
+  color: #000;
+  padding: 0;
+  text-transform: uppercase;
+  font-weight: normal;
+  
+
+}
+
+
+.subTitle{
+  
+  margin-top:2%;
+  display: flex;
+  justify-content: center;
+
+}
+.input-field{
+  height:100%;
+  width:75%;
+  display: grid;
+  margin-left:15%;
+  margin-bottom:2.5%;
+}
+
+.input-item{
+  font-size: 18px;
+  color: black;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  margin:02%;
+  padding:02%;
+  border-radius:3px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  font-family: Lato, sans-serif;
+
+}
+
+
+.messageTitle{
+  display: flex;
+  justify-content: center;
+  margin-top:2.5%;
+}
+.submitButton{
+  margin:05%;
+  height:25%;
+  width:25%;
+  border-radius:10px;
+  padding:02%;
+  //
+  background-color: #464645;
+    color: #ffffff;
+    font-family: optima;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 700;
+  //
+}
+.buttonHolder{
+  display: flex;
+  justify-content: center;  
+
+}
+
+ .formholder{
+   height: 50%;
+   width:50%;
+   background-color: #ececec;
+ }
+ .infoholder{
+  
+  padding:5%;
+  height: auto;
+  width:50%;
+  background-color : #0a2351;  
+}
+.hold1{
+  
+  height:100%;
+  width:100%;
+  padding: 5%;
+  background : rgba(255,255,255,.2);
+  color:white;
+}
+
+.hold1:hover{
+   
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);}
+
+ .contactus-main{
+
+  display:flex;
+  height:auto;
+  width:100%;
+  margin-top:-5%;
+ }
  .dataHolder{
-    height: 80vh;
+    height: 50vh;
     width: 100%;
   }
 
 .backimage{
   position: absolute;
   z-index : -1;
-  height: 70vh;
+  height: 40vh;
   width: 100%;
 }
  
 .transparentBackground{
   width: 100%;
-  height: 70vh;
+  height: 40vh;
   background-color: black;
   opacity: 0.3;
   position: absolute;
@@ -302,7 +473,7 @@ const Wrapper = styled.section`
   margin: 0 5px;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 600px) {
   .screen-body {
     flex-direction: column;
   }

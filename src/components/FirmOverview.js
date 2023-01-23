@@ -22,7 +22,7 @@ const FirmOverview = () => {
         <div className='transparentBackground'></div>
         <div className='textHolder'>
           <div className='header'>
-            PENNSYLVANIA CIVIL RIGHTS ATTORNEYS
+            Firm Overview
           </div>
         </div>
 
@@ -51,31 +51,6 @@ const FirmOverview = () => {
             </p>
           </div> 
         </div>
-
-        {/* <Card className='back-holder'>
-            <Box className='hold1'>
-                    <h2>Philadelphia, PA Civil Rights Law Firm</h2>
-                    <p style={{color: 'white'}}>Our attorneys are dedicated to protecting the civil rights of our clients. We do this by aggressively pursuing compensation for them in court, seeking payment for the damage caused by police and other public employees.
-
-At the law firm of Jeffrey R. Lessin & Associates, P.C., we know law enforcement personnel throughout the Philadelphia area. Each of our civil rights lawyers has been practicing law in this region for more than 20 years, giving them a comprehensive understanding of the individuals, organizations and policies that make up the law enforcement community in this region. Our knowledge and experience are invaluable to clients who have experienced discrimination or have had their civil rights violated.</p>
-                  </Box>
-                  <Box className='hold2'>
-                    <h2>Our Civil Rights Matters</h2>
-                    <p style={{color: 'white'}}>Our PA civil rights practice focuses on holding public agencies responsible for the conduct of their employees. Our clients include individuals who have experienced criminal violations of their civil rights, including police misconduct, illegal search and seizure, racial profiling and assault by prison guards. We file lawsuits on behalf of these clients, seeking compensation for their damages and doing our part to force the police to reform their behavior.</p>
-                  </Box>
-                  <Box className='hold3'>
-                    <h2>Contingency Fees in Most Cases</h2>
-                    <p style={{color: 'white'}}>In matters like these, we work on a contingent fee basis. This means that you owe no attorneys fee until we are successful. If we are unable to obtain compensation for you, we charge no attorneys fee. In addition, the court may award, or we may receive by settlement, attorney's fees directly from the defendant, which would be a setoff to any attorney's fees that you owe us. In short, there is little to lose and much to gain by pursuing justice after experiencing police misconduct or discrimination.
-
-If you or a loved one has experienced a violation of your civil rights in Pennsylvania, contact our Philadelphia personal injury law firm to schedule a no-cost consultation about your situation.
-
-You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.
-
-</p>
-                  </Box>
-                  </Card> */}
-
-
       </Wrapper>
       <Footer />
     </div>
@@ -190,208 +165,15 @@ const Wrapper = styled.section`
 }
 
 
- .hold1{
-   height: auto;
-   width: 100%;
-   padding: 5%;
-   background : rgba(255,255,255,.2);
-   color:white;
-   margin: 3%;
- }
-
- .hold2{
-  
-  height:auto;
-  width:75%;
-  padding: 5%;
-   background : rgba(255,255,255,.2);
-   color:white;
-   margin: 3%;
- }
- .hold3{
-  height:auto;
-  width:100%;
-  padding: 5%;
-   background : rgba(255,255,255,.2);
-   color:white;
-   margin: 3%;
- }
- .hold1:hover{
-   
-  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);}
  
-  .hold2:hover{
-   
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);}
-    
- .hold3:hover{
-   
-  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);}
- .info-holder{
-   top: 0;
-   display: grid;
-   position: absolute;
-   height: 50%;
-   width: 100%;
-   justify-content: center;
-   place-content: center;
-   align-items: center;
-   border-radius: 25px;
-   z-index: 1;
- }
- 
- .article-holder{
-     height: 100%;
-     width: 100%;
-     color: white;
-     border-bottom: 2px solid #dadada;
-     borderColor: 'white';
-     opacity: 1;
-     
- }
-
- .form-holder{
-   display: grid;
-   justify-content: center;
-   align-items: center; 
-   width: 100%;
-   height: 120vh;
-   position: relative;
- }
-
-
- .form {
-   background-color: #15172b;
-   border-radius: 20px;
-   box-sizing: border-box;
-   height: auto;
-   padding: 20px;
-   width: 320px;
- }
- 
- .title {
-   color: #eee;
-   font-family: sans-serif;
-   font-size: 36px;
-   font-weight: 600;
-   margin-top: 30px;
- }
- 
- .subtitle {
-   color: #eee;
-   font-family: sans-serif;
-   font-size: 16px;
-   font-weight: 600;
-   margin-top: 10px;
- }
- 
- .input-container {
-   height: 50px;
-   position: relative;
-   width: 100%;
- }
-
- .input-container2 {
-   height: 100px;
-   position: relative;
-   width: 100%;
-   margin-top: 30px;
- }
- 
- .ic1 {
-   margin-top: 40px;
- }
- 
- .ic2 {
-   margin-top: 30px;
- }
- 
- .input {
-   background-color: #303245;
-   border-radius: 12px;
-   border: 0;
-   box-sizing: border-box;
-   color: #eee;
-   font-size: 18px;
-   height: 100%;
-   outline: 0;
-   padding: 4px 20px 0;
-   width: 100%;
- }
- 
- .cut {
-   background-color: #15172b;
-   border-radius: 10px;
-   height: 20px;
-   left: 20px;
-   position: absolute;
-   top: -20px;
-   transform: translateY(0);
-   transition: transform 200ms;
-   width: 76px;
- }
- 
- .cut-short {
-   width: 70px;
- }
- 
- .input:focus ~ .cut,
- .input:not(:placeholder-shown) ~ .cut {
-   transform: translateY(8px);
- }
- 
- .placeholder {
-   color: #65657b;
-   font-family: sans-serif;
-   left: 20px;
-   line-height: 14px;
-   pointer-events: none;
-   position: absolute;
-   transform-origin: 0 50%;
-   transition: transform 200ms, color 200ms;
-   top: 20px;
- }
- 
- .input:focus ~ .placeholder,
- .input:not(:placeholder-shown) ~ .placeholder {
-   transform: translateY(-30px) translateX(10px) scale(0.75);
- }
- 
- .input:not(:placeholder-shown) ~ .placeholder {
-   color: #808097;
- }
- 
- .input:focus ~ .placeholder {
-   color: #dc2f55;
- }
- 
- .submit {
-   background-color: #08d;
-   border-radius: 12px;
-   border: 0;
-   box-sizing: border-box;
-   color: #eee;
-   cursor: pointer;
-   font-size: 18px;
-   height: 50px;
-   margin-top: 38px;
-   // outline: 0;
-   text-align: center;
-   width: 100%;
- }
- 
- .submit:active {
-   background-color: #06b;
- }
-
  @media only screen and (max-width: 600px) {
- 
+  .cardV{
+    height: 90%;
+  }
+  .cardV:hover{
+    transform: scale(1);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0);
+  }
  }
 `
 
