@@ -30,9 +30,8 @@ const ResourceLinks = () => {
         <div className='transparentBackground'></div>
         <div className='textHolder'>
           <div className='header'>
-            Practice Areas
+            Resource Links
           </div>
-          <div className='innerData'>Our attorneys are dedicated to helping people obtain compensation after experiencing violations of their constitutionally protected rights. Many of these cases are complex, involving multiple areas of constitutional law. At the law firm of Jeffrey R. Lessin & Associates, P.C., we have both the knowledge and the determination to pursue your case as far as necessary to obtain justice.</div>
         </div>
 
 
@@ -577,6 +576,7 @@ width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   background-color: var(--blue);
   color: cornsilk;
+  border-radius: 20px;
 }
 
 .product-card {
@@ -588,6 +588,7 @@ width: 100%;
   /* transition: all 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22); */
   transition: box-shadow 0.3s;
   background-color: rgb(20, 39, 79);
+  border-radius: 20px;
   &:hover{
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(9, 55, 53, 0.08),
     0px 16px 24px rgba(9, 55, 53, 0.1), 0px 24px 32px rgba(9, 55, 53, 0.14); 
@@ -601,6 +602,7 @@ width: 100%;
   border-radius: var(--radius);
   display: block;
   position: absolute;
+  border-radius: 20px;
 }
 
 
@@ -626,11 +628,9 @@ width: 100%;
     position: absolute;
     opacity: 0.5;
     border-radius: var(--radius);
+    border-radius: 20px;
 }
 
-.product-details:hover{
-  backdrop-filter: blur(5px);
-  }
 
 
 .item-info header {
