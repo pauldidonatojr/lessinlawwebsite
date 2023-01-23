@@ -42,7 +42,9 @@ const ResourceLinks = () => {
             <article className="product-card">
               <div className="overlay-product" />
               <div className="product-details">
-                <div className='product-header'>General</div>
+              <header className='product-header'>
+                  <h4 style={{ color: 'white' }}>General</h4>
+                </header>
                 <div className='links'>
                   <a className='link' href='http://maps.google.com/'>Google Maps</a>
 
