@@ -218,7 +218,6 @@ const Wrapper = styles.main`
     width: 100%;
     height: 30%;
     background-color: rgb(20, 39, 79);
-    
  }
 
  .div-1 {

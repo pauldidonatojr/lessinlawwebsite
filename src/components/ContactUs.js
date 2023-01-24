@@ -90,7 +90,6 @@ The use of the Internet or this form for communication with the firm or any indi
           name="textValue"
           placeholder='Message'
         />
-
       </div>
       <div className='buttonHolder'>
       <Button className = 'submitButton'variant="contained">Submit</Button>
@@ -473,7 +472,8 @@ const Wrapper = styled.section`
   margin: 0 5px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 520px) {
+ 
   .screen-body {
     flex-direction: column;
   }
@@ -493,32 +493,45 @@ const Wrapper = styled.section`
   .app-title:after {
     display: none;
   }
+  .contactus-main{
+
+    display:grid;
+    height:auto;
+    width:100%;
+  }  
+  
+ .infoholder{
+  
+  padding:5%;
+  height: auto;
+  width:100%;
+}
+.formholder{
+  height:auto;
+  width:100%;
+  background-color: #ececec;
+}
+.transparentBackground{
+  width: 100%;
+  height: 40vh;
+}
+.questiontitle h2{
+
+  padding:02%; 
 }
 
-  @media only screen and (max-width: 600px) {
-    height: 100vh;
-    width: 100%;
-
-  .dataHolder{
-    height: 70vh;
-    width: 100%;
-  }
-
-  .transparentBackground{
-    width: 100%;
-    height: 70vh;
-    background-color: black;
-    opacity: 0.8;
-    position: absolute;
+.input-field{
+  height:30%;
+  width:75%;
+  margin-left:15%;
+}
+.buttonHolder{
+     margin:0%;
+     padding:0%;
+     background-color: black;
+}
+.submitButton{
 }
 
-.screen-body {
-    padding: 40px;
-  }
-
-  .screen-body-item {
-    padding: 0;
-  }
-  }
+}
 `
-
