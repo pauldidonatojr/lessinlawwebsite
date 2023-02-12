@@ -93,11 +93,11 @@ const Landing = () => {
        <Button variant="contained" onClick={openModal} className="btn btn-hero">
         new client? click here
        </Button>{' '}
-       <Button variant="contained" className="btn btn-hero">
+       {/* <Button variant="contained" className="btn btn-hero">
         <Link to="/register" style={{ color: 'white', textDecoration: 'none' }}>
          current client click here
         </Link>
-       </Button>
+       </Button> */}
        <Button variant="contained" className="btn btn-hero">
         <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
          {' '}
@@ -139,8 +139,11 @@ const Landing = () => {
 }
 
 const Wrapper = styled.main`
- height: 100vh;
-
+ height: 100%;
+ background-image: url('https://res.cloudinary.com/elpawl-llc/image/upload/v1675866967/skyline_fhftgi.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
  .container {
   z-index: 1;
  }
@@ -160,6 +163,7 @@ const Wrapper = styled.main`
  }
  .info {
   text-align: center;
+  margin-bottom: 4rem;
  }
  .bio {
   transition: var(--transition);

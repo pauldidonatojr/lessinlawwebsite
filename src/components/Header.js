@@ -1,128 +1,180 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Fab, AddIcon, Grid, Itemm, Box, Text } from '@mui/material'
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper'
+import { styled } from '@mui/material/styles'
 import styles from 'styled-components'
-import { padding } from '@mui/system';
-import { Twitter } from '@mui/icons-material';
-import CallIcon from '@mui/icons-material/Call';
-import EmailIcon from '@mui/icons-material/Email';
-import { links } from '../utils/constants';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import { padding } from '@mui/system'
+import { Twitter } from '@mui/icons-material'
+import CallIcon from '@mui/icons-material/Call'
+import EmailIcon from '@mui/icons-material/Email'
+import { links } from '../utils/constants'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
 
 const Header = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-    return (
-        <Wrapper>
-            <div className='dekstop'>
-                <div className='top'>
-                    <div className='nameHolder'>
-                        <div className='companyName'>
-                            {' '}
-                            Jeffrey R. Lessin & Associates, P.C.{' '}
-                        </div>
-                        <div className='companyDetails'>
-                            {' '}
-                            Pennsylvania Trial Lawyers . Philadelphia Civil Rights Attorneys{' '}
-                        </div>
-                    </div>
-                    <div className="contactButtons">
-                        <div className='callButtonHolder'>
-                            <a style={{ textDecoration: 'none', color: 'black' }} href="tel:+2155991400">
-                                <div className='callButtonHolderInner'>
-                                    <CallIcon style={{ fontSize: 'large', marginRight: '5px' }} /><div>{' '}Phone</div>
-                                </div>
-                                <div style={{ marginTop: '5px' }}>+215591400</div>
-                            </a>
-                        </div>
-                        <div className='emailButtonHolder'>
-                            <div className='callButtonHolder'>
-                                <a style={{ textDecoration: 'none', color: 'black' }} href="mailto:info@lessinlaw.com">
-                                    <div className='callButtonHolderInner'>
-                                        <EmailIcon style={{ fontSize: 'large', marginRight: '5px' }} /><div>{' '}Email</div>
-                                    </div>
-                                    <div style={{ marginTop: '5px' }}>info@lessinlaw.com</div>
-                                </a>
-                            </div>
-                        </div>
+ const [anchorEl, setAnchorEl] = React.useState(null)
+ const open = Boolean(anchorEl)
+ const handleClick = (event) => {
+  setAnchorEl(event.currentTarget)
+ }
+ const handleClose = () => {
+  setAnchorEl(null)
+ }
+ return (
+  <Wrapper>
+   <div className="dekstop">
+    <div className="top" style={{ backgroundColor: 'red' }}>
+     <div className="nameHolder" style={{ backgroundColor: 'blue' }}>
+      <div className="companyName"> Jeffrey R. Lessin & Associates, P.C. </div>
+      <div className="companyDetails" style={{ backgroundColor: 'green' }}>
+       {' '}
+       Pennsylvania Trial Lawyers . Philadelphia Civil Rights Attorneys{' '}
+      </div>
+     </div>
 
+     <div className="contactButtons">
+      <div className="callButtonHolder" style={{ backgroundColor: 'orange' }}>
+       <a
+        style={{ textDecoration: 'none', color: 'black' }}
+        href="tel:+2155991400"
+       >
+        <div className="callButtonHolderInner">
+         <CallIcon style={{ fontSize: 'large', marginRight: '5px' }} />
+         <div> Phone</div>
+        </div>
 
+        <div style={{ marginTop: '5px' }}>+215591400</div>
+       </a>
+      </div>
 
-                        <div className='mobContactButtons'>
+      <div className="emailButtonHolder">
+       <div className="callButtonHolder">
+        <a
+         style={{ textDecoration: 'none', color: 'black' }}
+         href="mailto:info@lessinlaw.com"
+        >
+         <div className="callButtonHolderInner">
+          <EmailIcon style={{ fontSize: 'large', marginRight: '5px' }} />
+          <div> Email</div>
+         </div>
+         <div style={{ marginTop: '5px' }}>info@lessinlaw.com</div>
+        </a>
+       </div>
+      </div>
 
-                            <a style={{ textDecoration: 'none', color: 'black' }} href="mailto:info@lessinlaw.com">
-                                <EmailIcon style={{ fontSize: 30, marginRight: '10px' }} />
-                            </a>
+      <div className="mobContactButtons">
+       <a
+        style={{ textDecoration: 'none', color: 'black' }}
+        href="mailto:info@lessinlaw.com"
+       >
+        <EmailIcon style={{ fontSize: 30, marginRight: '10px' }} />
+       </a>
 
-                            <a style={{ textDecoration: 'none', color: 'black' }} href="tel:+2155991400">
-                                <CallIcon style={{ fontSize: 30, marginLeft: '10px' }} />
-                            </a>
+       <a
+        style={{ textDecoration: 'none', color: 'black' }}
+        href="tel:+2155991400"
+       >
+        <CallIcon style={{ fontSize: 30, marginLeft: '10px' }} />
+       </a>
+      </div>
+     </div>
+    </div>
+    <div className="bottom">
+     <div className="div-1">
+      <ul>
+       <Link style={{ textDecoration: 'none' }} to="/home">
+        <li> Home </li>
+       </Link>
+       <Link style={{ textDecoration: 'none' }} to="/firmoverview">
+        <li> Firm Overview </li>
+       </Link>
+       <Link style={{ textDecoration: 'none' }} to="/practiceareas">
+        <li> Practice Areas Overview </li>
+       </Link>
+       <Link style={{ textDecoration: 'none' }} to="/attorneyprofiles">
+        <li> Attorney Profiles </li>
+       </Link>
+       <Link style={{ textDecoration: 'none' }} to="/resourcelinks">
+        <li> Resource Links</li>
+       </Link>
+       <Link style={{ textDecoration: 'none' }} to="/communities">
+        <li> Communities</li>
+       </Link>
+       <Link style={{ textDecoration: 'none' }} to="/contactus">
+        <li> Contact </li>
+       </Link>
+      </ul>
+     </div>
 
-                        </div>
-                    </div>
-                </div>
-                <div className='bottom'>
-                    <div className="div-1">
-                        <ul>
-                            <Link style={{ textDecoration: 'none' }} to='/home'><li> Home </li></Link>
-                            <Link style={{ textDecoration: 'none' }} to='/firmoverview'><li> Firm Overview </li></Link>
-                            <Link style={{ textDecoration: 'none' }} to='/practiceareas'><li> Practice Areas Overview </li></Link>
-                            <Link style={{ textDecoration: 'none' }} to='/attorneyprofiles'><li> Attorney Profiles </li></Link>
-                            <Link style={{ textDecoration: 'none' }} to='/resourcelinks'><li> Resource Links</li></Link>
-                            <Link style={{ textDecoration: 'none' }} to='/communities'><li> Communities</li></Link>
-                            <Link style={{ textDecoration: 'none' }} to='/contactus'><li> Contact </li></Link>
-                        </ul>
-                    </div>
+     {/* Drawer for Mobile */}
+     <div className="menuMobile">
+      <Button
+       id="basic-button"
+       aria-controls={open ? 'basic-menu' : undefined}
+       aria-haspopup="true"
+       aria-expanded={open ? 'true' : undefined}
+       onClick={handleClick}
+       style={{
+        color: 'white',
+        fontWeight: 'bold',
+       }}
+      >
+       Menu
+      </Button>
+      <Menu
+       id="basic-menu"
+       anchorEl={anchorEl}
+       open={open}
+       onClose={handleClose}
+       MenuListProps={{
+        'aria-labelledby': 'basic-button',
+       }}
+      >
+       <Link style={{ textDecoration: 'none', color: 'black' }} to="/home">
+        <MenuItem onClick={handleClose}>Home</MenuItem>
+       </Link>
+       <Link
+        style={{ textDecoration: 'none', color: 'black' }}
+        to="/firmoverview"
+       >
+        <MenuItem onClick={handleClose}>Firm Overview</MenuItem>
+       </Link>
+       <Link
+        style={{ textDecoration: 'none', color: 'black' }}
+        to="/practiceareas"
+       >
+        <MenuItem onClick={handleClose}>Practice Areas Overview</MenuItem>
+       </Link>
+       <Link
+        style={{ textDecoration: 'none', color: 'black' }}
+        to="/attorneyprofiles"
+       >
+        <MenuItem onClick={handleClose}>Attorney Profiles</MenuItem>
+       </Link>
+       <Link
+        style={{ textDecoration: 'none', color: 'black' }}
+        to="/resourcelinks"
+       >
+        <MenuItem onClick={handleClose}>Resource Links</MenuItem>
+       </Link>
+       <Link
+        style={{ textDecoration: 'none', color: 'black' }}
+        to="/communities"
+       >
+        <MenuItem onClick={handleClose}>Communities</MenuItem>
+       </Link>
+       <Link style={{ textDecoration: 'none', color: 'black' }} to="/contactus">
+        <MenuItem onClick={handleClose}>Contact Us</MenuItem>
+       </Link>
+      </Menu>
+     </div>
 
-                    {/* Drawer for Mobile */}
-                    <div className='menuMobile'>
-                        <Button
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleClick}
-                            style={{
-                                color: 'white',
-                                fontWeight: 'bold'
-                            }}
-                        >
-                            Menu
-                        </Button>
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            MenuListProps={{
-                                'aria-labelledby': 'basic-button',
-                            }}
-                        >
-                             <Link style={{textDecoration: 'none', color: 'black'}} to='/home'><MenuItem onClick={handleClose}>Home</MenuItem></Link>
-                             <Link style={{textDecoration: 'none', color: 'black'}} to='/firmoverview'><MenuItem onClick={handleClose}>Firm Overview</MenuItem></Link>
-                             <Link style={{textDecoration: 'none', color: 'black'}} to='/practiceareas'><MenuItem onClick={handleClose}>Practice Areas Overview</MenuItem></Link>
-                             <Link style={{textDecoration: 'none', color: 'black'}} to='/attorneyprofiles'><MenuItem onClick={handleClose}>Attorney Profiles</MenuItem></Link>
-                             <Link style={{textDecoration: 'none', color: 'black'}} to='/resourcelinks'><MenuItem onClick={handleClose}>Resource Links</MenuItem></Link>
-                             <Link style={{textDecoration: 'none', color: 'black'}} to='/communities'><MenuItem onClick={handleClose}>Communities</MenuItem></Link>
-                             <Link style={{textDecoration: 'none', color: 'black'}} to='/contactus'><MenuItem onClick={handleClose}>Contact Us</MenuItem></Link>
-                        </Menu>
-                    </div>
-
-                    {/*  */}
-                </div>
-            </div>
-
-        </Wrapper>
-    )
+     {/*  */}
+    </div>
+   </div>
+  </Wrapper>
+ )
 }
 
 const Wrapper = styles.main`
@@ -134,7 +186,7 @@ const Wrapper = styles.main`
     width: 100%;
     height: 100%;
  }
- .tabMob{ 
+ .tabMob{
     width: 100%;
     height: 100%;
  }
@@ -143,7 +195,7 @@ const Wrapper = styles.main`
     width: 100%;
     height: 70%;
     display: flex;
-    
+
  }
 
 .nameHolder{
@@ -174,7 +226,7 @@ const Wrapper = styles.main`
 }
 
 .companyName:hover{
-    font-variation-settings: "wght" 582; 
+    font-variation-settings: "wght" 582;
     letter-spacing: 1.5px;
     cursor: pointer;
 }
@@ -188,7 +240,7 @@ const Wrapper = styles.main`
 
 .callButtonHolder{
     height: 100%;
-    width: 20%;
+    width: 100%;
     text-align: center;
     place-content: center;
     align-items: center;
@@ -231,7 +283,7 @@ const Wrapper = styles.main`
      display: flex;
      justify-content: center;
      place-content: center;
-     
+
      li {
       height: 100%;
       color: white;
@@ -264,22 +316,22 @@ const Wrapper = styles.main`
    }
 
 
-  
+
  @media (min-width: 576px) {
-  
+
  }
 
  @media only screen and (max-width: 600px) {
     height: 250px;
     .dekstop{
-        
+
      }
      .top{
         display: grid;
      }
      .nameHolder{
         width: 100%;
-        
+
      }
      .companyName{
         font-size: 20px;
@@ -321,7 +373,7 @@ const Wrapper = styles.main`
  }
 
  @media only screen and (max-width: 768px) {
-    
+
  }
 
  @media (min-width: 992px) {
