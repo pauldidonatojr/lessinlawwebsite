@@ -44,7 +44,7 @@ const Landing = () => {
    <div className="container page ">
     <div className="info">
      <h1 style={{ fontSize: '3rem' }}>
-      Lessin <span>Lessin</span>
+      Lessin <span>Law</span>
      </h1>
      <div className="bio">
       {data.map((info, infoIndex) => {
