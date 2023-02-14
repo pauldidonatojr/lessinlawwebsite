@@ -91,20 +91,21 @@ const Landing = () => {
 
       <div className="btn-groups">
        <Button variant="contained" onClick={openModal} className="btn btn-hero">
-        new client? click here
+        Enter
        </Button>{' '}
        {/* <Button variant="contained" className="btn btn-hero">
         <Link to="/register" style={{ color: 'white', textDecoration: 'none' }}>
          current client click here
         </Link>
        </Button> */}
-       <Button variant="contained" className="btn btn-hero">
+       {/* <Button variant="contained" className="btn btn-hero">
         <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
          {' '}
          click here to view our website
         </Link>
-       </Button>
+       </Button> */}
       </div>
+
       <div
        className={`${
         isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
@@ -139,7 +140,7 @@ const Landing = () => {
 }
 
 const Wrapper = styled.main`
- height: 100%;
+ height: 110vh;
  background-image: url('https://res.cloudinary.com/elpawl-llc/image/upload/v1675866967/skyline_fhftgi.jpg');
  background-repeat: no-repeat;
  background-size: cover;
@@ -163,7 +164,6 @@ const Wrapper = styled.main`
  }
  .info {
   text-align: center;
-  margin-bottom: 4rem;
  }
  .bio {
   transition: var(--transition);
@@ -179,12 +179,14 @@ const Wrapper = styled.main`
   color: var(--grey-600);
  }
  .btn-groups {
-  display: flex;
 
-  flex-direction: column;
+  width: 250px;
+
  }
 
  article {
+  margin-top: 2rem;
+
   position: absolute;
   top: 0;
   left: 0;
@@ -246,12 +248,15 @@ const Wrapper = styled.main`
    padding: 0.5rem;
    margin-top: 5rem;
    background-color: var(--white);
-   border-radius: 3%;
+   border-radius: 2%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 650px;
-   width: 375px;
-   margin-top: 7rem;
+   height: 565px;
+   width: 380px;
+   margin-top: 12rem;
+   h1 {
+    margin-top: 4rem;
+   }
   }
   .bio {
    transition: var(--transition);
@@ -291,15 +296,15 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 0.5rem;
-   margin-top: 5rem;
+   padding: 2.75rem;
+
    background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
    height: 650px;
-   width: 375px;
-   margin-top: 7rem;
+   width: 455px;
+   margin-top: 10rem;
   }
   .bio {
    transition: var(--transition);
@@ -340,15 +345,15 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 0.5rem;
+   padding: 3rem;
    margin-top: 5rem;
    background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 650px;
-   width: 375px;
-   margin-top: 7rem;
+   height: 675px;
+   width: 495px;
+   margin-top: 10rem;
   }
   .bio {
    transition: var(--transition);
@@ -389,15 +394,15 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 0.5rem;
+   padding: 3rem;
    margin-top: 5rem;
    background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 650px;
-   width: 375px;
-   margin-top: 7rem;
+   height: 675px;
+   width: 650px;
+   margin-top: 10rem;
   }
   .bio {
    transition: var(--transition);
@@ -437,15 +442,15 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 0.5rem;
+   padding: 3rem;
    margin-top: 5rem;
    background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 650px;
-   width: 375px;
-   margin-top: 7rem;
+   height: 760px;
+   width: 675px;
+   margin-top: 10rem;
   }
   .bio {
    transition: var(--transition);

@@ -104,61 +104,100 @@ const Hero = () => {
   )
 
   return (
+   <div style={{ width: '100%', height: '100%' }}>
+    <>{card}</>
+    <Header />
+    <Wrapper>
+     <section class="backg">
+      <img className="dekstopImage" src="/android-chrome-512x512.png"></img>
+      <div className="detailsTextHolder">
+       <div className="detailsText">
+        Our attorneys are dedicated to protecting the civil rights of our
+        clients. We do this by aggressively pursuing compensation for them in
+        court, seeking payment for the damage caused by police and other public
+        employees.
+       </div>
+       <div className="contactButtonHolder">
+        <div onClick={handleShow} className="contactButton">
+         Contact US
+        </div>
+       </div>
+      </div>
+     </section>
 
-    <div style={{ width: '100%', height: '100%' }}>
-      <>{card}</>
-      <Header />
-      <Wrapper>
-        <section class='backg'>
-          <img className='dekstopImage' src='/android-chrome-512x512.png'></img>
-          <div className='detailsTextHolder'>
-            <div className='detailsText'>
-              Our attorneys are dedicated to protecting the civil rights of our clients. We do this by aggressively pursuing compensation for them in court, seeking payment for the damage caused by police and other public employees.
-            </div>
-            <div className='contactButtonHolder'>
-              <div onClick={handleShow} className='contactButton'>Contact US</div>
-            </div>
-          </div>
-        </section>
+     <section className="carousel">
+      <div className="carouselTitleHolder">
+       <h2 style={{ color: 'white' }}>Areas of Focus</h2>
+      </div>
+      <UncontrolledExample />
+     </section>
 
-        <section className='carousel'>
-          <div className='carouselTitleHolder'>
-            <h2 style={{ color: 'white' }}>Areas of Focus</h2>
-          </div>
-          <UncontrolledExample />
-          
-        </section>
+     <section className="text1">
+      <div className="t1-holder">
+       <h2 style={{ padding: '10px', color: 'black' }}>
+        Pennsylvania Police brutality, Illegal Search & Seizure Lawyer
+       </h2>
+       <div className="t1-para">
+        At our Philadelphia-based personal injury law firm, we specialize in
+        representing clients who have suffered harm in a variety of accidents
+        and incidents. With a team of knowledgeable and compassionate personal
+        injury lawyers, we are dedicated to fighting for the rights of those who
+        have been wronged and helping our clients secure the compensation they
+        deserve. Our goal is to provide exceptional legal representation and
+        support to all of our clients throughout the personal injury claims
+        process. Whether it's a car accident, workplace injury, medical
+        malpractice, or any other type of personal injury case, our experienced
+        lawyers are equipped with the resources and skills necessary to
+        effectively advocate for our clients.{' '}
+       </div>
+      </div>
+     </section>
 
-
-        <section className='text1'>
-          <div className='t1-holder'>
-          <h2 style={{ padding: '10px',color: 'black' }}>Pennsylvania Police brutality, Illegal Search & Seizure Lawyer</h2>
-          <div className='t1-para'>
-          As Americans, we enjoy legal protections that are unknown in many other counties. However, unless something happens to violate them, our rights are easy to take for granted. Moreover, when something does happen, we often have little knowledge about our options.  Our Philadelphia PA law firm  advocates for people whose civil rights were violated by law enforcement, jail personnel and other public employees.<br/><br/><br/><br/>Our Pennsylvania civil rights lawyers support the police and know that they provide a vital service to society by protecting people from crime and violence. However, we also know that law enforcement organizations are often unwilling to police themselves with the same aggressiveness that they use when pursuing criminals. In some instances, police officers fail to operate with the integrity and fairness that the public deserves, violating citizens' rights and damaging their own reputations.
-          </div>
-          </div>
-        </section>
-
-        <section className='text2'>
-          <div className='t2-image'>
-          <img style={{width: "100%", height: '100%', objectFit: 'cover'}} src='attorney.jpg'/>
-          </div>
-          <div className='t2-holder'>
-          <h4 style={{ padding: '10px',color: 'white', paddingTop:'20px' }}>Our Civil Rights Practice</h4>
-          <div className='t2-para'>
-          Our Philadelphia ciivil rights attorneys assist people who suffered violations of their rights. We are aggressive advocates for our clients, believing that only by bringing civil rights claims will law enforcement begin to reform its most damaging practices. Our lawyers seek compensation for clients, including those who suffered physical and emotional damages resulting from police misconduct. Our cases involve a wide variety of matters, from illegal search and seizure to police brutality.<br/>
-          <br/>Our law firm brings claims forward under the Fourth, Fifth, Eighth and Fourteenth amendments to the U.S. Constitution. The protections offered by these amendments and numerous federal and state statutes give our clients grounds for action. Our attorneys have been successful in many cases, obtaining settlements and verdicts against city, county and state law enforcement organizations.<br/>
-          <br/>If you or a loved one has experienced a violation of your civil rights in Pennsylvania, contact our Philadelphia civil rights law firm to schedule a no-cost consultation about your situation.<br/>
-          <br/><br/>You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.
-          </div>
-          </div>
-        </section>
-
-
-      </Wrapper>
-      <Footer />
-    </div>
-
+     <section className="text2">
+      <div className="t2-image">
+       <img
+        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        src="attorney.jpg"
+       />
+      </div>
+      <div className="t2-holder">
+       <h4 style={{ padding: '10px', color: 'white', paddingTop: '20px' }}>
+        Our Civil Rights Practice
+       </h4>
+       <div className="t2-para">
+        Our goal is to ensure that our clients receive the maximum compensation
+        for their injuries, and that their rights are protected at every step of
+        the way. At our law firm, we understand the impact that personal
+        injuries can have on an individual's life, and we are here to help our
+        clients navigate the legal system with confidence. Our commitment to our
+        clients is evident in our attention to detail, and our focus on
+        achieving the best possible outcome in every case. Contact us today to
+        schedule a consultation and learn more about how our team can help you
+        with your personal injury claim.
+        <br />
+        <br />
+        Our law firm brings claims forward under the Fourth, Fifth, Eighth and
+        Fourteenth amendments to the U.S. Constitution. The protections offered
+        by these amendments and numerous federal and state statutes give our
+        clients grounds for action. Our attorneys have been successful in many
+        cases, obtaining settlements and verdicts against city, county and state
+        law enforcement organizations.
+        <br />
+        <br />
+        If you or a loved one has experienced a violation of your civil rights
+        in Pennsylvania, contact our Philadelphia civil rights law firm to
+        schedule a no-cost consultation about your situation.
+        <br />
+        <br />
+        <br />
+        You pay no legal fees unless we win. Conveniently located across from
+        City Hall in downtown Philadelphia.
+       </div>
+      </div>
+     </section>
+    </Wrapper>
+    <Footer />
+   </div>
   )
 
 }
@@ -193,7 +232,7 @@ height: 100%;
   height: 100%;
   object-fit: cover;
   transition: filter 1s;
-  border-radius: 10px; 
+  border-radius: 10px;
   background-color: black;
   opacity: 0.4;
 }
@@ -212,13 +251,13 @@ height: 100%;
     font-family: sans;
     &header:hover{
       box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(9, 55, 53, 0.08),
-      0px 16px 24px rgba(9, 55, 53, 0.1), 0px 24px 32px rgba(9, 55, 53, 0.14); 
+      0px 16px 24px rgba(9, 55, 53, 0.1), 0px 24px 32px rgba(9, 55, 53, 0.14);
     }
   }
   .card:hover .image{
     filter: blur(4px);
-  } 
- 
+  }
+
 
 
   @media only screen and (max-width: 600px) {
@@ -232,7 +271,7 @@ height: 100%;
     }
 
   }
- 
+
 `
 
 
@@ -280,7 +319,7 @@ background-color: rgb(20, 39, 79);
     color: white;
     padding-top: 2rem;
     place-content:center;
-    display: grid; 
+    display: grid;
     transition: var(--transition);
     cursor: pointer;
     &:hover {
@@ -374,7 +413,7 @@ background-color: rgb(20, 39, 79);
 }
 
  @media (min-width: 576px) {
-  
+
  }
 
  @media only screen and (max-width: 600px) {
@@ -409,7 +448,7 @@ background-color: rgb(20, 39, 79);
         height: 100%;
         padding-top: 2rem;
         place-content:center;
-        display: grid; 
+        display: grid;
         transition: var(--transition);
         cursor: pointer;
         &:hover {
@@ -443,7 +482,7 @@ background-color: rgb(20, 39, 79);
       width: 100%;
     }
 
-    
+
  }
  @media only screen and (min-width: 600px) {
  }
@@ -465,19 +504,19 @@ width: 100%;
     display: flex;
     min-height: 100vh;
   }
-  
+
   .container {
     flex: 0 1 700px;
     margin: auto;
     padding: 10px;
   }
-  
+
   .screen {
     position: relative;
     background: #3e3e3e;
     border-radius: 15px;
   }
-  
+
   .screen:after {
     content: '';
     display: block;
@@ -490,7 +529,7 @@ width: 100%;
     box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
     z-index: -1;
   }
-  
+
   .screen-header {
     display: flex;
     align-items: center;
@@ -499,11 +538,11 @@ width: 100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
   }
-  
+
   .screen-header-left {
     margin-right: auto;
   }
-  
+
   .screen-header-button {
     display: inline-block;
     width: 8px;
@@ -520,22 +559,22 @@ width: 100%;
     margin-right: 3px;
     border-radius: 8px;
   }
-  
+
   .screen-header-button.close {
   }
-  
+
   .screen-header-button.maximize {
     background: #e8e925;
   }
-  
+
   .screen-header-button.minimize {
     background: #74c54f;
   }
-  
+
   .screen-header-right {
     display: flex;
   }
-  
+
   .screen-header-ellipsis {
     width: 3px;
     height: 3px;
@@ -543,21 +582,21 @@ width: 100%;
     border-radius: 8px;
     background: #999;
   }
-  
+
   .screen-body {
     display: flex;
   }
-  
+
   .screen-body-item {
     flex: 1;
     padding: 50px;
   }
-  
+
   .screen-body-item.left {
     display: flex;
     flex-direction: column;
   }
-  
+
   .app-title {
     display: flex;
     flex-direction: column;
@@ -565,7 +604,7 @@ width: 100%;
     color: #ea1d6f;
     font-size: 26px;
   }
-  
+
   .app-title:after {
     content: '';
     display: block;
@@ -576,26 +615,26 @@ width: 100%;
     height: 4px;
     background: #ea1d6f;
   }
-  
+
   .app-contact {
     margin-top: auto;
     font-size: 8px;
     color: #888;
   }
-  
+
   .app-form-group {
     margin-bottom: 15px;
   }
-  
+
   .app-form-group.message {
     margin-top: 40px;
   }
-  
+
   .app-form-group.buttons {
     margin-bottom: 0;
     text-align: right;
   }
-  
+
   .app-form-control {
     width: 100%;
     padding: 10px 0;
@@ -608,15 +647,15 @@ width: 100%;
     outline: none;
     transition: border-color .2s;
   }
-  
+
   .app-form-control::placeholder {
     color: #666;
   }
-  
+
   .app-form-control:focus {
     border-bottom-color: #ddd;
   }
-  
+
   .app-form-button {
     background: none;
     border: none;
@@ -625,12 +664,12 @@ width: 100%;
     cursor: pointer;
     outline: none;
   }
-  
+
   .app-form-button:hover {
     color: brown;
     font-weight: bold;
   }
-  
+
   .credits {
     display: flex;
     justify-content: center;
@@ -641,7 +680,7 @@ width: 100%;
     font-size: 16px;
     font-weight: normal;
   }
-  
+
   .credits-link {
     display: flex;
     align-items: center;
@@ -649,45 +688,45 @@ width: 100%;
     font-weight: bold;
     text-decoration: none;
   }
-  
+
   .dribbble {
     width: 20px;
     height: 20px;
     margin: 0 5px;
   }
-  
+
   @media screen and (max-width: 520px) {
     .screen-body {
       flex-direction: column;
     }
-  
+
     .screen-body-item.left {
       margin-bottom: 30px;
     }
-  
+
     .app-title {
       flex-direction: row;
     }
-  
+
     .app-title span {
       margin-right: 12px;
     }
-  
+
     .app-title:after {
       display: none;
     }
   }
-  
+
   @media only screen and (max-width: 600px) {
 
   .app-contact{
     display: none;
   }
-     
+
   .screen-body {
       padding: 40px;
   }
-  
+
   .screen-body-item {
     padding: 0;
   }
