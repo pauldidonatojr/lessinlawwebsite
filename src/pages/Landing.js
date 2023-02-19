@@ -51,36 +51,36 @@ const Landing = () => {
    clearInterval(slider)
   }
  }, [index])
- //  function Popup() {
- //   const [showPopup, setShowPopup] = useState(true)
+ function Popup() {
+  const [showPopup, setShowPopup] = useState(true)
 
- //   useEffect(() => {
- //    const timer = setTimeout(() => {
- //     setShowPopup(false)
- //    }, 10000) // Change the duration as per your requirement
- //    return () => clearTimeout(timer)
- //   }, [])
+  useEffect(() => {
+   const timer = setTimeout(() => {
+    setShowPopup(false)
+   }, 15000) // Change the duration as per your requirement
+   return () => clearTimeout(timer)
+  }, [])
 
- //   return showPopup ? (
- //    <div className="popup">
- //     <h2> Live Chat </h2>
- //     <p>Click the button to chat with a paralegal</p>
+  return showPopup ? (
+   <div className="popup">
+    <h2> Live Chat </h2>
+    <p>Click the button to chat with a paralegal</p>
 
- //     <div style={{ display: 'flex', justifyContent: 'center' }}>
- //      <button onClick={() => setShowPopup(false)}>Chat</button>
- //      <button onClick={() => setShowPopup(false)}>Close</button>
- //     </div>
- //    </div>
- //   ) : null
- //  }
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+     <button onClick={() => setShowPopup(false)}>Chat</button>
+     <button onClick={() => setShowPopup(false)}>Close</button>
+    </div>
+   </div>
+  ) : null
+ }
  return (
   <Wrapper className="background-images" style={backgroundImageStyle}>
    {/* <nav>
     <Logo />
    </nav> */}
-   {/* <div className="app">
+    <div className="app">
     <Popup />
-   </div> */}
+   </div>
    <div className="container page ">
     <div className="info">
      {/* <div className="navbar"> Information </div> */}
@@ -115,20 +115,20 @@ const Landing = () => {
       })}
 
       <div className="btn-groups">
-       <Button variant="contained" onClick={openModal} className="btn btn-hero">
-        Enter
-       </Button>{' '}
+       {/* <Button variant="contained" onClick={openModal} className="btn btn-hero">
+        enter
+       </Button> */}
        {/* <Button variant="contained" className="btn btn-hero">
         <Link to="/register" style={{ color: 'white', textDecoration: 'none' }}>
          current client click here
         </Link>
        </Button> */}
-       {/* <Button variant="contained" className="btn btn-hero">
+       <Button variant="contained" className="btn btn-hero">
         <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
          {' '}
-         click here to view our website
+         enter
         </Link>
-       </Button> */}
+       </Button>
       </div>
 
       <div
@@ -194,7 +194,7 @@ const Wrapper = styled.main`
 
  .popup {
   position: fixed;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
