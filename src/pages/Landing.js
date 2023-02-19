@@ -14,8 +14,18 @@ const Landing = () => {
  const [data, setData] = useState(heroData)
  const [index, setIndex] = useState(0)
  const { openModal } = useModalContext()
-
+ const [currentImage, setCurrentImage] = useState(0)
  const { isModalOpen, closeModal } = useModalContext()
+ const backgroundImages = [
+  'https://res.cloudinary.com/elpawl-llc/image/upload/v1675866967/skyline_fhftgi.jpg',
+  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676508506/Bok-shot_-700x400_fzdjwe.jpg',
+  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676508506/philadelphia-70850__340_ucqyxx.jpg',
+  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676508521/pexels-filippo-bergamaschi-2767737_fidye2.jpg',
+ ]
+
+ const backgroundImageStyle = {
+  backgroundImage: `url(${backgroundImages[currentImage]})`,
+ }
  useEffect(() => {
   const lastIndex = data.length - 1
   if (index < 0) {
@@ -25,6 +35,13 @@ const Landing = () => {
    setIndex(0)
   }
  }, [index, data])
+ useEffect(() => {
+  const intervalId = setInterval(() => {
+   setCurrentImage((currentImage + 1) % backgroundImages.length)
+  }, 5000)
+
+  return () => clearInterval(intervalId)
+ }, [currentImage, backgroundImages.length])
 
  useEffect(() => {
   let slider = setInterval(() => {
@@ -34,15 +51,40 @@ const Landing = () => {
    clearInterval(slider)
   }
  }, [index])
+ //  function Popup() {
+ //   const [showPopup, setShowPopup] = useState(true)
 
+ //   useEffect(() => {
+ //    const timer = setTimeout(() => {
+ //     setShowPopup(false)
+ //    }, 10000) // Change the duration as per your requirement
+ //    return () => clearTimeout(timer)
+ //   }, [])
+
+ //   return showPopup ? (
+ //    <div className="popup">
+ //     <h2> Live Chat </h2>
+ //     <p>Click the button to chat with a paralegal</p>
+
+ //     <div style={{ display: 'flex', justifyContent: 'center' }}>
+ //      <button onClick={() => setShowPopup(false)}>Chat</button>
+ //      <button onClick={() => setShowPopup(false)}>Close</button>
+ //     </div>
+ //    </div>
+ //   ) : null
+ //  }
  return (
-  <Wrapper>
+  <Wrapper className="background-images" style={backgroundImageStyle}>
    {/* <nav>
     <Logo />
    </nav> */}
-
+   {/* <div className="app">
+    <Popup />
+   </div> */}
    <div className="container page ">
     <div className="info">
+     {/* <div className="navbar"> Information </div> */}
+
      <h1 style={{ fontSize: '3rem' }}>
       Lessin <span>Law</span>
      </h1>
@@ -61,33 +103,16 @@ const Landing = () => {
        }
 
        return (
-        <div>
+        <div className="articleDiv">
          <article className={position} key={id}>
           <i>
            {' '}
-           <p className="text">{text}</p>
+           <p className="text" >{text}</p>
           </i>
          </article>
         </div>
        )
       })}
-      {/* <p>
-       <i>
-        {' '}
-        <b>
-         {' '}
-         Welcome to the website of Jeffrey R. Lessin, Personal Injury Lawyer.
-         Our firm is proud to serve the greater Philadelphia community with
-         legal counsel on all kinds of civil rights cases as well as slip and
-         falls, motor vehicle accidents, premises liability, and product
-         liability. We understand that suffering an injury can be a traumatic
-         and costly experience. Our team of dedicated attorneys is committed to
-         ensuring that our clients receive the justice and compensation they
-         deserve. To learn more click <Link to="/home"> here.</Link>
-        </b>{' '}
-       </i>{' '}
-        To learn more click <Link to="/home"> here.</Link>
-      </p> */}
 
       <div className="btn-groups">
        <Button variant="contained" onClick={openModal} className="btn btn-hero">
@@ -121,7 +146,8 @@ const Landing = () => {
        </div>
       </div>
      </div>
-     {/*
+    </div>
+    {/*
      <div className="btn-groups">
       <Button variant="contained" onClick={openModal} className="btn btn-hero">
        new client click here
@@ -133,18 +159,83 @@ const Landing = () => {
        click here to view our website
       </Button>{' '}
      </div> */}
-    </div>
    </div>
   </Wrapper>
  )
 }
 
 const Wrapper = styled.main`
- height: 110vh;
- background-image: url('https://res.cloudinary.com/elpawl-llc/image/upload/v1675866967/skyline_fhftgi.jpg');
- background-repeat: no-repeat;
+ /* background-repeat: no-repeat; */
+ /* background-size: cover;
+ background-position: center; */
+ width: 100%;
  background-size: cover;
  background-position: center;
+ transition: background-image 1s ease-in-out;
+ height: 110vh;
+ display: grid;
+ align-items: center;
+ justify-content: center;
+ .navbar {
+  background-color: blue;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 2rem;
+ }
+ .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  z-index: 999;
+ }
+
+ .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1000;
+  pointer-events: auto;
+ }
+
+ .popup h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+ }
+
+ .popup p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+ }
+
+ .popup button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+ }
+
+ .popup button:hover {
+  background-color: #0062cc;
+ }
+
  .container {
   z-index: 1;
  }
@@ -161,9 +252,14 @@ const Wrapper = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
  }
  .info {
   text-align: center;
+  height: 110vh;
+
+  width: 100%;
  }
  .bio {
   transition: var(--transition);
@@ -179,19 +275,18 @@ const Wrapper = styled.main`
   color: var(--grey-600);
  }
  .btn-groups {
-
-  width: 250px;
-
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
  }
 
  article {
   margin-top: 2rem;
-
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+
   opacity: 0;
   transition: var(--transition);
  }
@@ -206,56 +301,31 @@ const Wrapper = styled.main`
   transform: translateX(100%);
  }
 
- @media (min-width: 576px) {
-  .page {
-   min-height: calc(100vh - var(--nav-height));
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-top: -3rem;
-  }
-  .info {
-   padding: 10rem;
-   background-color: red;
-  }
-  .bio {
-   font-size: 2rem;
-   transition: var(--transition);
-  }
-  .btn-groups {
-   padding: 2rem;
-   display: grid;
-   grid-gap: 2rem;
-   text-align: center;
-  }
-
-  .btn-hero {
-   font-size: 1.5rem;
-  }
- }
-
  @media only screen and (max-width: 600px) {
-  .container {
-  }
   .page {
-   min-height: calc(100vh - var(--nav-height));
+   min-height: calc(110vh - var(--nav-height));
+   border-radius: 4%;
+   width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-top: -3rem;
+   margin-top: 3rem;
+   margin-bottom: 2rem;
+  }
+
+  article {
+
+   border-radius: 2%;
   }
   .info {
-   padding: 0.5rem;
-   margin-top: 5rem;
-   background-color: var(--white);
-   border-radius: 2%;
+   border-radius: 20%;
+   background-color: whitesmoke;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 565px;
-   width: 380px;
-   margin-top: 12rem;
+   height: 600px;
+   width: 450px;
    h1 {
-    margin-top: 4rem;
+    margin-top: 3rem;
    }
   }
   .bio {
@@ -289,7 +359,7 @@ const Wrapper = styled.main`
   .container {
   }
   .page {
-   min-height: calc(100vh - var(--nav-height));
+   /* min-height: calc(100vh - var(--nav-height)); */
    display: flex;
    justify-content: center;
    align-items: center;
@@ -298,8 +368,6 @@ const Wrapper = styled.main`
   .info {
    padding: 2.75rem;
 
-   background-color: var(--white);
-   border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
    height: 650px;
@@ -338,7 +406,7 @@ const Wrapper = styled.main`
   .container {
   }
   .page {
-   min-height: calc(100vh - var(--nav-height));
+   /* min-height: calc(100vh - var(--nav-height)); */
    display: flex;
    justify-content: center;
    align-items: center;
@@ -347,7 +415,6 @@ const Wrapper = styled.main`
   .info {
    padding: 3rem;
    margin-top: 5rem;
-   background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
@@ -387,7 +454,7 @@ const Wrapper = styled.main`
   .container {
   }
   .page {
-   min-height: calc(100vh - var(--nav-height));
+   /* min-height: calc(100vh - var(--nav-height)); */
    display: flex;
    justify-content: center;
    align-items: center;
@@ -396,7 +463,6 @@ const Wrapper = styled.main`
   .info {
    padding: 3rem;
    margin-top: 5rem;
-   background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
@@ -435,7 +501,7 @@ const Wrapper = styled.main`
   .container {
   }
   .page {
-   min-height: calc(100vh - var(--nav-height));
+   /* min-height: calc(100vh - var(--nav-height)); */
    display: flex;
    justify-content: center;
    align-items: center;
@@ -444,7 +510,6 @@ const Wrapper = styled.main`
   .info {
    padding: 3rem;
    margin-top: 5rem;
-   background-color: var(--white);
    border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
@@ -480,4 +545,33 @@ const Wrapper = styled.main`
   }
  }
 `
+
+//  @media (min-width: 576px) {
+//   .page {
+//    /* min-height: calc(100vh - var(--nav-height)); */
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//    margin-top: -3rem;
+//   }
+//   .info {
+//    padding: 10rem;
+//    background-color: red;
+//   }
+//   .bio {
+//    font-size: 2rem;
+//    transition: var(--transition);
+//   }
+//   .btn-groups {
+//    padding: 2rem;
+//    display: grid;
+
+//    grid-gap: 2rem;
+//    text-align: center;
+//   }
+
+//   .btn-hero {
+//    font-size: 1.5rem;
+//   }
+//  }
 export default Landing
