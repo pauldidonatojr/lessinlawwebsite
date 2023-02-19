@@ -18,9 +18,11 @@ const Landing = () => {
  const { isModalOpen, closeModal } = useModalContext()
  const backgroundImages = [
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1675866967/skyline_fhftgi.jpg',
-  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676508506/Bok-shot_-700x400_fzdjwe.jpg',
-  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676508506/philadelphia-70850__340_ucqyxx.jpg',
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1676508521/pexels-filippo-bergamaschi-2767737_fidye2.jpg',
+  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846332/902207_1e34262fb393244_ezgb7q.jpg',
+  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846445/Schuylkill-After.0_wm6vps.jpg',
+  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846494/iStock-1225283684-e1626622577319_nfp8ok.jpg',
+  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846529/philadelphia-skyline-blue-hour-susan-candelario_ynlzpz.jpg',
  ]
 
  const backgroundImageStyle = {
@@ -78,9 +80,9 @@ const Landing = () => {
    {/* <nav>
     <Logo />
    </nav> */}
-    <div className="app">
+   {/* <div className="app">
     <Popup />
-   </div>
+   </div> */}
    <div className="container page ">
     <div className="info">
      {/* <div className="navbar"> Information </div> */}
@@ -123,7 +125,8 @@ const Landing = () => {
          current client click here
         </Link>
        </Button> */}
-       <Button variant="contained" className="btn btn-hero">
+
+       <Button variant="contained" className="btn btn-hero" >
         <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
          {' '}
          enter
@@ -257,6 +260,9 @@ const Wrapper = styled.main`
  }
  .info {
   text-align: center;
+  background-color: whitesmoke;
+  border-radius: 10%;
+  border: 2px solid black;
  }
  .bio {
   transition: var(--transition);
@@ -316,20 +322,20 @@ const Wrapper = styled.main`
    background-color: whitesmoke;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 350px;
-   width: 285px;
-   margin-left: 0.75rem;
+   height: 425px;
+   width: 300px;
+   margin-left: 2rem;
    margin-right: 0.5rem;
    h1 {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
    }
   }
   .bio {
    transition: var(--transition);
-   font-size: 0.65rem;
+   font-size: 0.75rem;
 
    height: 475px;
-   width: 240px;
+   width: 250px;
    max-width: 800px;
    font-weight: 500px;
    margin: 0 auto;
@@ -344,8 +350,8 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 12rem;
-   margin-bottom: 15rem;
+   margin-top: 18rem;
+   margin-bottom: 12rem;
   }
   .btn-hero {
    font-size: 1rem;
@@ -362,19 +368,28 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 2.75rem;
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   border-radius: 10%;
 
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 650px;
-   width: 455px;
+   height: 425px;
+   width: 300px;
+   margin-left: 2rem;
+   margin-right: 0.5rem;
+   h1 {
+    margin-top: 0.75rem;
+   }
   }
   .bio {
    transition: var(--transition);
-   font-size: 1rem;
 
-   height: 500px;
-   width: 350px;
+   font-size: 0.75rem;
+
+   height: 475px;
+   width: 250px;
+
    max-width: 800px;
    font-weight: 500px;
    margin: 0 auto;
@@ -389,8 +404,8 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 13rem;
-   margin-bottom: 8rem;
+   margin-top: 18rem;
+   margin-bottom: 12rem;
   }
   .btn-hero {
    font-size: 1rem;
@@ -408,21 +423,26 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 3rem;
-   margin-top: 5rem;
-   border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 675px;
-   width: 495px;
-   margin-top: 10rem;
+   border-radius: 10%;
+
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 425px;
+   width: 300px;
+   margin-left: 2rem;
+   margin-right: 0.5rem;
+   h1 {
+    margin-top: 0.75rem;
+   }
   }
   .bio {
    transition: var(--transition);
-   font-size: 1rem;
+   font-size: 0.75rem;
 
-   height: 500px;
-   width: 350px;
+   height: 475px;
+   width: 250px;
    max-width: 800px;
    font-weight: 500px;
    margin: 0 auto;
@@ -437,8 +457,8 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 15rem;
-   margin-bottom: 8rem;
+   margin-top: 18rem;
+   margin-bottom: 12rem;
   }
   .btn-hero {
    font-size: 1rem;
@@ -456,21 +476,26 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 3rem;
-   margin-top: 5rem;
-   border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 675px;
-   width: 650px;
-   margin-top: 10rem;
+   border-radius: 10%;
+
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 425px;
+   width: 300px;
+   margin-left: 2rem;
+   margin-right: 0.5rem;
+   h1 {
+    margin-top: 0.75rem;
+   }
   }
   .bio {
    transition: var(--transition);
-   font-size: 1rem;
+   font-size: 0.75rem;
 
-   height: 500px;
-   width: 350px;
+   height: 475px;
+   width: 250px;
    max-width: 800px;
    font-weight: 500px;
    margin: 0 auto;
@@ -485,8 +510,8 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 15rem;
-   margin-bottom: 8rem;
+   margin-top: 18rem;
+   margin-bottom: 12rem;
   }
   .btn-hero {
    font-size: 1rem;
@@ -503,21 +528,26 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .info {
-   padding: 3rem;
-   margin-top: 5rem;
-   border-radius: 3%;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 760px;
-   width: 675px;
-   margin-top: 10rem;
+   border-radius: 10%;
+
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 425px;
+   width: 300px;
+   margin-left: 2rem;
+   margin-right: 0.5rem;
+   h1 {
+    margin-top: 0.75rem;
+   }
   }
   .bio {
    transition: var(--transition);
-   font-size: 1rem;
+   font-size: 0.75rem;
 
-   height: 500px;
-   width: 350px;
+   height: 475px;
+   width: 250px;
    max-width: 800px;
    font-weight: 500px;
    margin: 0 auto;
@@ -532,8 +562,8 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 15rem;
-   margin-bottom: 8rem;
+   margin-top: 18rem;
+   margin-bottom: 12rem;
   }
   .btn-hero {
    font-size: 1rem;
