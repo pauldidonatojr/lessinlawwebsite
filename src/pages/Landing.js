@@ -312,12 +312,12 @@ const Wrapper = styled.main`
    border-radius: 2%;
   }
   .info {
-   border-radius: 15%;
+   border-radius: 10%;
    background-color: whitesmoke;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
    height: 350px;
-   width: 250px;
+   width: 285px;
    margin-left: 0.75rem;
    margin-right: 0.5rem;
    h1 {
