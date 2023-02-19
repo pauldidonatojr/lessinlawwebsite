@@ -107,7 +107,7 @@ const Landing = () => {
          <article className={position} key={id}>
           <i>
            {' '}
-           <p className="text" >{text}</p>
+           <p className="text">{text}</p>
           </i>
          </article>
         </div>
@@ -168,7 +168,7 @@ const Wrapper = styled.main`
  /* background-repeat: no-repeat; */
  /* background-size: cover;
  background-position: center; */
- width: 100%;
+
  background-size: cover;
  background-position: center;
  transition: background-image 1s ease-in-out;
@@ -257,9 +257,6 @@ const Wrapper = styled.main`
  }
  .info {
   text-align: center;
-  height: 110vh;
-
-  width: 100%;
  }
  .bio {
   transition: var(--transition);
@@ -309,31 +306,30 @@ const Wrapper = styled.main`
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-top: 3rem;
-   margin-bottom: 2rem;
   }
 
   article {
-
    border-radius: 2%;
   }
   .info {
-   border-radius: 20%;
+   border-radius: 15%;
    background-color: whitesmoke;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 600px;
-   width: 450px;
+   height: 350px;
+   width: 250px;
+   margin-left: 0.75rem;
+   margin-right: 0.5rem;
    h1 {
-    margin-top: 3rem;
+    margin-top: 1rem;
    }
   }
   .bio {
    transition: var(--transition);
-   font-size: 1rem;
+   font-size: 0.65rem;
 
-   height: 500px;
-   width: 350px;
+   height: 475px;
+   width: 240px;
    max-width: 800px;
    font-weight: 500px;
    margin: 0 auto;
@@ -348,8 +344,8 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 15rem;
-   margin-bottom: 8rem;
+   margin-top: 12rem;
+   margin-bottom: 15rem;
   }
   .btn-hero {
    font-size: 1rem;
@@ -372,7 +368,6 @@ const Wrapper = styled.main`
    box-shadow: var(--shadow-3);
    height: 650px;
    width: 455px;
-   margin-top: 10rem;
   }
   .bio {
    transition: var(--transition);
@@ -394,7 +389,7 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 15rem;
+   margin-top: 13rem;
    margin-bottom: 8rem;
   }
   .btn-hero {
