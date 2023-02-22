@@ -19,6 +19,7 @@
     "bootstrap": "^5.2.3",
     "moment": "^2.29.4",
     "prettier": "^2.7.1",
+    "react-bodymovin": "^2.0.0",
     "react-bootstrap": "^2.7.0",
     "react-carousel-minimal": "^1.4.1",
     "react-dom": "^18.2.0",
