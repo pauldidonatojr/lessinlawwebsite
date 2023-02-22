@@ -126,7 +126,7 @@ const Landing = () => {
         </Link>
        </Button> */}
 
-       <Button variant="contained" className="btn btn-hero" >
+       <Button variant="contained" className="btn btn-hero">
         <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
          {' '}
          enter
@@ -262,7 +262,6 @@ const Wrapper = styled.main`
   text-align: center;
   background-color: whitesmoke;
   border-radius: 10%;
-  border: 2px solid black;
  }
  .bio {
   transition: var(--transition);
