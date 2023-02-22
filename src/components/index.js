@@ -23,8 +23,10 @@ import JobsContainer from './JobsContainer'
 import SearchContainer from './SearchContainer'
 import StatsContainer from './StatsContainer'
 import AreaChart from './AreaChart'
+import RainbowChat from './RainbowChat'
 import Header from './Header'
 export {
+ RainbowChat,
  Loading,
  Navbar,
  Logo,
@@ -50,5 +52,5 @@ export {
  StatsContainer,
  ChartsContainer,
  Navlinks,
- Header
+ Header,
 }

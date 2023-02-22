@@ -331,7 +331,22 @@ ul {
     margin-bottom: 1rem;
     letter-spacing: var(--letterSpacing);
 }
+ .chat-container {
+     position: fixed;
+     top: 40%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 999999;
+ }
 
+ #rainbow-chat {
+     margin: 0;
+     padding: 0;
+     background: transparent;
+     border: none;
+     outline: none;
+    
+ }
 .coffee-info span {
     display: block;
 }

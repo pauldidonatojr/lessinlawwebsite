@@ -1,4 +1,4 @@
-import React, { useStateu7yhj useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Fab, AddIcon, Grid, Itemm, Box, Text } from '@mui/material'
 import Paper from '@mui/material/Paper'
@@ -24,17 +24,17 @@ const Header = () => {
  return (
   <Wrapper>
    <div className="dekstop">
-    <div className="top" >
-     <div className="nameHolder" >
+    <div className="top">
+     <div className="nameHolder">
       <div className="companyName"> Jeffrey R. Lessin & Associates, P.C. </div>
-      <div className="companyDetails" >
+      <div className="companyDetails">
        {' '}
        Pennsylvania Trial Lawyers . Philadelphia Civil Rights Attorneys{' '}
       </div>
      </div>
 
      <div className="contactButtons">
-      <div className="callButtonHolder" >
+      <div className="callButtonHolder">
        <a
         style={{ textDecoration: 'none', color: 'black' }}
         href="tel:+2155991400"

@@ -4,7 +4,8 @@ const ModalContext = React.createContext()
 
 const ModalProvider = ({ children }) => {
  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
- const [isModalOpen, setIsModalOpen] = useState(false)
+const [isModalOpen, setIsModalOpen] = useState(false)
+const [isChatOpen, setIsChatOpen] = useState(false)
 
  const openSidebar = () => {
   setIsSidebarOpen(true)
@@ -20,13 +21,23 @@ const ModalProvider = ({ children }) => {
   setIsModalOpen(false)
  }
 
+ const openChat = () => {
+  setIsChatOpen(true)
+ }
+ const closeChat = () => {
+  setIsChatOpen(false)
+ }
+
  return (
   <ModalContext.Provider
    value={{
     isSidebarOpen,
-    isModalOpen,
+             isModalOpen,
+    isChatOpen,
     openModal,
     closeModal,
+    openChat,
+    closeChat,
     openSidebar,
     closeSidebar,
    }}

@@ -9,13 +9,18 @@ import { heroData } from '../utils/data.js'
 import Button from '@mui/material/Button'
 import { FaWindowClose } from 'react-icons/fa'
 import Contact from '../components/Contact.js'
+import RainbowChat from '../components/RainbowChat.js'
+
 
 const Landing = () => {
  const [data, setData] = useState(heroData)
  const [index, setIndex] = useState(0)
- const { openModal } = useModalContext()
+  const { openModal } = useModalContext()
+  const { openChat } = useModalContext()
  const [currentImage, setCurrentImage] = useState(0)
- const { isModalOpen, closeModal } = useModalContext()
+  const { isModalOpen, closeModal } = useModalContext()
+   const { isChatOpen, closeChat } = useModalContext()
+    const [showChat, setShowChat] = useState(false)
  const backgroundImages = [
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1675866967/skyline_fhftgi.jpg',
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1676508521/pexels-filippo-bergamaschi-2767737_fidye2.jpg',
@@ -24,6 +29,9 @@ const Landing = () => {
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846494/iStock-1225283684-e1626622577319_nfp8ok.jpg',
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846529/philadelphia-skyline-blue-hour-susan-candelario_ynlzpz.jpg',
  ]
+  const handleClick = () => {
+   setShowChat(true)
+  }
 
  const backgroundImageStyle = {
   backgroundImage: `url(${backgroundImages[currentImage]})`,
@@ -67,9 +75,8 @@ const Landing = () => {
    <div className="popup">
     <h2> Live Chat </h2>
     <p>Click the button to chat with a paralegal</p>
-
     <div style={{ display: 'flex', justifyContent: 'center' }}>
-     <button onClick={() => setShowPopup(false)}>Chat</button>
+     <button onClick={openModal}>Chat</button>
      <button onClick={() => setShowPopup(false)}>Close</button>
     </div>
    </div>
@@ -79,12 +86,13 @@ const Landing = () => {
   <Wrapper className="background-images" style={backgroundImageStyle}>
    {/* <nav>
     <Logo />
-   </nav> */}
+   </nav>  */}
    {/* <div className="app">
     <Popup />
    </div> */}
+
    <div className="container page ">
-    <div className="info">
+    <div className={`${setShowChat ? 'info' : 'info-overlay'}`}>
      {/* <div className="navbar"> Information </div> */}
 
      <h1 style={{ fontSize: '3rem' }}>
@@ -128,9 +136,14 @@ const Landing = () => {
 
        <Button variant="contained" className="btn btn-hero">
         <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
-         {' '}
          enter
         </Link>
+       </Button>
+       <Button variant="contained" onClick={openModal} className="btn btn-hero">
+        contact us
+       </Button>
+       <Button variant="contained" onClick={openChat} className="btn btn-hero">
+        live chat
        </Button>
       </div>
 
@@ -148,20 +161,23 @@ const Landing = () => {
         <Contact />
        </div>
       </div>
+
+      <div
+       className={`${
+        isChatOpen ? 'modal-overlay show-modal' : 'modal-overlay'
+       }`}
+      >
+       <div className="modal-container">
+        <button className="close-modal-btn" onClick={closeChat}>
+         <FaWindowClose
+          style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
+         ></FaWindowClose>
+        </button>
+        <RainbowChat />
+       </div>
+      </div>
      </div>
     </div>
-    {/*
-     <div className="btn-groups">
-      <Button variant="contained" onClick={openModal} className="btn btn-hero">
-       new client click here
-      </Button>{' '}
-      <Button variant="contained" className="btn btn-hero">
-       current client click here
-      </Button>
-      <Button variant="contained" className="btn btn-hero">
-       click here to view our website
-      </Button>{' '}
-     </div> */}
    </div>
   </Wrapper>
  )
@@ -185,6 +201,32 @@ const Wrapper = styled.main`
   height: 50px;
   margin-bottom: 2rem;
  }
+  .info-overlay {
+    display: none;
+  }
+ .chat-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+ }
+
+ #rainbow-chat {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 450px;
+  height: 45%;
+ }
+
  .popup-overlay {
   position: fixed;
   top: 0;
@@ -321,10 +363,11 @@ const Wrapper = styled.main`
    background-color: whitesmoke;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 425px;
+   height: 550px;
    width: 300px;
    margin-left: 2rem;
    margin-right: 0.5rem;
+   margin-bottom: 10rem;
    h1 {
     margin-top: 0.75rem;
    }
