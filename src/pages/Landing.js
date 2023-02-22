@@ -11,16 +11,15 @@ import { FaWindowClose } from 'react-icons/fa'
 import Contact from '../components/Contact.js'
 import RainbowChat from '../components/RainbowChat.js'
 
-
 const Landing = () => {
  const [data, setData] = useState(heroData)
  const [index, setIndex] = useState(0)
-  const { openModal } = useModalContext()
-  const { openChat } = useModalContext()
+ const { openModal } = useModalContext()
+ const { openChat } = useModalContext()
  const [currentImage, setCurrentImage] = useState(0)
-  const { isModalOpen, closeModal } = useModalContext()
-   const { isChatOpen, closeChat } = useModalContext()
-    const [showChat, setShowChat] = useState(false)
+ const { isModalOpen, closeModal } = useModalContext()
+ const { isChatOpen, closeChat } = useModalContext()
+ // const [showChat, setShowChat] = useState(false)
  const backgroundImages = [
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1675866967/skyline_fhftgi.jpg',
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1676508521/pexels-filippo-bergamaschi-2767737_fidye2.jpg',
@@ -29,9 +28,6 @@ const Landing = () => {
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846494/iStock-1225283684-e1626622577319_nfp8ok.jpg',
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846529/philadelphia-skyline-blue-hour-susan-candelario_ynlzpz.jpg',
  ]
-  const handleClick = () => {
-   setShowChat(true)
-  }
 
  const backgroundImageStyle = {
   backgroundImage: `url(${backgroundImages[currentImage]})`,
@@ -61,27 +57,27 @@ const Landing = () => {
    clearInterval(slider)
   }
  }, [index])
- function Popup() {
-  const [showPopup, setShowPopup] = useState(true)
+ //  function Popup() {
+ //   const [showPopup, setShowPopup] = useState(true)
 
-  useEffect(() => {
-   const timer = setTimeout(() => {
-    setShowPopup(false)
-   }, 15000) // Change the duration as per your requirement
-   return () => clearTimeout(timer)
-  }, [])
+ //   useEffect(() => {
+ //    const timer = setTimeout(() => {
+ //     setShowPopup(false)
+ //    }, 15000) // Change the duration as per your requirement
+ //    return () => clearTimeout(timer)
+ //   }, [])
 
-  return showPopup ? (
-   <div className="popup">
-    <h2> Live Chat </h2>
-    <p>Click the button to chat with a paralegal</p>
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-     <button onClick={openModal}>Chat</button>
-     <button onClick={() => setShowPopup(false)}>Close</button>
-    </div>
-   </div>
-  ) : null
- }
+ //   return showPopup ? (
+ //    <div className="popup">
+ //     <h2> Live Chat </h2>
+ //     <p>Click the button to chat with a paralegal</p>
+ //     <div style={{ display: 'flex', justifyContent: 'center' }}>
+ //      <button onClick={openModal}>Chat</button>
+ //      <button onClick={() => setShowPopup(false)}>Close</button>
+ //     </div>
+ //    </div>
+ //   ) : null
+ //  }
  return (
   <Wrapper className="background-images" style={backgroundImageStyle}>
    {/* <nav>
@@ -92,7 +88,8 @@ const Landing = () => {
    </div> */}
 
    <div className="container page ">
-    <div className={`${setShowChat ? 'info' : 'info-overlay'}`}>
+    {/* <div className={`${setShowChat ? 'info' : 'info-overlay'}`}> */}
+    <div className="info">
      {/* <div className="navbar"> Information </div> */}
 
      <h1 style={{ fontSize: '3rem' }}>
@@ -163,16 +160,14 @@ const Landing = () => {
       </div>
 
       <div
-       className={`${
-        isChatOpen ? 'modal-overlay show-modal' : 'modal-overlay'
-       }`}
+       className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
       >
        <div className="modal-container">
-        <button className="close-modal-btn" onClick={closeChat}>
+        <button className="close-chat-btn" onClick={closeChat}>
          <FaWindowClose
           style={{
            position: 'relative',
-           zIndex: '1',
+           zIndex: '999990',
            top: '0',
            right: '0',
           }}
@@ -206,9 +201,9 @@ const Wrapper = styled.main`
   height: 50px;
   margin-bottom: 2rem;
  }
-  .info-overlay {
-    display: none;
-  }
+ .info-overlay {
+  display: none;
+ }
  .chat-overlay {
   position: fixed;
   top: 0;

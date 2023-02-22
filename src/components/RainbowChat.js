@@ -15,6 +15,7 @@ const RainbowChat = () => {
      width: '350px',
      height: '650px',
      marginTop: '5rem',
+     borderRadius: '4%',
     }}
     id="rainbow-chat"
     src="https://secure.penntelco.com/chat_widget/index.php"

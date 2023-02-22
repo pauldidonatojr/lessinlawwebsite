@@ -336,7 +336,7 @@ ul {
      top: 40%;
      left: 50%;
      transform: translate(-50%, -50%);
-     z-index: 999999;
+     /* z-index: 999999; */
  }
 
  #rainbow-chat {
@@ -345,7 +345,7 @@ ul {
      background: transparent;
      border: none;
      outline: none;
-    
+
  }
 .coffee-info span {
     display: block;
