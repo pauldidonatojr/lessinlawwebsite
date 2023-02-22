@@ -170,7 +170,12 @@ const Landing = () => {
        <div className="modal-container">
         <button className="close-modal-btn" onClick={closeChat}>
          <FaWindowClose
-          style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
+          style={{
+           position: 'relative',
+           zIndex: '999990',
+           top: '0',
+           right: '0',
+          }}
          ></FaWindowClose>
         </button>
         <RainbowChat />
