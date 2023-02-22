@@ -416,7 +416,7 @@ const Wrapper = styled.main`
 
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 425px;
+   height: 550px;
    width: 300px;
    margin-left: 2rem;
    margin-right: 0.5rem;
@@ -471,7 +471,7 @@ const Wrapper = styled.main`
 
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 425px;
+   height: 550px;
    width: 300px;
    margin-left: 2rem;
    margin-right: 0.5rem;
@@ -524,7 +524,7 @@ const Wrapper = styled.main`
 
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 425px;
+   height: 550px;
    width: 300px;
    margin-left: 2rem;
    margin-right: 0.5rem;
@@ -576,7 +576,7 @@ const Wrapper = styled.main`
 
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 425px;
+   height: 550px;
    width: 300px;
    margin-left: 2rem;
    margin-right: 0.5rem;
