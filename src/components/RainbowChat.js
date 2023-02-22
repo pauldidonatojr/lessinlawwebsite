@@ -4,7 +4,11 @@ const RainbowChat = () => {
  return (
   <div
    className="chat-container"
-   style={{ width: '450px', height: '800px' , marginTop: '3.5rem'}}
+   style={{
+    width: '450px',
+    height: '750px',
+    marginTop: '3.5rem',
+   }}
   >
    <iframe
     style={{
@@ -12,6 +16,7 @@ const RainbowChat = () => {
      height: '650px',
      marginTop: '5rem',
      touchAction: 'manipulation',
+
     }}
     id="rainbow-chat"
     src="https://secure.penntelco.com/chat_widget/index.php"
