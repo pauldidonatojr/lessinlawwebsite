@@ -44,7 +44,7 @@ const Landing = () => {
  useEffect(() => {
   const intervalId = setInterval(() => {
    setCurrentImage((currentImage + 1) % backgroundImages.length)
-  }, 5000)
+  }, 3000)
 
   return () => clearInterval(intervalId)
  }, [currentImage, backgroundImages.length])
