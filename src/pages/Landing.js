@@ -172,7 +172,7 @@ const Landing = () => {
          <FaWindowClose
           style={{
            position: 'relative',
-           zIndex: '999990',
+           zIndex: '1',
            top: '0',
            right: '0',
           }}
