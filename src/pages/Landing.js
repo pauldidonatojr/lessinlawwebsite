@@ -10,7 +10,7 @@ import Button from '@mui/material/Button'
 import { FaWindowClose } from 'react-icons/fa'
 import Contact from '../components/Contact.js'
 import RainbowChat from '../components/RainbowChat.js'
-
+import { Fade } from 'react-slideshow-image'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 const Landing = () => {
@@ -35,6 +35,7 @@ const Landing = () => {
   'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846529/philadelphia-skyline-blue-hour-susan-candelario_ynlzpz.jpg',
  ]
 
+
  const backgroundImageStyle = {
   backgroundImage: `url(${backgroundImages[currentImage]})`,
  }
@@ -48,20 +49,20 @@ const Landing = () => {
   }
  }, [index, data])
 
- /////////////////////////
+
  useEffect(() => {
   const intervalId = setInterval(() => {
    setCurrentImage((currentImage + 1) % backgroundImages.length)
-  }, 3000)
+  }, 5000)
 
   return () => clearInterval(intervalId)
  }, [currentImage, backgroundImages.length])
- /////////////////////////
+
 
  useEffect(() => {
   let slider = setInterval(() => {
    setIndex(index + 1)
-  }, 8000)
+  }, 5000)
   return () => {
    clearInterval(slider)
   }
@@ -145,10 +146,10 @@ const Landing = () => {
    <>{card}</>
    <div className="container page ">
     {/* <div className={`${setShowChat ? 'info' : 'info-overlay'}`}> */}
-    <div className="info" style={{border: '5px solid black'}}>
+    <div className="info">
      {/* <div className="navbar"> Information </div> */}
 
-     <h1 style={{ fontSize: '3rem' }}>
+     <h1 style={{ fontSize: '4.25rem' }}>
       Lessin <span>Law</span>
      </h1>
      <div className="bio">
@@ -250,8 +251,9 @@ const Wrapper = styled.main`
 
  background-size: cover;
  background-position: center;
- transition: background-image 1s ease-in-out;
- height: 110vh;
+ transition: opacity 1s ease-in-out;
+ min-height: 100vh;
+
  display: grid;
  align-items: center;
  justify-content: center;
@@ -437,7 +439,7 @@ const Wrapper = styled.main`
    font-size: 0.75rem;
 
    height: 475px;
-   width: 250px;
+   width: 265px;
    max-width: 800px;
    font-weight: 500px;
    margin: 0 auto;
@@ -636,20 +638,20 @@ const Wrapper = styled.main`
 
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 550px;
-   width: 300px;
+   height: 950px;
+   width: 600px;
    margin-left: 2rem;
    margin-right: 0.5rem;
    h1 {
-    margin-top: 0.75rem;
+    margin-top: 3.75rem;
    }
   }
   .bio {
    transition: var(--transition);
-   font-size: 0.75rem;
+   font-size: 1.34rem;
 
-   height: 475px;
-   width: 250px;
+   height: 750px;
+   width: 365px;
    max-width: 800px;
    font-weight: 500px;
    margin: 0 auto;
@@ -664,11 +666,12 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 18rem;
+   margin-top: 35rem;
    margin-bottom: 12rem;
   }
   .btn-hero {
-   font-size: 1rem;
+   font-size: 1.5rem;
+   width: 15rem;
   }
  }
 `
