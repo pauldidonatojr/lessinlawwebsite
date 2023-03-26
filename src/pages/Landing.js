@@ -13,7 +13,7 @@ import RainbowChat from '../components/RainbowChat.js'
 import { Fade } from 'react-slideshow-image'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
-
+import PracticeAreas from '../components/PracticeAreas'
 const Landing = ({ videoSrc }) => {
  const [data, setData] = useState(heroData)
  const [index, setIndex] = useState(0)
@@ -113,161 +113,173 @@ const Landing = ({ videoSrc }) => {
  //    </div>
  //   ) : null
  //  }
- return (
-  <Wrapper>
-   <video autoPlay muted loop id="background-video">
-    <source
-     src={
-      'https://res.cloudinary.com/elpawl-llc/video/upload/v1679865257/production_ID_4686761_wgtnc3.mp4'
-     }
-     type="video/mp4"
-    />
-   </video>
-   {/* <nav>
+  return (
+   <>
+    <Wrapper>
+     <video autoPlay muted loop id="background-video">
+      <source
+       src={
+        'https://res.cloudinary.com/elpawl-llc/video/upload/v1679873411/pexels-kelly-lacy-6606214_1_gcflle.mp4'
+       }
+       type="video/mp4"
+      />
+     </video>
+     {/* <nav>
     <Logo />
    </nav>  */}
-   {/* <div className="app">
+     {/* <div className="app">
     <Popup />
    </div> */}
+     <div className=" page1">
+      <div className="info1">
+       <div className="btn-groups">
+        <Button variant="contained" className="btn btn-hero">
+         <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
+          enter
+         </Link>
+        </Button>
+        <Button
+         variant="contained"
+         onClick={handleShow}
+         className="btn btn-hero"
+        >
+         contact us
+        </Button>
+        <Button variant="contained" onClick={openChat} className="btn btn-hero">
+         live chat
+        </Button>
+       </div>
 
-   <div className=" page1">
-    <div className="info1">
-     <div className="btn-groups">
-      <Button variant="contained" className="btn btn-hero">
-       <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
-        enter
-       </Link>
-      </Button>
-      <Button variant="contained" onClick={handleShow} className="btn btn-hero">
-       contact us
-      </Button>
-      <Button variant="contained" onClick={openChat} className="btn btn-hero">
-       live chat
-      </Button>
-     </div>
-
-     <div
-      className={`${
-       isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
-      }`}
-     >
-      <div className="modal-container">
-       <button className="close-modal-btn" onClick={closeModal}>
-        <FaWindowClose
-         style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
-        ></FaWindowClose>
-       </button>
-       Contact
-      </div>
-     </div>
-
-     <div
-      className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
-     >
-      <div className="modal-container">
-       <button className="close-chat-btn" onClick={closeChat}>
-        <FaWindowClose
-         style={{
-          position: 'relative',
-          zIndex: '999990',
-          top: '0',
-          right: '0',
-         }}
-        ></FaWindowClose>
-       </button>
-       <RainbowChat />
-      </div>
-     </div>
-    </div>
-   </div>
-
-   <div className="container page ">
-    {/* <div className={`${setShowChat ? 'info' : 'info-overlay'}`}> */}
-    <div className="info">
-     {/* <div className="navbar"> Information </div> */}
-
-     <h1 style={{ fontSize: '4rem' }}>
-      Lessin <span>Law</span>
-     </h1>
-     <div className="bio">
-      {data.map((info, infoIndex) => {
-       const { id, text } = info
-       let position = 'nextSlide'
-       if (infoIndex === index) {
-        position = 'activeSlide'
-       }
-       if (
-        infoIndex === index - 1 ||
-        (index === 0 && infoIndex === data.length - 1)
-       ) {
-        position = 'lastSlide'
-       }
-
-       return (
-        <div className="articleDiv">
-         <article className={position} key={id}>
-          <i>
-           {' '}
-           <p className="text" style={{ color: '#fff', fontWeight: '650', lineHeight: '2' }}>
-            {text}
-           </p>
-          </i>
-         </article>
-        </div>
-       )
-      })}
-
-      <div className="btn-groups">
-       <Button
-        variant="contained"
-        onClick={handleShow}
-        className="btn btn-hero"
+       <div
+        className={`${
+         isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
+        }`}
        >
-        contact us
-       </Button>
-       <Button variant="contained" onClick={openChat} className="btn btn-hero">
-        live chat
-       </Button>
-      </div>
-
-      <div
-       className={`${
-        isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
-       }`}
-      >
-       <div className="modal-container">
-        <button className="close-modal-btn" onClick={closeModal}>
-         <FaWindowClose
-          style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
-         ></FaWindowClose>
-        </button>
-        Contact
+        <div className="modal-container">
+         <button className="close-modal-btn" onClick={closeModal}>
+          <FaWindowClose
+           style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
+          ></FaWindowClose>
+         </button>
+         Contact
+        </div>
        </div>
-      </div>
 
-      <div
-       className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
-      >
-       <div className="modal-container">
-        <button className="close-chat-btn" onClick={closeChat}>
-         <FaWindowClose
-          style={{
-           position: 'relative',
-           zIndex: '999990',
-           top: '0',
-           right: '0',
-          }}
-         ></FaWindowClose>
-        </button>
-        <RainbowChat />
+       <div
+        className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
+       >
+        <div className="modal-container">
+         <button className="close-chat-btn" onClick={closeChat}>
+          <FaWindowClose
+           style={{
+            position: 'relative',
+            zIndex: '999990',
+            top: '0',
+            right: '0',
+           }}
+          ></FaWindowClose>
+         </button>
+         <RainbowChat />
+        </div>
        </div>
       </div>
      </div>
-    </div>
-    <>{card}</>
-   </div>
-  </Wrapper>
- )
+     <div className="container page ">
+      {/* <div className={`${setShowChat ? 'info' : 'info-overlay'}`}> */}
+      <div className="info">
+       {/* <div className="navbar"> Information </div> */}
+
+       <h1 style={{ fontSize: '4rem' }}>
+        Lessin <span>Law</span>
+       </h1>
+       <div className="bio">
+        {data.map((info, infoIndex) => {
+         const { id, text } = info
+         let position = 'nextSlide'
+         if (infoIndex === index) {
+          position = 'activeSlide'
+         }
+         if (
+          infoIndex === index - 1 ||
+          (index === 0 && infoIndex === data.length - 1)
+         ) {
+          position = 'lastSlide'
+         }
+
+         return (
+          <div className="articleDiv">
+           <article className={position} key={id}>
+            <i>
+             {' '}
+             <p
+              className="text"
+              style={{ color: '#fff', fontWeight: '650', lineHeight: '2' }}
+             >
+              {text}
+             </p>
+            </i>
+           </article>
+          </div>
+         )
+        })}
+
+        <div className="btn-groups">
+         <Button
+          variant="contained"
+          onClick={handleShow}
+          className="btn btn-hero"
+         >
+          contact us
+         </Button>
+         <Button
+          variant="contained"
+          onClick={openChat}
+          className="btn btn-hero"
+         >
+          live chat
+         </Button>
+        </div>
+
+        <div
+         className={`${
+          isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
+         }`}
+        >
+         <div className="modal-container">
+          <button className="close-modal-btn" onClick={closeModal}>
+           <FaWindowClose
+            style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
+           ></FaWindowClose>
+          </button>
+          Contact
+         </div>
+        </div>
+
+        <div
+         className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
+        >
+         <div className="modal-container">
+          <button className="close-chat-btn" onClick={closeChat}>
+           <FaWindowClose
+            style={{
+             position: 'relative',
+             zIndex: '999990',
+             top: '0',
+             right: '0',
+            }}
+           ></FaWindowClose>
+          </button>
+          <RainbowChat />
+         </div>
+        </div>
+       </div>
+      </div>
+      <>{card}</>
+     </div>
+    </Wrapper>
+    <PracticeAreas />
+   </>
+  )
 }
 
 const Wrapper = styled.main`
@@ -467,7 +479,6 @@ const Wrapper = styled.main`
  }
 
  @media only screen and (max-width: 600px) {
-
   .page {
    min-height: calc(70vh - var(--nav-height));
    border-radius: 4%;

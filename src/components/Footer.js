@@ -92,72 +92,67 @@ const Footer = () => {
   )
 
   return (
-    <Wrapper>
-      <div className="infoHolder">
-        <div className="company-details" onClick={cHandleToggle}>
-          <h4>
-            {' '}
-            Jeffrey R. Lessin & Associates, P.C.{' '}
-          </h4>
-          <h6 className='companyTagline' style={{ color: 'black' }}>
-            {' '}Pepresents people living in
-            communities throughout Pennsylvania{' '}
-          </h6>
-        </div>
-        <div className="location-details" onClick={handleToggle}>
-          <h4 style={{ marginTop: '10px' }}> Location </h4>
-          <LocationOnIcon style={{ fontSize: '50px' }} />
-        </div>
+   <Wrapper>
+    <div className="infoHolder">
+     <div className="company-details" onClick={cHandleToggle}>
+      <h4> Jeffrey R. Lessin & Associates, P.C. </h4>
+      <h6 className="companyTagline" style={{ color: 'black' }}>
+       {' '}
+       Pepresents people living in communities throughout Pennsylvania{' '}
+      </h6>
+     </div>
+     <div className="location-details" onClick={handleToggle}>
+      <h4 style={{ marginTop: '10px' }}> Location </h4>
+      <LocationOnIcon style={{ fontSize: '50px' }} />
+     </div>
 
-        <div className="social-media">
+      <h5 style={{ color: 'grey' }}>
+       &copy; {new Date().getFullYear()}
+       <span style={{ color: 'black' }}> Lessin Law</span>
+      </h5>
+      <div className="countriesHolder">
+       <p style={{ fontSize: '0.85rem' }}>
+        {' '}
+        Counties: Berks County • Bucks County • Chester County • Delaware County
+        • Lehigh County • Montgomery County • Northampton County • Philadelphia
+        County
+       </p>{' '}
+      </div>
+
+     {/* <div className="social-media">
           <InstagramIcon style={{ margin: '0.5rem' }} />
           <FacebookIcon style={{ margin: '0.5rem' }} />
           <TwitterIcon style={{ margin: '0.5rem' }} />
           <LinkedInIcon style={{ margin: '0.5rem' }} />
           <YouTubeIcon style={{ margin: '0.5rem' }} />
-        </div>
-      </div>
+        </div> */}
+    </div>
 
-      <div className='mobSocialLoc'>
-        <LocationOnIcon onClick={handleToggle} style={{ margin: '0.5rem' }}/>
-        <InstagramIcon style={{ margin: '0.5rem' }} />
-        <FacebookIcon style={{ margin: '0.5rem' }} />
-        <TwitterIcon style={{ margin: '0.5rem' }} />
-        <LinkedInIcon style={{ margin: '0.5rem' }} />
-        <YouTubeIcon style={{ margin: '0.5rem' }} />
-      </div>
+    {/* <div className="mobSocialLoc">
+     <LocationOnIcon onClick={handleToggle} style={{ margin: '0.5rem' }} />
+     <InstagramIcon style={{ margin: '0.5rem' }} />
+     <FacebookIcon style={{ margin: '0.5rem' }} />
+     <TwitterIcon style={{ margin: '0.5rem' }} />
+     <LinkedInIcon style={{ margin: '0.5rem' }} />
+     <YouTubeIcon style={{ margin: '0.5rem' }} />
+    </div> */}
 
-      <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={open}
-        onClick={handleClose}
-      >
-        <Card variant="outlined">{card}</Card>
-      </Backdrop>
-      {/* Company Details */}
-      <Backdrop
-        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={cOpen}
-        onClick={cHandleClose}
-      >
-        <Card variant="outlined">{companyCard}</Card>
-      </Backdrop>
-
-      <div className="bottom-details">
-        <h5 style={{ color: 'grey' }}>
-          &copy; {new Date().getFullYear()}
-          <span style={{ color: 'black' }}> Lessin Law</span>
-        </h5>
-        <div className='countriesHolder'>
-          <p style={{ fontSize: '0.85rem' }}>
-            {' '}
-            Counties: Berks County • Bucks County • Chester County • Delaware County •
-            Lehigh County • Montgomery County • Northampton County • Philadelphia
-            County
-          </p>{' '}
-        </div>
-      </div>
-    </Wrapper>
+    <Backdrop
+     sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+     open={open}
+     onClick={handleClose}
+    >
+     <Card variant="outlined">{card}</Card>
+    </Backdrop>
+    {/* Company Details */}
+    <Backdrop
+     sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+     open={cOpen}
+     onClick={cHandleClose}
+    >
+     <Card variant="outlined">{companyCard}</Card>
+    </Backdrop>
+   </Wrapper>
   )
 }
 
@@ -174,8 +169,9 @@ const CardWrapper = styled.section`
 `
 
 const Wrapper = styled.footer`
+background-color: whitesmoke;
  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
- height: 250px;
+ height: 200px;
  width: 100%;
  justify-content: center;
  align-items: center;
@@ -365,7 +361,7 @@ const Wrapper = styled.footer`
 
  @media (max-width: 600px) {
   display: grid;
-  border-radius: 30px;
+  /* border-radius: 30px; */
   .infoHolder {
    display: grid;
   }

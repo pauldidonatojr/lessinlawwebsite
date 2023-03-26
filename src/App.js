@@ -65,7 +65,8 @@ function App() {
     <Route path="*" element={<Error />} />
 
     {/* ///////////////////////////*/}
-   </Routes>
+         </Routes>
+         <Footer/>
    <ToastContainer position="top-center" />
   </BrowserRouter>
  )
