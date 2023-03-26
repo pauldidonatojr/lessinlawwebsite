@@ -13,7 +13,8 @@ import RainbowChat from '../components/RainbowChat.js'
 import { Fade } from 'react-slideshow-image'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
-const Landing = () => {
+
+const Landing = ({ videoSrc }) => {
  const [data, setData] = useState(heroData)
  const [index, setIndex] = useState(0)
  const [show, setShow] = useState(false)
@@ -26,19 +27,6 @@ const Landing = () => {
  const handleShow = () => setShow(true)
  // const [showChat, setShowChat] = useState(false)
 
- const backgroundImages = [
-  'https://res.cloudinary.com/elpawl-llc/image/upload/v1675866967/skyline_fhftgi.jpg',
-  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676508521/pexels-filippo-bergamaschi-2767737_fidye2.jpg',
-  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846332/902207_1e34262fb393244_ezgb7q.jpg',
-  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846445/Schuylkill-After.0_wm6vps.jpg',
-  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846494/iStock-1225283684-e1626622577319_nfp8ok.jpg',
-  'https://res.cloudinary.com/elpawl-llc/image/upload/v1676846529/philadelphia-skyline-blue-hour-susan-candelario_ynlzpz.jpg',
- ]
-
-
- const backgroundImageStyle = {
-  backgroundImage: `url(${backgroundImages[currentImage]})`,
- }
  useEffect(() => {
   const lastIndex = data.length - 1
   if (index < 0) {
@@ -48,16 +36,6 @@ const Landing = () => {
    setIndex(0)
   }
  }, [index, data])
-
-
- useEffect(() => {
-  const intervalId = setInterval(() => {
-   setCurrentImage((currentImage + 1) % backgroundImages.length)
-  }, 5000)
-
-  return () => clearInterval(intervalId)
- }, [currentImage, backgroundImages.length])
-
 
  useEffect(() => {
   let slider = setInterval(() => {
@@ -136,20 +114,79 @@ const Landing = () => {
  //   ) : null
  //  }
  return (
-  <Wrapper className="background-images" style={backgroundImageStyle}>
+  <Wrapper>
+   <video autoPlay muted loop id="background-video">
+    <source
+     src={
+      'https://res.cloudinary.com/elpawl-llc/video/upload/v1679865257/production_ID_4686761_wgtnc3.mp4'
+     }
+     type="video/mp4"
+    />
+   </video>
    {/* <nav>
     <Logo />
    </nav>  */}
    {/* <div className="app">
     <Popup />
    </div> */}
-   <>{card}</>
+
+   <div className=" page1">
+    <div className="info1">
+     <div className="btn-groups">
+      <Button variant="contained" className="btn btn-hero">
+       <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
+        enter
+       </Link>
+      </Button>
+      <Button variant="contained" onClick={handleShow} className="btn btn-hero">
+       contact us
+      </Button>
+      <Button variant="contained" onClick={openChat} className="btn btn-hero">
+       live chat
+      </Button>
+     </div>
+
+     <div
+      className={`${
+       isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
+      }`}
+     >
+      <div className="modal-container">
+       <button className="close-modal-btn" onClick={closeModal}>
+        <FaWindowClose
+         style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
+        ></FaWindowClose>
+       </button>
+       Contact
+      </div>
+     </div>
+
+     <div
+      className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
+     >
+      <div className="modal-container">
+       <button className="close-chat-btn" onClick={closeChat}>
+        <FaWindowClose
+         style={{
+          position: 'relative',
+          zIndex: '999990',
+          top: '0',
+          right: '0',
+         }}
+        ></FaWindowClose>
+       </button>
+       <RainbowChat />
+      </div>
+     </div>
+    </div>
+   </div>
+
    <div className="container page ">
     {/* <div className={`${setShowChat ? 'info' : 'info-overlay'}`}> */}
     <div className="info">
      {/* <div className="navbar"> Information </div> */}
 
-     <h1 style={{ fontSize: '4.25rem' }}>
+     <h1 style={{ fontSize: '4rem' }}>
       Lessin <span>Law</span>
      </h1>
      <div className="bio">
@@ -171,7 +208,9 @@ const Landing = () => {
          <article className={position} key={id}>
           <i>
            {' '}
-           <p className="text">{text}</p>
+           <p className="text" style={{ color: '#fff', fontWeight: '650', lineHeight: '2' }}>
+            {text}
+           </p>
           </i>
          </article>
         </div>
@@ -179,20 +218,6 @@ const Landing = () => {
       })}
 
       <div className="btn-groups">
-       {/* <Button variant="contained" onClick={openModal} className="btn btn-hero">
-        enter
-       </Button> */}
-       {/* <Button variant="contained" className="btn btn-hero">
-        <Link to="/register" style={{ color: 'white', textDecoration: 'none' }}>
-         current client click here
-        </Link>
-       </Button> */}
-
-       <Button variant="contained" className="btn btn-hero">
-        <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
-         enter
-        </Link>
-       </Button>
        <Button
         variant="contained"
         onClick={handleShow}
@@ -239,6 +264,7 @@ const Landing = () => {
       </div>
      </div>
     </div>
+    <>{card}</>
    </div>
   </Wrapper>
  )
@@ -248,15 +274,21 @@ const Wrapper = styled.main`
  /* background-repeat: no-repeat; */
  /* background-size: cover;
  background-position: center; */
-
- background-size: cover;
- background-position: center;
- transition: opacity 1s ease-in-out;
- min-height: 100vh;
+ #background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+ }
 
  display: grid;
  align-items: center;
  justify-content: center;
+ height: 100%;
+ width: 100%;
  .navbar {
   background-color: blue;
   width: 100%;
@@ -344,7 +376,6 @@ const Wrapper = styled.main`
  }
 
  .container {
-  z-index: 1;
  }
  nav {
   width: var(--fluid-width);
@@ -360,9 +391,18 @@ const Wrapper = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 1rem;
+ }
+ .page1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
  }
  .info {
+  text-align: center;
+  border-radius: 10%;
+ }
+ .info1 {
   text-align: center;
   background-color: whitesmoke;
   border-radius: 10%;
@@ -406,21 +446,59 @@ const Wrapper = styled.main`
  article.nextSlide {
   transform: translateX(100%);
  }
+ .video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+ }
+
+ .video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+ }
 
  @media only screen and (max-width: 600px) {
+
   .page {
-   min-height: calc(110vh - var(--nav-height));
+   min-height: calc(70vh - var(--nav-height));
    border-radius: 4%;
    width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
   }
-
+  .page1 {
+   /* display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column; */
+   display: none;
+  }
   article {
    border-radius: 2%;
   }
   .info {
+   border-radius: 2%;
+   transition: var(--transition);
+
+   height: 505px;
+   width: 300px;
+   margin-bottom: 11rem;
+   margin-top: 1rem;
+   h1 {
+    margin-top: 0.75rem;
+   }
+  }
+  .info1 {
    border-radius: 10%;
    background-color: whitesmoke;
    transition: var(--transition);
@@ -436,9 +514,8 @@ const Wrapper = styled.main`
   }
   .bio {
    transition: var(--transition);
-   font-size: 0.75rem;
-
-   height: 475px;
+   font-size: 0.85rem;
+   height: 535px;
    width: 265px;
    max-width: 800px;
    font-weight: 500px;
@@ -454,22 +531,28 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 18rem;
-   margin-bottom: 12rem;
+   margin-top: 26.5rem;
+   margin-bottom: 14rem;
   }
   .btn-hero {
-   font-size: 1rem;
+   font-size: 1.25rem;
   }
  }
  @media only screen and (min-width: 600px) {
-  .container {
-  }
   .page {
    /* min-height: calc(100vh - var(--nav-height)); */
    display: flex;
    justify-content: center;
    align-items: center;
    margin-top: -3rem;
+  }
+  .page1 {
+   /* min-height: calc(100vh - var(--nav-height)); */
+   /* display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: -3rem; */
+   display: none;
   }
   .info {
    transition: var(--transition);
@@ -486,9 +569,23 @@ const Wrapper = styled.main`
     margin-top: 0.75rem;
    }
   }
+  .info1 {
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   border-radius: 10%;
+
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 550px;
+   width: 300px;
+   margin-left: 2rem;
+   margin-right: 0.5rem;
+   h1 {
+    margin-top: 0.75rem;
+   }
+  }
   .bio {
    transition: var(--transition);
-
    font-size: 0.75rem;
 
    height: 475px;
@@ -526,7 +623,29 @@ const Wrapper = styled.main`
    align-items: center;
    margin-top: -3rem;
   }
+  .page1 {
+   /* min-height: calc(100vh - var(--nav-height)); */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: -3rem;
+  }
   .info {
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   border-radius: 10%;
+
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 550px;
+   width: 300px;
+   margin-left: 2rem;
+   margin-right: 0.5rem;
+   h1 {
+    margin-top: 0.75rem;
+   }
+  }
+  .info1 {
    transition: var(--transition);
    box-shadow: var(--shadow-3);
    border-radius: 10%;
@@ -579,7 +698,29 @@ const Wrapper = styled.main`
    align-items: center;
    margin-top: -3rem;
   }
+  .page1 {
+   /* min-height: calc(100vh - var(--nav-height)); */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: -3rem;
+  }
   .info {
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   border-radius: 10%;
+
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 550px;
+   width: 300px;
+   margin-left: 2rem;
+   margin-right: 0.5rem;
+   h1 {
+    margin-top: 0.75rem;
+   }
+  }
+  .info1 {
    transition: var(--transition);
    box-shadow: var(--shadow-3);
    border-radius: 10%;
@@ -622,10 +763,20 @@ const Wrapper = styled.main`
   }
  }
  @media (min-width: 1280px) {
-  .container {
-  }
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+
   .page {
-   /* min-height: calc(100vh - var(--nav-height)); */
+   min-height: calc(100vh - var(--nav-height));
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: -3rem;
+  }
+  .page1 {
+   min-height: calc(100vh - var(--nav-height));
    display: flex;
    justify-content: center;
    align-items: center;
@@ -638,7 +789,22 @@ const Wrapper = styled.main`
 
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 950px;
+   height: 650px;
+   width: 600px;
+   margin-left: 2rem;
+   margin-right: 0.5rem;
+   h1 {
+    margin-top: 3.75rem;
+   }
+  }
+  .info1 {
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   border-radius: 10%;
+
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 650px;
    width: 600px;
    margin-left: 2rem;
    margin-right: 0.5rem;
@@ -650,7 +816,7 @@ const Wrapper = styled.main`
    transition: var(--transition);
    font-size: 1.34rem;
 
-   height: 750px;
+   height: 500px;
    width: 365px;
    max-width: 800px;
    font-weight: 500px;
@@ -666,8 +832,6 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 35rem;
-   margin-bottom: 12rem;
   }
   .btn-hero {
    font-size: 1.5rem;

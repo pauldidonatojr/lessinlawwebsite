@@ -8,13 +8,13 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
 import CallIcon from '@mui/icons-material/Call';
-                
+
 
 
 const ContactUs = () => {
   return (
     <Wrapper>
-      <Header />
+
 
       <div className='dataHolder'>
 
@@ -32,7 +32,7 @@ const ContactUs = () => {
 
       <div className='infoholder'>
         <Box className='hold1'>
-         <h2>Call a Pennsylvania Civil Rights Attorney</h2>
+         <h2>Call a Pennsylvania Personal Injury Lawyer</h2>
          <p style={{color:'white'}}>If you have experienced discrimination, police misconduct or other violations of your civil rights, you do have recourse. Our Philadelphia attorneys are available to advise you and help you take action to uphold your rights and obtain compensation for your damages and losses. With more than 60 years of combined experience, our lawyers are aggressive advocates who do not give up. Call us today.
 
 You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.
@@ -56,7 +56,7 @@ The use of the Internet or this form for communication with the firm or any indi
         <div className='questiontitle'>
           <h2 style={{fontSize:'32px',  fontFamily: 'optima'}}>WHAT CAN WE HELP YOU WITH ?</h2>
         </div>
-        
+
         <hr  className='line'style={{
     height: '.1',
     borderColor : '#DDDDDD',
@@ -73,7 +73,7 @@ The use of the Internet or this form for communication with the firm or any indi
         <input className='input-item'  type="text" name="name" placeholder='Email'/>
         <input  className='input-item'  type="text" name="name" placeholder='Mobile Phone'/>
         </div>
-        
+
         <hr  className='line'style={{
     height: .1,
     borderColor : '#DDDDDD',
@@ -86,7 +86,7 @@ The use of the Internet or this form for communication with the firm or any indi
        <h3 style={{fontFamily: 'Optima',fontSize:'20px'}}>MESSAGE</h3>
       </div>
       <div className='messageAreaHolder'>
-      <input className='messageArea' type="textarea" 
+      <input className='messageArea' type="textarea"
           name="textValue"
           placeholder='Message'
         />
@@ -96,7 +96,7 @@ The use of the Internet or this form for communication with the firm or any indi
       </div>
       </div>
       </div>
-      
+
       <Footer />
     </Wrapper>
   )
@@ -108,16 +108,16 @@ export default ContactUs
 const Wrapper = styled.section`
  height: 100vh;
  width: 100%;
- 
+
 .messageAreaHolder{
   height:100%;
   width:100%;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 
 }
 .messageArea{
-  
+
   height:200px;
   width:72%;
   margin-left:5%;
@@ -135,19 +135,19 @@ const Wrapper = styled.section`
   margin-bottom:03%;
   padding:02%;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   font-family: "Optima";
   color: #000;
   padding: 0;
   text-transform: uppercase;
   font-weight: normal;
-  
+
 
 }
 
 
 .subTitle{
-  
+
   margin-top:2%;
   display: flex;
   justify-content: center;
@@ -200,7 +200,7 @@ const Wrapper = styled.section`
 }
 .buttonHolder{
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 
 }
 
@@ -210,14 +210,14 @@ const Wrapper = styled.section`
    background-color: #ececec;
  }
  .infoholder{
-  
+
   padding:5%;
   height: auto;
   width:50%;
-  background-color : #0a2351;  
+  background-color : #0a2351;
 }
 .hold1{
-  
+
   height:100%;
   width:100%;
   padding: 5%;
@@ -226,7 +226,7 @@ const Wrapper = styled.section`
 }
 
 .hold1:hover{
-   
+
   box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);}
@@ -249,7 +249,7 @@ const Wrapper = styled.section`
   height: 40vh;
   width: 100%;
 }
- 
+
 .transparentBackground{
   width: 100%;
   height: 40vh;
@@ -473,7 +473,7 @@ const Wrapper = styled.section`
 }
 
 @media screen and (max-width: 520px) {
- 
+
   .screen-body {
     flex-direction: column;
   }
@@ -498,10 +498,10 @@ const Wrapper = styled.section`
     display:grid;
     height:auto;
     width:100%;
-  }  
-  
+  }
+
  .infoholder{
-  
+
   padding:5%;
   height: auto;
   width:100%;
@@ -517,7 +517,7 @@ const Wrapper = styled.section`
 }
 .questiontitle h2{
 
-  padding:02%; 
+  padding:02%;
 }
 
 .input-field{

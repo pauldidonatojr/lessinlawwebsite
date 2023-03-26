@@ -117,7 +117,7 @@ const Hero = () => {
  return (
   <div style={{ width: '100%', height: '100%' }}>
    <>{card}</>
-   <Header />
+  
    <Wrapper>
     <section class="backg" style={{ backgroundColor: 'lightblue' }}>
      <div className="detailsTextHolder">

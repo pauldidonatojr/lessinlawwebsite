@@ -24,9 +24,12 @@ const Header = () => {
  return (
   <Wrapper>
    <div className="dekstop">
-    <div className="top">
+    <div className="top" style={{backgroundColor: 'whitesmoke'}}>
      <div className="nameHolder">
-      <div className="companyName"> Jeffrey R. Lessin & Associates, P.C. </div>
+      <Link to="/">
+       {' '}
+       <div className="companyName"> Jeffrey R. Lessin & Associates, P.C. </div>
+      </Link>
       <div className="companyDetails">
        {' '}
        Pennsylvania Trial Lawyers . Philadelphia Civil Rights Attorneys{' '}
@@ -83,7 +86,7 @@ const Header = () => {
     <div className="bottom">
      <div className="div-1">
       <ul>
-       <Link style={{ textDecoration: 'none' }} to="/home">
+       <Link style={{ textDecoration: 'none' }} to="/landing">
         <li> Home </li>
        </Link>
        <Link style={{ textDecoration: 'none' }} to="/firmoverview">
@@ -131,7 +134,7 @@ const Header = () => {
         'aria-labelledby': 'basic-button',
        }}
       >
-       <Link style={{ textDecoration: 'none', color: 'black' }} to="/home">
+       <Link style={{ textDecoration: 'none', color: 'black' }} to="/landing">
         <MenuItem onClick={handleClose}>Home</MenuItem>
        </Link>
        <Link

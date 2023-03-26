@@ -13,10 +13,10 @@ const PracticeAreas = () => {
  const { openModal } = useModalContext()
 
  const { isModalOpen, closeModal } = useModalContext()
- 
+
  return (
   <div>
-  <Header />
+
   <Wrapper>
       <div className='backimage'>
         <img src='/Practice.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover' }}></img>
@@ -187,7 +187,7 @@ width: 100%;
   width: 100%;
   position: relative;
   display: grid;
-  place-content: center; 
+  place-content: center;
 }
 
 .textHolder{
@@ -279,7 +279,7 @@ width: 100%;
     transition: box-shadow 0.3s;
     &:hover{
       box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(9, 55, 53, 0.08),
-      0px 16px 24px rgba(9, 55, 53, 0.1), 0px 24px 32px rgba(9, 55, 53, 0.14); 
+      0px 16px 24px rgba(9, 55, 53, 0.1), 0px 24px 32px rgba(9, 55, 53, 0.14);
     }
   }
 
@@ -292,7 +292,7 @@ width: 100%;
     position: absolute;
   }
 
-  
+
   .product-details{
       display: grid;
       justify-content: center;
@@ -323,7 +323,7 @@ width: 100%;
     backdrop-filter: blur(5px);
     }
 
-  
+
   .item-info header {
     display: flex;
     justify-content: space-between;
@@ -379,8 +379,8 @@ width: 100%;
   .product-card:not(:hover) .product-header{
     display: unset;
   }
-  
-  
+
+
 
   .item-text {
     color: white;

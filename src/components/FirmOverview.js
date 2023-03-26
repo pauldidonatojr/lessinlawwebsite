@@ -13,7 +13,6 @@ const FirmOverview = () => {
   const { isModalOpen, closeModal } = useModalContext()
   return (
     <div>
-      <Header />
       <Wrapper>
 
         <div className='backimage'>
@@ -34,13 +33,13 @@ const FirmOverview = () => {
 
             At the law firm of Jeffrey R. Lessin & Associates, P.C., we know law enforcement personnel throughout the Philadelphia area. Each of our civil rights lawyers has been practicing law in this region for more than 20 years, giving them a comprehensive understanding of the individuals, organizations and policies that make up the law enforcement community in this region. Our knowledge and experience are invaluable to clients who have experienced discrimination or have had their civil rights violated.
             </p>
-          </div> 
+          </div>
           <div className='cardV'>
           <h3 style={{color: 'white'}}>Our Civil Rights Matters</h3>
             <p style={{width: '100%', height: '100%', color: 'white'}}>
             Our PA civil rights practice focuses on holding public agencies responsible for the conduct of their employees. Our clients include individuals who have experienced criminal violations of their civil rights, including police misconduct, illegal search and seizure, racial profiling and assault by prison guards. We file lawsuits on behalf of these clients, seeking compensation for their damages and doing our part to force the police to reform their behavior.
             </p>
-          </div> 
+          </div>
           <div className='cardV'>
           <h3 style={{color: 'white'}}>Contingency Fees in Most Cases</h3>
             <p style={{width: '100%', height: '100%', color: 'white'}}>
@@ -49,7 +48,7 @@ const FirmOverview = () => {
             If you or a loved one has experienced a violation of your civil rights in Pennsylvania, contact our Philadelphia personal injury law firm to schedule a no-cost consultation about your situation.
             You pay no legal fees unless we win. Conveniently located across from City Hall in downtown Philadelphia.
             </p>
-          </div> 
+          </div>
         </div>
       </Wrapper>
       <Footer />
@@ -87,7 +86,7 @@ const Wrapper = styled.section`
   width: 100%;
   position: relative;
   display: grid;
-  place-content: center; 
+  place-content: center;
 }
 
 .textHolder{
@@ -123,7 +122,7 @@ const Wrapper = styled.section`
 .image-holder{
    display: inline;
    justify-content: center;
-   align-items: center; 
+   align-items: center;
    width: 100%;
    height: 200%;
    position: relative;
@@ -165,7 +164,7 @@ const Wrapper = styled.section`
 }
 
 
- 
+
  @media only screen and (max-width: 600px) {
   .cardV{
     height: 90%;
