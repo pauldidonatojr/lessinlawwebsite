@@ -5,7 +5,7 @@ const RainbowChat = () => {
   <div
    className="chat-container"
    style={{
-    width: '450px',
+    width: '345px',
     height: '750px',
     marginTop: '3.5rem',
    }}

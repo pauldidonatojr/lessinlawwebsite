@@ -230,7 +230,14 @@ const Landing = ({ videoSrc }) => {
        <div
         className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
        >
-        <div className="modal-container">
+        <div
+         className="modal-container"
+         style={{
+          display: 'grid',
+          justifyContent: 'center',
+          alignItems: 'center',
+         }}
+        >
          <button className="close-chat-btn" onClick={closeChat}>
           <FaWindowClose
            style={{
