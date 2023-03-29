@@ -13,424 +13,394 @@ import RainbowChat from '../components/RainbowChat.js'
 import { Fade } from 'react-slideshow-image'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
-import { Card } from '@mui/material';
-import City_Video from '../assets/2.mp4';
-
-
-
+import { Card } from '@mui/material'
+import City_Video from '../assets/2.mp4'
 
 const Landing = ({ videoSrc }) => {
-  const [data, setData] = useState(heroData)
-  const [index, setIndex] = useState(0)
-  const [show, setShow] = useState(false)
-  const [currentImage, setCurrentImage] = useState(0)
-  const { openModal } = useModalContext()
-  const { openChat } = useModalContext()
-  const { isModalOpen, closeModal } = useModalContext()
-  const { isChatOpen, closeChat } = useModalContext()
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
-  // const [showChat, setShowChat] = useState(false)
+ const [data, setData] = useState(heroData)
+ const [index, setIndex] = useState(0)
+ const [show, setShow] = useState(false)
+ const [currentImage, setCurrentImage] = useState(0)
+ const { openModal } = useModalContext()
+ const { openChat } = useModalContext()
+ const { isModalOpen, closeModal } = useModalContext()
+ const { isChatOpen, closeChat } = useModalContext()
+ const handleClose = () => setShow(false)
+ const handleShow = () => setShow(true)
+ // const [showChat, setShowChat] = useState(false)
 
-  useEffect(() => {
-    const lastIndex = data.length - 1
-    if (index < 0) {
-      setIndex(lastIndex)
-    }
-    if (index > lastIndex) {
-      setIndex(0)
-    }
-  }, [index, data])
+ useEffect(() => {
+  const lastIndex = data.length - 1
+  if (index < 0) {
+   setIndex(lastIndex)
+  }
+  if (index > lastIndex) {
+   setIndex(0)
+  }
+ }, [index, data])
 
-  useEffect(() => {
-    let slider = setInterval(() => {
-      setIndex(index + 1)
-    }, 5000)
-    return () => {
-      clearInterval(slider)
-    }
-  }, [index])
+ useEffect(() => {
+  let slider = setInterval(() => {
+   setIndex(index + 1)
+  }, 5000)
+  return () => {
+   clearInterval(slider)
+  }
+ }, [index])
 
-  const card = (
-    <ContactCard>
-      <Modal
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        show={show}
-        onHide={handleClose}
+ const card = (
+  <ContactCard>
+   <Modal
+    size="lg"
+    aria-labelledby="contained-modal-title-vcenter"
+    centered
+    show={show}
+    onHide={handleClose}
+   >
+    <Modal.Header closeButton>
+     <Modal.Title>Contact Us</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+     <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+       <Form.Control type="email" placeholder="Enter email" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+       <Form.Control type="text" placeholder="Name" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+       <Form.Control type="phone" placeholder="Phone" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+       <Form.Control
+        as="textarea"
+        rows={3}
+        placeholder="Type your message here"
+       />
+      </Form.Group>
+     </Form>
+    </Modal.Body>
+    <Modal.Footer>
+     <Button variant="secondary" onClick={handleClose}>
+      Close
+     </Button>
+     <Button variant="primary" onClick={handleClose}>
+      Submit
+     </Button>
+    </Modal.Footer>
+   </Modal>
+  </ContactCard>
+ )
+ return (
+  <>
+   <Wrapper>
+    <video
+     autoPlay
+     muted
+     playsInline
+     loop
+     controls="false"
+     id="background-video"
+    >
+     <source src={City_Video} type="video/mp4" />
+    </video>
+
+    <div className=" page1">
+     <div className="info1">
+      <div className="btn-groups">
+       <Button variant="contained" className="btn btn-hero">
+        <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
+         enter
+        </Link>
+       </Button>
+       <Button
+        variant="contained"
+        onClick={handleShow}
+        className="btn btn-hero"
+       >
+        contact us
+       </Button>
+       <Button variant="contained" onClick={openChat} className="btn btn-hero">
+        live chat
+       </Button>
+      </div>
+
+      <div
+       className={`${
+        isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
+       }`}
       >
-        <Modal.Header closeButton>
-          <Modal.Title>Contact Us</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="email" placeholder="Enter email" />
-            </Form.Group>
+       <div className="modal-container">
+        <button className="close-modal-btn" onClick={closeModal}>
+         <FaWindowClose
+          style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
+         ></FaWindowClose>
+        </button>
+        Contact
+       </div>
+      </div>
 
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Control type="text" placeholder="Name" />
-            </Form.Group>
+      <div
+       className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
+      >
+       <div className="modal-container">
+        <button className="close-chat-btn" onClick={closeChat}>
+         <FaWindowClose
+          style={{
+           position: 'relative',
+           zIndex: '999990',
+           top: '0',
+           right: '0',
+          }}
+         ></FaWindowClose>
+        </button>
+        <RainbowChat />
+       </div>
+      </div>
+     </div>
+    </div>
+    <div className="container page ">
+     <div className="info">
+      <h1 style={{ fontSize: '4rem' }}>
+       Lessin <span>Law</span>
+      </h1>
+      <div className="bio">
+       {data.map((info, infoIndex) => {
+        const { id, text } = info
+        let position = 'nextSlide'
+        if (infoIndex === index) {
+         position = 'activeSlide'
+        }
+        if (
+         infoIndex === index - 1 ||
+         (index === 0 && infoIndex === data.length - 1)
+        ) {
+         position = 'lastSlide'
+        }
 
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Control type="phone" placeholder="Phone" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Control
-                as="textarea"
-                rows={3}
-                placeholder="Type your message here"
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Submit
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </ContactCard>
-  )
-  return (
-    <>
-      <Wrapper>
-        <video autoPlay muted playsInline loop id="background-video">
-          <source
-            src={
-              City_Video
-            }
-            type="video/mp4"
-          />
-        </video>
-
-        <div className=" page1">
-          <div className="info1">
-            <div className="btn-groups">
-              <Button variant="contained" className="btn btn-hero">
-                <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
-                  enter
-                </Link>
-              </Button>
-              <Button
-                variant="contained"
-                onClick={handleShow}
-                className="btn btn-hero"
-              >
-                contact us
-              </Button>
-              <Button variant="contained" onClick={openChat} className="btn btn-hero">
-                live chat
-              </Button>
-            </div>
-
-            <div
-              className={`${isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
-                }`}
+        return (
+         <div className="articleDiv">
+          <article className={position} key={id}>
+           <div className="video-top"></div>
+           <i>
+            {' '}
+            <p
+             className="text"
+             style={{ color: '#fff', fontWeight: '650', lineHeight: '2' }}
             >
-              <div className="modal-container">
-                <button className="close-modal-btn" onClick={closeModal}>
-                  <FaWindowClose
-                    style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
-                  ></FaWindowClose>
-                </button>
-                Contact
-              </div>
-            </div>
+             {text}
+            </p>
+           </i>
+          </article>
+         </div>
+        )
+       })}
 
-            <div
-              className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
-            >
-              <div className="modal-container">
-                <button className="close-chat-btn" onClick={closeChat}>
-                  <FaWindowClose
-                    style={{
-                      position: 'relative',
-                      zIndex: '999990',
-                      top: '0',
-                      right: '0',
-                    }}
-                  ></FaWindowClose>
-                </button>
-                <RainbowChat />
-              </div>
-            </div>
-          </div>
+       <div className="btn-groups">
+        <Button
+         variant="contained"
+         onClick={handleShow}
+         className="btn btn-hero"
+        >
+         contact us
+        </Button>
+        <Button variant="contained" onClick={openChat} className="btn btn-hero">
+         live chat
+        </Button>
+       </div>
+
+       <div
+        className={`${
+         isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
+        }`}
+       >
+        <div className="modal-container">
+         <button className="close-modal-btn" onClick={closeModal}>
+          <FaWindowClose
+           style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
+          ></FaWindowClose>
+         </button>
+         Contact
         </div>
-        <div className="container page ">
-          <div className="info">
+       </div>
 
-            <h1 style={{ fontSize: '4rem' }}>
-              Lessin <span>Law</span>
-            </h1>
-            <div className="bio">
-              {data.map((info, infoIndex) => {
-                const { id, text } = info
-                let position = 'nextSlide'
-                if (infoIndex === index) {
-                  position = 'activeSlide'
-                }
-                if (
-                  infoIndex === index - 1 ||
-                  (index === 0 && infoIndex === data.length - 1)
-                ) {
-                  position = 'lastSlide'
-                }
-
-                return (
-                  <div className="articleDiv">
-
-                    <article className={position} key={id}>
-                      <div className='video-top'></div>
-                      <i>
-                        {' '}
-                        <p
-                          className="text"
-                          style={{ color: '#fff', fontWeight: '650', lineHeight: '2' }}
-                        >
-                          {text}
-                        </p>
-                      </i>
-                    </article>
-
-                  </div>
-                )
-              })}
-
-              <div className="btn-groups">
-                <Button
-                  variant="contained"
-                  onClick={handleShow}
-                  className="btn btn-hero"
-                >
-                  contact us
-                </Button>
-                <Button
-                  variant="contained"
-                  onClick={openChat}
-                  className="btn btn-hero"
-                >
-                  live chat
-                </Button>
-              </div>
-
-              <div
-                className={`${isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
-                  }`}
-              >
-                <div className="modal-container">
-                  <button className="close-modal-btn" onClick={closeModal}>
-                    <FaWindowClose
-                      style={{ position: 'relative', zIndex: '1', top: '0', right: '0' }}
-                    ></FaWindowClose>
-                  </button>
-                  Contact
-                </div>
-              </div>
-
-              <div
-                className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
-              >
-                <div className="modal-container">
-                  <button className="close-chat-btn" onClick={closeChat}>
-                    <FaWindowClose
-                      style={{
-                        position: 'relative',
-                        zIndex: '999990',
-                        top: '0',
-                        right: '0',
-                      }}
-                    ></FaWindowClose>
-                  </button>
-                  <RainbowChat />
-                </div>
-              </div>
-            </div>
-          </div>
-          <>{card}</>
+       <div
+        className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
+       >
+        <div className="modal-container">
+         <button className="close-chat-btn" onClick={closeChat}>
+          <FaWindowClose
+           style={{
+            position: 'relative',
+            zIndex: '999990',
+            top: '0',
+            right: '0',
+           }}
+          ></FaWindowClose>
+         </button>
+         <RainbowChat />
         </div>
+       </div>
+      </div>
+     </div>
+     <>{card}</>
+    </div>
 
+    {/* Practice Areas */}
+    <PracticeAreas>
+     <div className="transparentBackground"></div>
+     <div className="textHolder">
+      <div className="header">Practice Areas</div>
+      <div className="innerData">
+       Our attorneys are dedicated to helping people obtain compensation after
+       experiencing violations of their constitutionally protected rights. Many
+       of these cases are complex, involving multiple areas of constitutional
+       law. At the law firm of Jeffrey R. Lessin & Associates, P.C., we have
+       both the knowledge and the determination to pursue your case as far as
+       necessary to obtain justice.
+      </div>
+     </div>
+     <div className="card-holder">
+      <div variant="outlined" className="inner-card">
+       <div className="inner-card-transparent"></div>
+       <header className="product-header">
+        <h4 style={{ color: 'white' }}>Police Brutality</h4>
+       </header>
+       <div className="product-det">
+        You can do something about it. Police officers are not above the law.
+       </div>
+      </div>
 
+      <div variant="outlined" className="inner-card">
+       <div className="inner-card-transparent"></div>
+       <header className="product-header">
+        <h4 style={{ color: 'white' }}>Wrongful Detainment</h4>
+       </header>
+       <div className="product-det">
+        If you have been wrongly accused and detained by a mall security guard
+        or store manager, you have recourse.
+       </div>
+      </div>
 
+      <div variant="outlined" className="inner-card">
+       <div className="inner-card-transparent"></div>
+       <header className="product-header">
+        <h4 style={{ color: 'white' }}>Excessive Foce</h4>
+       </header>
+       <div className="product-det">
+        If a police officer struck you while you were handcuffed, you have
+        probably experienced excessive force, a term that applies whenever
+        police use levels of force greater than is needed to control the
+        situation.
+       </div>
+      </div>
 
+      <div variant="outlined" className="inner-card">
+       <div className="inner-card-transparent"></div>
+       <header className="product-header">
+        <h4 style={{ color: 'white' }}>False Imprisonment</h4>
+       </header>
+       <div className="product-det">
+        People arrested and put in jail for crimes they did not commit may be
+        able to seek compensation.
+       </div>
+      </div>
 
-        {/* Practice Areas */}
-        <PracticeAreas>
-          <div className="transparentBackground"></div>
-          <div className="textHolder">
-            <div className="header">Practice Areas</div>
-            <div className="innerData">
-              Our attorneys are dedicated to helping people obtain compensation after
-              experiencing violations of their constitutionally protected rights. Many
-              of these cases are complex, involving multiple areas of constitutional
-              law. At the law firm of Jeffrey R. Lessin & Associates, P.C., we have both
-              the knowledge and the determination to pursue your case as far as
-              necessary to obtain justice.
-            </div>
-          </div>
-          <div className='card-holder'>
+      <div variant="outlined" className="inner-card">
+       <div className="inner-card-transparent"></div>
+       <header className="product-header">
+        <h4 style={{ color: 'white' }}>False Arrest</h4>
+       </header>
+       <div className="product-det">
+        Police misconduct can involve either failing to act or taking wrongful
+        action.
+       </div>
+      </div>
 
+      <div variant="outlined" className="inner-card">
+       <div className="inner-card-transparent"></div>
+       <header className="product-header">
+        <h4 style={{ color: 'white' }}>Illegal Seach and Seazures</h4>
+       </header>
+       <div className="product-det">
+        These cases often arise when police arrest an innocent person.
+       </div>
+      </div>
 
+      <div variant="outlined" className="inner-card">
+       <div className="inner-card-transparent"></div>
+       <header className="product-header">
+        <h4 style={{ color: 'white' }}>Racial Profiling</h4>
+       </header>
+       <div className="product-det">
+        {' '}
+        If police entered your house without a warrant or searched your car
+        without probable cause, you may be able to file a claim for illegal
+        search and seizure against the police department.
+       </div>
+      </div>
 
-            <div variant="outlined" className='inner-card'>
-              <div className='inner-card-transparent'></div>
-              <header className="product-header">
-                <h4 style={{ color: 'white' }}>Police Brutality</h4>
-              </header>
-              <div className="product-det">
-                You can do something about it. Police officers are not above the law.
-              </div>
-            </div>
+      <div variant="outlined" className="inner-card">
+       <div className="inner-card-transparent"></div>
+       <header className="product-header">
+        <h4 style={{ color: 'white' }}>Prison Guard Misconduct</h4>
+       </header>
+       <div className="product-det">
+        Drivers stopped and searched without probable cause may be victims of
+        racial or gender profiling.
+       </div>
+      </div>
 
-
-            <div variant="outlined" className='inner-card'>
-              <div className='inner-card-transparent'></div>
-              <header className="product-header">
-                <h4 style={{ color: 'white' }}>Wrongful Detainment</h4>
-              </header>
-              <div className="product-det">
-                If you have been wrongly accused and detained by a mall security guard
-                or store manager, you have recourse.
-              </div>
-            </div>
-
-
-            <div variant="outlined" className='inner-card'>
-              <div className='inner-card-transparent'></div>
-              <header className="product-header">
-                <h4 style={{ color: 'white' }}>Excessive Foce</h4>
-              </header>
-              <div className="product-det">
-                If a police officer struck you while you were handcuffed, you have
-                probably experienced excessive force, a term that applies whenever
-                police use levels of force greater than is needed to control the
-                situation.
-              </div>
-            </div>
-
-
-            <div variant="outlined" className='inner-card'>
-              <div className='inner-card-transparent'></div>
-              <header className="product-header">
-                <h4 style={{ color: 'white' }}>False Imprisonment</h4>
-              </header>
-              <div className="product-det">
-                People arrested and put in jail for crimes they did not commit may be
-                able to seek compensation.
-              </div>
-            </div>
-
-
-            <div variant="outlined" className='inner-card'>
-              <div className='inner-card-transparent'></div>
-              <header className="product-header">
-                <h4 style={{ color: 'white' }}>False Arrest</h4>
-              </header>
-              <div className="product-det">
-                Police misconduct can involve either failing to act or taking wrongful
-                action.
-              </div>
-            </div>
-
-
-            <div variant="outlined" className='inner-card'>
-              <div className='inner-card-transparent'></div>
-              <header className="product-header">
-                <h4 style={{ color: 'white' }}>Illegal Seach and Seazures</h4>
-              </header>
-              <div className="product-det">
-                These cases often arise when police arrest an innocent person.
-              </div>
-            </div>
-
-
-            <div variant="outlined" className='inner-card'>
-              <div className='inner-card-transparent'></div>
-              <header className="product-header">
-                <h4 style={{ color: 'white' }}>Racial Profiling</h4>
-              </header>
-              <div className="product-det">
-                {' '}
-                If police entered your house without a warrant or searched your car
-                without probable cause, you may be able to file a claim for illegal
-                search and seizure against the police department.
-              </div>
-            </div>
-
-
-            <div variant="outlined" className='inner-card'>
-              <div className='inner-card-transparent'></div>
-              <header className="product-header">
-                <h4 style={{ color: 'white' }}>Prison Guard Misconduct</h4>
-              </header>
-              <div className="product-det">
-                Drivers stopped and searched without probable cause may be victims of
-                racial or gender profiling.
-              </div>
-            </div>
-
-
-            <div variant="outlined" className='inner-card'>
-              <div className='inner-card-transparent'></div>
-              <header className="product-header">
-                <h4 style={{ color: 'white' }}>Institutional Assault</h4>
-              </header>
-              <div className="product-det">
-                This can involve prison guards punishing inmates by taking away their
-                Constitutional rights. Denying an inmate the right to practice his or
-                her religion or visit the prison library may be examples of this type
-                of misconduct.
-              </div>
-            </div>
-
-
-
-
-          </div>
-        </PracticeAreas>
-
-
-
-      </Wrapper>
-    </>
-  )
+      <div variant="outlined" className="inner-card">
+       <div className="inner-card-transparent"></div>
+       <header className="product-header">
+        <h4 style={{ color: 'white' }}>Institutional Assault</h4>
+       </header>
+       <div className="product-det">
+        This can involve prison guards punishing inmates by taking away their
+        Constitutional rights. Denying an inmate the right to practice his or
+        her religion or visit the prison library may be examples of this type of
+        misconduct.
+       </div>
+      </div>
+     </div>
+    </PracticeAreas>
+   </Wrapper>
+  </>
+ )
 }
 
-
 const PracticeAreas = styled.main`
-  height: 100%;
+ height: 100%;
+ width: 100%;
+ margin-top: 50px;
+ margin-bottom: 50px;
+
+ .card-holder {
   width: 100%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 20%;
+  display: grid;
+  place-content: center;
+ }
 
+ .inner-card {
+  width: 300px;
+  height: 300px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+ }
+ .inner-card-transparent {
+  width: 300px;
+  height: 300px;
+  background-color: rgb(20, 39, 79);
+  opacity: 0.6;
+  position: absolute;
+ }
 
-  .card-holder {
-    width: 100%;
-    margin-top: 20%;
-    display: grid;
-    place-content: center;
-  }
-
-  .inner-card{
-    width: 300px;
-    height: 300px;
-    margin-top: 10%;
-    margin-bottom: 10%;
-  }
-  .inner-card-transparent{
-    width: 300px;
-    height: 300px;
-    background-color: rgb(20, 39, 79);
-    opacity: 0.6;
-    position: absolute;
-  }
-
-  .transparentBackground {
+ .transparentBackground {
   width: 100%;
   height: 75vh;
   background-color: black;
@@ -543,8 +513,6 @@ const PracticeAreas = styled.main`
   text-align: center;
  }
 
-
-
  @media only screen and (max-width: 600px) {
   .transparentBackground {
    opacity: 0.6;
@@ -552,12 +520,10 @@ const PracticeAreas = styled.main`
   .textHolder2 {
    display: grid;
   }
-}
-`;
-
+ }
+`
 
 const Wrapper = styled.main`
-
  #background-video {
   position: fixed;
   top: 0;
@@ -568,7 +534,7 @@ const Wrapper = styled.main`
   z-index: -1;
  }
 
- .video-top{
+ .video-top {
   width: 100%;
   height: 100%;
   background-color: black;
