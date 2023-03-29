@@ -100,7 +100,7 @@ const Landing = ({ videoSrc }) => {
   return (
     <>
       <Wrapper>
-        <video playsInline autoPlay muted loop id="background-video">
+        <video autoPlay muted playsInline loop id="background-video">
           <source
             src={
               City_Video
