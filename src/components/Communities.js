@@ -6,8 +6,8 @@ import Contact from './Contact'
 import Article from './Article'
 import Filler from './Filler'
 import Section from './Section'
-import Footer from './Footer'
-import Header from './Header'
+import Footer from '../pages/Footer'
+import Header from '../pages/Header'
 
 const Communities = () => {
  const { openModal } = useModalContext()

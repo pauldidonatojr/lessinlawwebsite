@@ -6,7 +6,7 @@ import Contact from './Contact'
 import Article from './Article'
 import Filler from './Filler'
 import Section from './Section'
-import Header from './Header'
+import Header from '../pages/Header'
 
 const PracticeAreas = () => {
  const { openModal } = useModalContext()

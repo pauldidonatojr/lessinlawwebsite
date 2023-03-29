@@ -118,24 +118,8 @@ const Footer = () => {
         County
        </p>{' '}
       </div>
-
-     {/* <div className="social-media">
-          <InstagramIcon style={{ margin: '0.5rem' }} />
-          <FacebookIcon style={{ margin: '0.5rem' }} />
-          <TwitterIcon style={{ margin: '0.5rem' }} />
-          <LinkedInIcon style={{ margin: '0.5rem' }} />
-          <YouTubeIcon style={{ margin: '0.5rem' }} />
-        </div> */}
+      
     </div>
-
-    {/* <div className="mobSocialLoc">
-     <LocationOnIcon onClick={handleToggle} style={{ margin: '0.5rem' }} />
-     <InstagramIcon style={{ margin: '0.5rem' }} />
-     <FacebookIcon style={{ margin: '0.5rem' }} />
-     <TwitterIcon style={{ margin: '0.5rem' }} />
-     <LinkedInIcon style={{ margin: '0.5rem' }} />
-     <YouTubeIcon style={{ margin: '0.5rem' }} />
-    </div> */}
 
     <Backdrop
      sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -144,7 +128,6 @@ const Footer = () => {
     >
      <Card variant="outlined">{card}</Card>
     </Backdrop>
-    {/* Company Details */}
     <Backdrop
      sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
      open={cOpen}

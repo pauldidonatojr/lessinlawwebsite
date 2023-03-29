@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Fab, AddIcon, Grid, Itemm, Box, Text } from '@mui/material'
 import Paper from '@mui/material/Paper'
-import { styled } from '@mui/material/styles'
-import styles from 'styled-components'
+// import { styled } from '@mui/material/styles'
+import styled from 'styled-components'
 import { padding } from '@mui/system'
 import { Twitter } from '@mui/icons-material'
 import CallIcon from '@mui/icons-material/Call'
@@ -11,6 +11,16 @@ import EmailIcon from '@mui/icons-material/Email'
 import { links } from '../utils/constants'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+
+
+const theme = createTheme({
+   typography: {
+     // Tell MUI what the font-size on the html element is.
+     htmlFontSize: 10,
+   },
+ });
 
 const Header = () => {
  const [anchorEl, setAnchorEl] = React.useState(null)
@@ -26,9 +36,11 @@ const Header = () => {
    <div className="dekstop">
     <div className="top" style={{backgroundColor: 'whitesmoke'}}>
      <div className="nameHolder">
-      <Link to="/">
+      <Link to="/" style={{textDecoration: 'none'}}>
        {' '}
-       <div className="companyName"> Jeffrey R. Lessin & Associates, P.C. </div>
+       <ThemeProvider theme={theme}>
+      <Typography className="companyName"> Jeffrey R. Lessin & Associates, P.C.</Typography>
+    </ThemeProvider>
       </Link>
       <div className="companyDetails">
        {' '}
@@ -110,7 +122,6 @@ const Header = () => {
       </ul>
      </div>
 
-     {/* Drawer for Mobile */}
      <div className="menuMobile">
       <Button
        id="basic-button"
@@ -173,14 +184,13 @@ const Header = () => {
       </Menu>
      </div>
 
-     {/*  */}
     </div>
    </div>
   </Wrapper>
  )
 }
 
-const Wrapper = styles.main`
+const Wrapper = styled.main`
  height: 200px;
  width: 100%;
 
@@ -219,7 +229,7 @@ const Wrapper = styles.main`
 .companyName{
     display: grid;
     place-content: center;
-    font-size: 20px;
+    font-size: 30px;
     font-family: sans;
     line-height: 150%;
     text-align: center;
@@ -337,10 +347,11 @@ const Wrapper = styles.main`
 
      }
      .companyName{
-        font-size: 20px;
+        font-size: 30px;
         height: 100%;
         place-content: center;
         display: grid;
+        text-decoration: none;
      }
      .companyDetails{
         display: none;

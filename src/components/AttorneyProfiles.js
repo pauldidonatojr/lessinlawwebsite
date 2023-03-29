@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React, { useState, useEffect } from 'react'
-import Header from './Header'
-import Footer from './Footer'
+import Header from '../pages/Header'
+import Footer from '../pages/Footer'
 import { Button, Fab, AddIcon, Grid, Itemm, Box, Text, Paper } from '@mui/material'
 import Carousel from 'react-bootstrap/Carousel';
 import CallIcon from '@mui/icons-material/Call';

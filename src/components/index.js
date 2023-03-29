@@ -7,7 +7,7 @@ import Navlinks from './Navlinks.js'
 import Sidebar from './Sidebar.js'
 import SearchBar from './SearchBar.js'
 import Profiles from './Profiles.js'
-import Footer from './Footer.js'
+import Footer from '../pages/Footer.js'
 import FirmOverview from './FirmOverview'
 import PracticeAreas from './PracticeAreas'
 import AttorneyProfiles from './AttorneyProfiles'
@@ -25,7 +25,7 @@ import SearchContainer from './SearchContainer'
 import StatsContainer from './StatsContainer'
 import AreaChart from './AreaChart'
 import RainbowChat from './RainbowChat'
-import Header from './Header'
+import Header from '../pages/Header'
 export {
  
  RainbowChat,

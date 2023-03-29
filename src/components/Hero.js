@@ -10,8 +10,8 @@ import {
  Paper,
 } from '@mui/material'
 import styled from 'styled-components'
-import Footer from './Footer'
-import Header from './Header'
+import Footer from '../pages/Footer'
+import Header from '../pages/Header'
 import Carousel from 'react-bootstrap/Carousel'
 import Typography from '@mui/joy/Typography'
 import Backdrop from '@mui/material/Backdrop'
@@ -116,7 +116,7 @@ const Hero = () => {
 
  return (
   <div style={{ width: '100%', height: '100%' }}>
-   <>{card}</>
+   {/* <>{card}</>
   
    <Wrapper>
     <section class="backg" style={{ backgroundColor: 'lightblue' }}>
@@ -168,44 +168,8 @@ const Hero = () => {
      </div>
     </section>
 
-    {/* <section className="text2" style={{ backgroundColor: 'hotpink' }}>
-     <div className="t2-holder">
-      <h4 style={{ padding: '10px', paddingTop: '20px', color: 'black' }}>
-       Our Civil Rights Practice
-      </h4>
-      <div className="t2-para" style={{ color: 'black' }}>
-       Our goal is to ensure that our clients receive the maximum compensation
-       for their injuries, and that their rights are protected at every step of
-       the way. At our law firm, we understand the impact that personal injuries
-       can have on an individual's life, and we are here to help our clients
-       navigate the legal system with confidence. Our commitment to our clients
-       is evident in our attention to detail, and our focus on achieving the
-       best possible outcome in every case. Contact us today to schedule a
-       consultation and learn more about how our team can help you with your
-       personal injury claim.
-       <br />
-       <br />
-       Our law firm brings claims forward under the Fourth, Fifth, Eighth and
-       Fourteenth amendments to the U.S. Constitution. The protections offered
-       by these amendments and numerous federal and state statutes give our
-       clients grounds for action. Our attorneys have been successful in many
-       cases, obtaining settlements and verdicts against city, county and state
-       law enforcement organizations.
-       <br />
-       <br />
-       If you or a loved one has experienced a violation of your civil rights in
-       Pennsylvania, contact our Philadelphia civil rights law firm to schedule
-       a no-cost consultation about your situation.
-       <br />
-       <br />
-       <br />
-       You pay no legal fees unless we win. Conveniently located across from
-       City Hall in downtown Philadelphia.
-      </div>
-     </div>
-    </section> */}
    </Wrapper>
-   <Footer />
+   <Footer /> */}
   </div>
  )
 }

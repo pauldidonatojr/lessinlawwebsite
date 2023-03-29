@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import React, { useState, useEffect } from 'react'
 import { FaWindowClose } from 'react-icons/fa'
 import { useModalContext } from '../context/modal_context'
-import Footer from './Footer'
-import Header from './Header'
+import Footer from '../pages/Footer'
+import Header from '../pages/Header'
 import { Card } from '@material-ui/core'
 import Box from '@mui/material/Box';
 
