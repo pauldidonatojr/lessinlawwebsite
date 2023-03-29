@@ -14,6 +14,11 @@ import { Fade } from 'react-slideshow-image'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import { Card } from '@mui/material';
+import City_Video from '../assets/city.mp4';
+
+
+
+
 const Landing = ({ videoSrc }) => {
   const [data, setData] = useState(heroData)
   const [index, setIndex] = useState(0)
@@ -98,7 +103,7 @@ const Landing = ({ videoSrc }) => {
         <video autoPlay muted loop id="background-video">
           <source
             src={
-              'https://res.cloudinary.com/elpawl-llc/video/upload/v1679873411/pexels-kelly-lacy-6606214_1_gcflle.mp4'
+              City_Video
             }
             type="video/mp4"
           />
