@@ -105,7 +105,10 @@ const Landing = ({ videoSrc }) => {
      controls="false"
      id="background-video"
     >
-     <source src={City_Video} type="video/mp4" />
+     <source
+      src="https://res.cloudinary.com/elpawl-llc/video/upload/v1679865257/production_ID_4686761_wgtnc3.mp4"
+      type="video/mp4"
+     />
     </video>
 
     <div className=" page1">
@@ -164,11 +167,11 @@ const Landing = ({ videoSrc }) => {
     </div>
     <div className="container page ">
      <div className="info">
-      <h1 style={{ fontSize: '4rem' }}>
+      <h1 style={{ fontSize: '5.75rem', marginBottom: '1rem' }}>
        Lessin <span>Law</span>
       </h1>
       <div className="bio">
-       {data.map((info, infoIndex) => {
+       {/* {data.map((info, infoIndex) => {
         const { id, text } = info
         let position = 'nextSlide'
         if (infoIndex === index) {
@@ -187,17 +190,12 @@ const Landing = ({ videoSrc }) => {
            <div className="video-top"></div>
            <i>
             {' '}
-            <p
-             className="text"
-             style={{ color: '#fff', fontWeight: '650', lineHeight: '2' }}
-            >
-             {text}
-            </p>
+            <p className="text">{text}</p>
            </i>
           </article>
          </div>
         )
-       })}
+       })} */}
 
        <div className="btn-groups">
         <Button
@@ -255,136 +253,135 @@ const Landing = ({ videoSrc }) => {
      </div>
      <>{card}</>
     </div>
-
-    {/* Practice Areas */}
-    <PracticeAreas>
-     <div className="transparentBackground"></div>
-     <div className="textHolder">
-      <div className="header">Practice Areas</div>
-      <div className="innerData">
-       Our attorneys are dedicated to helping people obtain compensation after
-       experiencing violations of their constitutionally protected rights. Many
-       of these cases are complex, involving multiple areas of constitutional
-       law. At the law firm of Jeffrey R. Lessin & Associates, P.C., we have
-       both the knowledge and the determination to pursue your case as far as
-       necessary to obtain justice.
-      </div>
-     </div>
-     <div className="card-holder">
-      <div variant="outlined" className="inner-card">
-       <div className="inner-card-transparent"></div>
-       <header className="product-header">
-        <h4 style={{ color: 'white' }}>Police Brutality</h4>
-       </header>
-       <div className="product-det">
-        You can do something about it. Police officers are not above the law.
-       </div>
-      </div>
-
-      <div variant="outlined" className="inner-card">
-       <div className="inner-card-transparent"></div>
-       <header className="product-header">
-        <h4 style={{ color: 'white' }}>Wrongful Detainment</h4>
-       </header>
-       <div className="product-det">
-        If you have been wrongly accused and detained by a mall security guard
-        or store manager, you have recourse.
-       </div>
-      </div>
-
-      <div variant="outlined" className="inner-card">
-       <div className="inner-card-transparent"></div>
-       <header className="product-header">
-        <h4 style={{ color: 'white' }}>Excessive Foce</h4>
-       </header>
-       <div className="product-det">
-        If a police officer struck you while you were handcuffed, you have
-        probably experienced excessive force, a term that applies whenever
-        police use levels of force greater than is needed to control the
-        situation.
-       </div>
-      </div>
-
-      <div variant="outlined" className="inner-card">
-       <div className="inner-card-transparent"></div>
-       <header className="product-header">
-        <h4 style={{ color: 'white' }}>False Imprisonment</h4>
-       </header>
-       <div className="product-det">
-        People arrested and put in jail for crimes they did not commit may be
-        able to seek compensation.
-       </div>
-      </div>
-
-      <div variant="outlined" className="inner-card">
-       <div className="inner-card-transparent"></div>
-       <header className="product-header">
-        <h4 style={{ color: 'white' }}>False Arrest</h4>
-       </header>
-       <div className="product-det">
-        Police misconduct can involve either failing to act or taking wrongful
-        action.
-       </div>
-      </div>
-
-      <div variant="outlined" className="inner-card">
-       <div className="inner-card-transparent"></div>
-       <header className="product-header">
-        <h4 style={{ color: 'white' }}>Illegal Seach and Seazures</h4>
-       </header>
-       <div className="product-det">
-        These cases often arise when police arrest an innocent person.
-       </div>
-      </div>
-
-      <div variant="outlined" className="inner-card">
-       <div className="inner-card-transparent"></div>
-       <header className="product-header">
-        <h4 style={{ color: 'white' }}>Racial Profiling</h4>
-       </header>
-       <div className="product-det">
-        {' '}
-        If police entered your house without a warrant or searched your car
-        without probable cause, you may be able to file a claim for illegal
-        search and seizure against the police department.
-       </div>
-      </div>
-
-      <div variant="outlined" className="inner-card">
-       <div className="inner-card-transparent"></div>
-       <header className="product-header">
-        <h4 style={{ color: 'white' }}>Prison Guard Misconduct</h4>
-       </header>
-       <div className="product-det">
-        Drivers stopped and searched without probable cause may be victims of
-        racial or gender profiling.
-       </div>
-      </div>
-
-      <div variant="outlined" className="inner-card">
-       <div className="inner-card-transparent"></div>
-       <header className="product-header">
-        <h4 style={{ color: 'white' }}>Institutional Assault</h4>
-       </header>
-       <div className="product-det">
-        This can involve prison guards punishing inmates by taking away their
-        Constitutional rights. Denying an inmate the right to practice his or
-        her religion or visit the prison library may be examples of this type of
-        misconduct.
-       </div>
-      </div>
-     </div>
-    </PracticeAreas>
    </Wrapper>
+
+   <PracticeAreas>
+    <div className="transparentBackground"></div>
+    <div className="textHolder">
+     <div className="header">Practice Areas</div>
+     <div className="innerData">
+      Our attorneys are dedicated to helping people obtain compensation after
+      experiencing violations of their constitutionally protected rights. Many
+      of these cases are complex, involving multiple areas of constitutional
+      law. At the law firm of Jeffrey R. Lessin & Associates, P.C., we have both
+      the knowledge and the determination to pursue your case as far as
+      necessary to obtain justice.
+     </div>
+    </div>
+    <div className="card-holder">
+     <div variant="outlined" className="inner-card">
+      <div className="inner-card-transparent"></div>
+      <header className="product-header">
+       <h4 style={{ color: 'white' }}>Police Brutality</h4>
+      </header>
+      <div className="product-det">
+       You can do something about it. Police officers are not above the law.
+      </div>
+     </div>
+
+     <div variant="outlined" className="inner-card">
+      <div className="inner-card-transparent"></div>
+      <header className="product-header">
+       <h4 style={{ color: 'white' }}>Wrongful Detainment</h4>
+      </header>
+      <div className="product-det">
+       If you have been wrongly accused and detained by a mall security guard or
+       store manager, you have recourse.
+      </div>
+     </div>
+
+     <div variant="outlined" className="inner-card">
+      <div className="inner-card-transparent"></div>
+      <header className="product-header">
+       <h4 style={{ color: 'white' }}>Excessive Foce</h4>
+      </header>
+      <div className="product-det">
+       If a police officer struck you while you were handcuffed, you have
+       probably experienced excessive force, a term that applies whenever police
+       use levels of force greater than is needed to control the situation.
+      </div>
+     </div>
+
+     <div variant="outlined" className="inner-card">
+      <div className="inner-card-transparent"></div>
+      <header className="product-header">
+       <h4 style={{ color: 'white' }}>False Imprisonment</h4>
+      </header>
+      <div className="product-det">
+       People arrested and put in jail for crimes they did not commit may be
+       able to seek compensation.
+      </div>
+     </div>
+
+     <div variant="outlined" className="inner-card">
+      <div className="inner-card-transparent"></div>
+      <header className="product-header">
+       <h4 style={{ color: 'white' }}>False Arrest</h4>
+      </header>
+      <div className="product-det">
+       Police misconduct can involve either failing to act or taking wrongful
+       action.
+      </div>
+     </div>
+
+     <div variant="outlined" className="inner-card">
+      <div className="inner-card-transparent"></div>
+      <header className="product-header">
+       <h4 style={{ color: 'white' }}>Illegal Seach and Seazures</h4>
+      </header>
+      <div className="product-det">
+       These cases often arise when police arrest an innocent person.
+      </div>
+     </div>
+
+     <div variant="outlined" className="inner-card">
+      <div className="inner-card-transparent"></div>
+      <header className="product-header">
+       <h4 style={{ color: 'white' }}>Racial Profiling</h4>
+      </header>
+      <div className="product-det">
+       {' '}
+       If police entered your house without a warrant or searched your car
+       without probable cause, you may be able to file a claim for illegal
+       search and seizure against the police department.
+      </div>
+     </div>
+
+     <div variant="outlined" className="inner-card">
+      <div className="inner-card-transparent"></div>
+      <header className="product-header">
+       <h4 style={{ color: 'white' }}>Prison Guard Misconduct</h4>
+      </header>
+      <div className="product-det">
+       Drivers stopped and searched without probable cause may be victims of
+       racial or gender profiling.
+      </div>
+     </div>
+
+     <div variant="outlined" className="inner-card">
+      <div className="inner-card-transparent"></div>
+      <header className="product-header">
+       <h4 style={{ color: 'white' }}>Institutional Assault</h4>
+      </header>
+      <div className="product-det">
+       This can involve prison guards punishing inmates by taking away their
+       Constitutional rights. Denying an inmate the right to practice his or her
+       religion or visit the prison library may be examples of this type of
+       misconduct.
+      </div>
+     </div>
+    </div>
+   </PracticeAreas>
   </>
  )
 }
 
 const PracticeAreas = styled.main`
- height: 100%;
+
  width: 100%;
  margin-top: 50px;
- margin-bottom: 50px;
+
+ background-color: whitesmoke;
 
  .card-holder {
   width: 100%;
@@ -411,7 +408,7 @@ const PracticeAreas = styled.main`
   width: 100%;
   height: 75vh;
   background-color: black;
-  opacity: 0.7;
+  opacity: 0.3;
   position: absolute;
  }
 
@@ -539,14 +536,23 @@ const Wrapper = styled.main`
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  opacity: 0.6;
  }
+ .text {
+  line-height: 2;
+  color: black; /* Set font color to white */
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 4.5); /* Add text shadow for contrast */
+  font-weight: 700;
+  font-size: 1.4rem;
 
+ }
  .video-top {
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: #000000;
   position: absolute;
-  opacity: 0.3;
+  opacity: 0.5;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
  }
 
  display: grid;
@@ -733,7 +739,7 @@ const Wrapper = styled.main`
 
  @media only screen and (max-width: 600px) {
   .page {
-   min-height: calc(70vh - var(--nav-height));
+   min-height: calc(85vh - var(--nav-height));
    border-radius: 4%;
    width: 100%;
    display: flex;
@@ -754,20 +760,21 @@ const Wrapper = styled.main`
    border-radius: 2%;
    transition: var(--transition);
 
-   height: 505px;
+   height: 540px;
    width: 300px;
-   margin-bottom: 11rem;
-   margin-top: 1rem;
+   margin-bottom: 4rem;
+   margin-top: 8.5rem;
    h1 {
-    margin-top: 0.75rem;
+    margin-bottom: 2.75rem;
    }
+
   }
   .info1 {
    border-radius: 10%;
    background-color: whitesmoke;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 550px;
+   height: 450px;
    width: 300px;
    margin-left: 2rem;
    margin-right: 0.5rem;
@@ -779,11 +786,11 @@ const Wrapper = styled.main`
   .bio {
    transition: var(--transition);
    font-size: 0.85rem;
-   height: 535px;
-   width: 265px;
+   height: 250px;
+   width: 295px;
    max-width: 800px;
    font-weight: 500px;
-   margin: 0 auto;
+
    text-align: center;
    position: relative;
    display: grid;
@@ -792,14 +799,14 @@ const Wrapper = styled.main`
   }
   .btn-groups {
    display: grid;
-   grid-gap: 1rem;
+   grid-gap: 2rem;
    text-align: center;
-   height: 10px;
-   margin-top: 26.5rem;
-   margin-bottom: 14rem;
+   height: 15px;
+   margin-top: 5.5rem;
+   margin-bottom: 2rem;
   }
   .btn-hero {
-   font-size: 1.25rem;
+   font-size: 1.75rem;
   }
  }
  @media only screen and (min-width: 600px) {
@@ -869,7 +876,7 @@ const Wrapper = styled.main`
    grid-gap: 1rem;
    text-align: center;
    height: 10px;
-   margin-top: 18rem;
+   margin-top: 22rem;
    margin-bottom: 12rem;
   }
   .btn-hero {

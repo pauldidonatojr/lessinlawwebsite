@@ -96,7 +96,7 @@ const Footer = () => {
     <div className="infoHolder">
      <div className="company-details" onClick={cHandleToggle}>
       <h4> Jeffrey R. Lessin & Associates, P.C. </h4>
-      <h6 className="companyTagline" style={{ color: 'black' }}>
+      <h6 className="companyTagline" style={{ color: 'whitesmoke' }}>
        {' '}
        Pepresents people living in communities throughout Pennsylvania{' '}
       </h6>
@@ -108,7 +108,7 @@ const Footer = () => {
 
       <h5 style={{ color: 'grey' }}>
        &copy; {new Date().getFullYear()}
-       <span style={{ color: 'black' }}> Lessin Law</span>
+       <span style={{ color: 'whitesmoke' }}> Lessin Law</span>
       </h5>
       <div className="countriesHolder">
        <p style={{ fontSize: '0.85rem' }}>
@@ -118,7 +118,7 @@ const Footer = () => {
         County
        </p>{' '}
       </div>
-      
+
     </div>
 
     <Backdrop
@@ -152,7 +152,7 @@ const CardWrapper = styled.section`
 `
 
 const Wrapper = styled.footer`
-background-color: whitesmoke;
+background-color: black;
  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
  height: 200px;
  width: 100%;
@@ -172,7 +172,7 @@ background-color: whitesmoke;
  }
 
  .company-details {
-  color: black;
+  color: whitesmoke;
   font-style: sans;
   margin: 2.5rem;
   display: grid;
@@ -193,7 +193,7 @@ background-color: whitesmoke;
  }
 
  .location-details {
-  color: black;
+  color: wwhitehite;
   margin: 2.5rem;
   display: flex;
   width: 30%;

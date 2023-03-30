@@ -33,14 +33,20 @@ const Header = () => {
  }
  return (
   <Wrapper>
+   <div style={{ backgroundColor: 'black', width: '100%', height: '70px', display: 'grid', justifyContent: 'center', alignItems: 'center' }}>
+    <p style={{color: 'whitesmoke', fontSize: '2.2rem'}}> (215) 599-1400</p>{' '}
+   </div>
    <div className="dekstop">
-    <div className="top" style={{backgroundColor: 'whitesmoke'}}>
+    <div className="top" style={{ backgroundColor: 'whitesmoke' }}>
      <div className="nameHolder">
-      <Link to="/" style={{textDecoration: 'none'}}>
+      <Link to="/" style={{ textDecoration: 'none' }}>
        {' '}
        <ThemeProvider theme={theme}>
-      <Typography className="companyName"> Jeffrey R. Lessin & Associates, P.C.</Typography>
-    </ThemeProvider>
+        <Typography className="companyName">
+         {' '}
+         Jeffrey R. Lessin & Associates, P.C.
+        </Typography>
+       </ThemeProvider>
       </Link>
       <div className="companyDetails">
        {' '}
@@ -183,7 +189,6 @@ const Header = () => {
        </Link>
       </Menu>
      </div>
-
     </div>
    </div>
   </Wrapper>
