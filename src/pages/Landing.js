@@ -28,15 +28,15 @@ const Landing = ({ videoSrc }) => {
  const handleClose = () => setShow(false)
  const handleShow = () => setShow(true)
  // const [showChat, setShowChat] = useState(false)
-  const [isChatBoxOpen, setIsChatBoxOpen] = useState(false)
+ const [isChatBoxOpen, setIsChatBoxOpen] = useState(false)
 
-  const handleChatBoxToggle = () => {
-   setIsChatBoxOpen((prevState) => !prevState)
-  }
+ const handleChatBoxToggle = () => {
+  setIsChatBoxOpen((prevState) => !prevState)
+ }
 
-  const handleChatBoxClose = () => {
-   setIsChatBoxOpen(false)
-  }
+ const handleChatBoxClose = () => {
+  setIsChatBoxOpen(false)
+ }
  useEffect(() => {
   const lastIndex = data.length - 1
   if (index < 0) {
@@ -105,9 +105,8 @@ const Landing = ({ videoSrc }) => {
  return (
   <>
    <Wrapper>
-
     <video
-  
+     autoPlay
      muted
      playsInline
      loop
@@ -403,7 +402,6 @@ const PracticeAreas = styled.main`
  width: 100%;
  margin-top: 50px;
 
-
  .card-holder {
   width: 100%;
   margin-top: 20%;
@@ -549,11 +547,6 @@ const PracticeAreas = styled.main`
 `
 
 const Wrapper = styled.main`
-
-
-
-
-
  #background-video {
   position: fixed;
   top: 0;
