@@ -11,16 +11,54 @@ import EmailIcon from '@mui/icons-material/Email'
 import { links } from '../utils/constants'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+const TopHeader = styled.div`
+ background-color: black;
+ width: 100%;
+ height: 35px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: fixed;
+ top: 0;
+ z-index: 9999; /* Adjust this value as needed */
+ @media only screen and (min-width: 768px) {
+  justify-content: space-around;
+  height: 50px;
+ }
+`
 
+const TextP = styled.p`
+ color: whitesmoke;
+ font-size: 1.85rem;
+ margin: 0;
+ text-transform: capitalize;
+ @media only screen and (min-width: 768px) {
+  display: block;
+  font-size: 2.55rem;
+
+ }
+`
+
+const TextZ = styled.p`
+ color: whitesmoke;
+ font-size: 1.85rem;
+ margin: 0;
+ display: none;
+ text-transform: capitalize;
+ @media only screen and (min-width: 768px) {
+  display: block;
+  font-size: 2.55rem;
+ }
+`
 
 const theme = createTheme({
-   typography: {
-     // Tell MUI what the font-size on the html element is.
-     htmlFontSize: 10,
-   },
- });
+ typography: {
+  // Tell MUI what the font-size on the html element is.
+  htmlFontSize: 10,
+ },
+})
 
 const Header = () => {
  const [anchorEl, setAnchorEl] = React.useState(null)
@@ -31,14 +69,30 @@ const Header = () => {
  const handleClose = () => {
   setAnchorEl(null)
  }
+
+ const [contentIndex, setContentIndex] = useState(0)
+
+ const content = [
+  ['Click here to chat', '215 594 1400'],
+  ['We are here to help!', 'Call us now'],
+  ['Live support available', 'Contact us'],
+ ]
+
+ useEffect(() => {
+  const interval = setInterval(() => {
+   setContentIndex((prevIndex) => (prevIndex + 1) % content.length)
+  }, 4000)
+  return () => clearInterval(interval)
+ }, [])
  return (
   <Wrapper>
-   <div style={{ backgroundColor: 'black', width: '100%', height: '70px', display: 'grid', justifyContent: 'center', alignItems: 'center' }}>
-    <p style={{color: 'whitesmoke', fontSize: '2.2rem'}}> (215) 599-1400</p>{' '}
-   </div>
+   <TopHeader>
+    <TextP>{content[contentIndex][0]}</TextP>
+    <TextZ>{content[contentIndex][1]}</TextZ>
+   </TopHeader>
    <div className="dekstop">
-    <div className="top" style={{ backgroundColor: 'whitesmoke' }}>
-     <div className="nameHolder">
+    <div className="top">
+     <div className="nameHolder1">
       <Link to="/" style={{ textDecoration: 'none' }}>
        {' '}
        <ThemeProvider theme={theme}>
@@ -50,7 +104,7 @@ const Header = () => {
       </Link>
       <div className="companyDetails">
        {' '}
-       Pennsylvania Trial Lawyers . Philadelphia Civil Rights Attorneys{' '}
+       Pennsylvania Personal Injury Lawyer . Philadelphia Civil Rights Attorneys{' '}
       </div>
      </div>
 
@@ -61,14 +115,31 @@ const Header = () => {
         href="tel:+2155991400"
        >
         <div className="callButtonHolderInner">
-         <CallIcon style={{ fontSize: 'large', marginRight: '5px' }} />
+         <CallIcon
+          style={{ fontSize: '1.5rem', marginRight: '5px', marginTop: '5px' }}
+         />
          <div> Phone</div>
         </div>
 
         <div style={{ marginTop: '5px' }}>+215591400</div>
        </a>
       </div>
-
+      <div className="nameHolder2">
+       <Link to="/" style={{ textDecoration: 'none' }}>
+        {' '}
+        <ThemeProvider theme={theme}>
+         <Typography className="companyName">
+          {' '}
+          Jeffrey R. Lessin & Associates, P.C.
+         </Typography>
+        </ThemeProvider>
+       </Link>
+       <div className="companyDetails">
+        {' '}
+        Pennsylvania Personal Injury Lawyer . Philadelphia Civil Rights
+        Attorneys{' '}
+       </div>
+      </div>
       <div className="emailButtonHolder">
        <div className="callButtonHolder">
         <a
@@ -76,7 +147,9 @@ const Header = () => {
          href="mailto:info@lessinlaw.com"
         >
          <div className="callButtonHolderInner">
-          <EmailIcon style={{ fontSize: 'large', marginRight: '5px' }} />
+          <EmailIcon
+           style={{ fontSize: '1.5rem', marginRight: '5px', marginTop: '5px' }}
+          />
           <div> Email</div>
          </div>
          <div style={{ marginTop: '5px' }}>info@lessinlaw.com</div>
@@ -196,208 +269,228 @@ const Header = () => {
 }
 
 const Wrapper = styled.main`
- height: 200px;
+ height: 140px;
  width: 100%;
-
-
- .dekstop{
-    width: 100%;
-    height: 100%;
+ background-color: whitesmoke;
+ .top-header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
  }
- .tabMob{
-    width: 100%;
-    height: 100%;
+ .dekstop {
+  margin-top: 2.2rem;
+  width: 100%;
+  height: 25vh;
+ }
+ .tabMob {
+  width: 100%;
+  height: 100%;
  }
 
- .top{
-    width: 100%;
-    height: 70%;
-    display: flex;
-
+ .top {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
  }
 
-.nameHolder{
-    width: 30%;
-    display: grid;
-}
-.companyDetails{
-    font-size: 0.9em;
-    line-height: 150%;
-    text-align: center;
-    letter-spacing: .5px;
-    color: black;
-}
-.companyDetails:hover{
-    cursor: pointer;
-}
+ .companyDetails {
+  font-size: 0.9em;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: black;
+ }
+ .companyDetails:hover {
+  cursor: pointer;
+ }
 
-.companyName{
-    display: grid;
-    place-content: center;
-    font-size: 30px;
-    font-family: sans;
-    line-height: 150%;
-    text-align: center;
-    letter-spacing: .5px;
-    color: black;
-    transition: 700ms ease;
-}
+ .companyName {
+  display: grid;
+  place-content: center;
+  font-size: 45px;
+  font-family: sans;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: black;
+  transition: 700ms ease;
+ }
 
-.companyName:hover{
-    font-variation-settings: "wght" 582;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-}
+ .companyName:hover {
+  font-variation-settings: 'wght' 582;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+ }
 
-.contactButtons{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    justify-content: end;
-}
+ .contactButtons {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+ }
 
-.callButtonHolder{
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    place-content: center;
-    align-items: center;
-    display: grid;
-}
+ .callButtonHolder {
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  place-content: center;
+  align-items: center;
+  display: grid;
+ }
 
-.mobContactButtons{
-    display: none;
-}
+ .mobContactButtons {
+  display: none;
+ }
 
-.callButtonHolderInner{
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
+ .callButtonHolderInner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
 
-.emailButtonHolder{
-    height: 100%;
-    width: 20%;
-    text-align: center;
-    place-content: center;
-    align-items: center;
-    display: grid;
-}
+ .emailButtonHolder {
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  place-content: center;
+  align-items: center;
+  display: grid;
+ }
 
- .bottom{
-    width: 100%;
-    height: 30%;
-    background-color: rgb(20, 39, 79);
+ .bottom {
+  width: 100%;
+  height: 30%;
+  background-color: rgb(20, 39, 79);
  }
 
  .div-1 {
-    flex: 1;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  place-content: center;
+  text-align: center;
+  display: grid;
+  ul {
+   display: flex;
+   justify-content: center;
+   place-content: center;
+
+   li {
     height: 100%;
-    width: 100%;
-    place-content: center;
-    text-align: center;
-    display: grid;
-    ul {
-     display: flex;
-     justify-content: center;
-     place-content: center;
-
-     li {
-      height: 100%;
-      color: white;
-      margin-right: 0.5rem;
-      margin-left: 0.5rem;
-      background: transparent;
-      border-color: transparent;
-      text-transform: capitalize;
-      letter-spacing: 0.10rem;
-      font-size: 1rem;
-      margin: 0 2rem;
-      transition: var(--transition);
-      cursor: pointer;
-      padding: 0.25rem 0;
-      line-height: 1;
-      outline-color: var(--clr-primary-10);
-     }
-     li:hover {
-      color: white;
-      box-shadow: 0 2px var(--clr-primary-10);
-     }
-     .li4 {
-      display: none;
-     }
-    }
+    color: white;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    background: transparent;
+    border-color: transparent;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    font-size: 1.5rem;
+    margin: 0 2rem;
+    transition: var(--transition);
+    cursor: pointer;
+    padding: 0.25rem 0;
+    line-height: 1;
+    outline-color: var(--clr-primary-10);
    }
-
-   .menuMobile{
-    visibility: hidden;
+   li:hover {
+    color: white;
+    box-shadow: 0 2px var(--clr-primary-10);
    }
+   .li4 {
+    display: none;
+   }
+  }
+ }
 
-
+ .menuMobile {
+  visibility: hidden;
+ }
 
  @media (min-width: 576px) {
-
  }
 
  @media only screen and (max-width: 600px) {
-    height: 250px;
-    .dekstop{
-
-     }
-     .top{
-        display: grid;
-     }
-     .nameHolder{
-        width: 100%;
-
-     }
-     .companyName{
-        font-size: 30px;
-        height: 100%;
-        place-content: center;
-        display: grid;
-        text-decoration: none;
-     }
-     .companyDetails{
-        display: none;
-     }
-     .div-1{
-        display: none;
-     }
-     .contactButtons{
-        width: 100%;
-        place-content: center;
-     }
-     .callButtonHolder{
-        display: none;
-     }
-     .emailButtonHolder{
-        display: none;
-     }
-     .mobContactButtons{
-        display: unset;
-        width: 70%;
-        height: 100%;
-        display: flex;
-        place-content: center;
-     }
-     .menuMobile{
-        display: grid;
-        place-content: center;
-        visibility: visible;
-        height: 100%;
-       }
- }
- @media only screen and (min-width: 600px) {
+  height: 100px;
+  .dekstop {
+  }
+  .top {
+   display: grid;
+   background-color: whitesmoke;
+   height: 20vh;
+  }
+  .nameHolder1 {
+   width: 100%;
+   display: block;
+  }
+  .nameHolder2 {
+   display: none;
+  }
+  .companyName {
+   font-size: 30px;
+   height: 100%;
+   place-content: center;
+   display: grid;
+   text-decoration: none;
+  }
+  .companyDetails {
+   display: none;
+  }
+  .div-1 {
+   display: none;
+  }
+  .contactButtons {
+   width: 100%;
+   place-content: center;
+  }
+  .callButtonHolder {
+   display: none;
+  }
+  .emailButtonHolder {
+   display: none;
+  }
+  .mobContactButtons {
+   display: unset;
+   width: 70%;
+   height: 100%;
+   display: flex;
+   place-content: center;
+  }
+  .menuMobile {
+   display: grid;
+   place-content: center;
+   visibility: visible;
+   height: 100%;
+  }
  }
 
  @media only screen and (max-width: 768px) {
-
  }
 
  @media (min-width: 992px) {
  }
  @media (min-width: 1280px) {
+  .nameHolder1 {
+ display: none;
+  }
+  .nameHolder2 {
+   width: 100%;
+   height: 100%;
+   margin-left: 2rem;
+   margin-top: 2rem;
+  }
+  .contactButtons {
+   margin-right: 1rem;
+  }
+  .top {
+   height: 50%;
+  }
  }
 `
 

@@ -28,7 +28,15 @@ const Landing = ({ videoSrc }) => {
  const handleClose = () => setShow(false)
  const handleShow = () => setShow(true)
  // const [showChat, setShowChat] = useState(false)
+  const [isChatBoxOpen, setIsChatBoxOpen] = useState(false)
 
+  const handleChatBoxToggle = () => {
+   setIsChatBoxOpen((prevState) => !prevState)
+  }
+
+  const handleChatBoxClose = () => {
+   setIsChatBoxOpen(false)
+  }
  useEffect(() => {
   const lastIndex = data.length - 1
   if (index < 0) {
@@ -97,8 +105,9 @@ const Landing = ({ videoSrc }) => {
  return (
   <>
    <Wrapper>
+
     <video
-     autoPlay
+  
      muted
      playsInline
      loop
@@ -127,7 +136,7 @@ const Landing = ({ videoSrc }) => {
         contact us
        </Button>
        <Button variant="contained" onClick={openChat} className="btn btn-hero">
-        live chat
+        Chat Live
        </Button>
       </div>
 
@@ -206,7 +215,7 @@ const Landing = ({ videoSrc }) => {
          contact us
         </Button>
         <Button variant="contained" onClick={openChat} className="btn btn-hero">
-         live chat
+         Chat Live
         </Button>
        </div>
 
@@ -260,12 +269,26 @@ const Landing = ({ videoSrc }) => {
     <div className="textHolder">
      <div className="header">Practice Areas</div>
      <div className="innerData">
-      Our attorneys are dedicated to helping people obtain compensation after
-      experiencing violations of their constitutionally protected rights. Many
-      of these cases are complex, involving multiple areas of constitutional
-      law. At the law firm of Jeffrey R. Lessin & Associates, P.C., we have both
-      the knowledge and the determination to pursue your case as far as
-      necessary to obtain justice.
+      At the law firm of Jeffrey R. Lessin & Associates, P.C., we're proud to
+      serve clients in Philadelphia and the surrounding areas within a 20-mile
+      radius. We understand that accidents can happen anywhere, whether you're
+      on the road, using public transportation, or simply going about your daily
+      routine. That's why our experienced personal injury attorneys are here to
+      help if you've been injured due to someone else's negligence. If you're in
+      Philadelphia, SEPTA is a common mode of transportation. Unfortunately,
+      accidents can happen on SEPTA buses, trains, and trolleys. If you've been
+      injured while using SEPTA, our attorneys can help you navigate the complex
+      legal process and obtain the compensation you deserve. We also understand
+      the serious impact that getting hit and injured can have on your life.
+      Whether you've been hit by a car while crossing the street, involved in a
+      workplace accident, or suffered any other type of personal injury, we're
+      here to help. Our attorneys have the knowledge and experience to represent
+      clients in a wide range of personal injury cases and are dedicated to
+      fighting for your rights. When you're injured and need help, the law firm
+      of Jeffrey R. Lessin & Associates, P.C. is here for you. Contact us today
+      to schedule a consultation with one of our experienced personal injury
+      attorneys. We'll work tirelessly to help you obtain the compensation you
+      need to recover from your injuries and move forward with your life.
      </div>
     </div>
     <div className="card-holder">
@@ -377,11 +400,9 @@ const Landing = ({ videoSrc }) => {
 }
 
 const PracticeAreas = styled.main`
-
  width: 100%;
  margin-top: 50px;
 
- background-color: whitesmoke;
 
  .card-holder {
   width: 100%;
@@ -398,7 +419,7 @@ const PracticeAreas = styled.main`
  }
  .inner-card-transparent {
   width: 300px;
-  height: 300px;
+  height: 400px;
   background-color: rgb(20, 39, 79);
   opacity: 0.6;
   position: absolute;
@@ -422,7 +443,7 @@ const PracticeAreas = styled.main`
 
  .textHolder {
   width: 100%;
-  height: 75vh;
+  height: 100vh;
   display: grid;
   place-content: center;
  }
@@ -528,6 +549,11 @@ const PracticeAreas = styled.main`
 `
 
 const Wrapper = styled.main`
+
+
+
+
+
  #background-video {
   position: fixed;
   top: 0;
@@ -544,7 +570,6 @@ const Wrapper = styled.main`
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 4.5); /* Add text shadow for contrast */
   font-weight: 700;
   font-size: 1.4rem;
-
  }
  .video-top {
   width: 100%;
@@ -767,7 +792,6 @@ const Wrapper = styled.main`
    h1 {
     margin-bottom: 2.75rem;
    }
-
   }
   .info1 {
    border-radius: 10%;
@@ -1040,7 +1064,7 @@ const Wrapper = styled.main`
   gap: 8rem;
 
   .page {
-   min-height: calc(100vh - var(--nav-height));
+   min-height: calc(70vh - var(--nav-height));
    display: flex;
    justify-content: center;
    align-items: center;
