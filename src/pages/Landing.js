@@ -105,7 +105,14 @@ const Landing = ({ videoSrc }) => {
  return (
   <>
    <Wrapper>
-    <video autoPlay loop muted  id="background-video">
+    <video
+     autoPlay
+     loop
+     muted
+     controls={false}
+     id="background-video"
+     className="mobile-video"
+    >
      <source
       src="https://res.cloudinary.com/elpawl-llc/video/upload/v1679865257/production_ID_4686761_wgtnc3.mp4"
       type="video/mp4"
@@ -543,6 +550,7 @@ const Wrapper = styled.main`
  display: grid;
  justify-content: center;
  align-items: center;
+
  #background-video {
   position: fixed;
   top: 0;
@@ -751,16 +759,32 @@ const Wrapper = styled.main`
  }
 
  @media only screen and (max-width: 600px) {
-  height: 100vh;
-  margin-top: 10rem;
+  height: 60vh;
+  margin-top: 20rem;
+  @media (max-width: 767px) {
+   margin-top: 14rem;
+  }
   .page {
-   min-height: calc(70vh - var(--nav-height));
-   border-radius: 4%;
+   min-height: calc(50vh - var(--nav-height));
+
    width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-top: 8rem;
+   margin-top: 15rem;
+   @media (max-width: 767px) {
+    /* Apply styles for mobile devices with a screen width of 767px or less */
+    height: 65vh;
+    margin-top: 1rem;
+    width: 50vh;
+    background-image: url('https://res.cloudinary.com/elpawl-llc/video/upload/v1679865257/production_ID_4686761_wgtnc3.mp4');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    #background-video {
+     display: none;
+    }
+   }
   }
   .page1 {
    /* display: flex;
@@ -789,8 +813,7 @@ const Wrapper = styled.main`
    box-shadow: var(--shadow-3);
    height: 450px;
    width: 300px;
-   margin-left: 2rem;
-   margin-right: 0.5rem;
+
    margin-bottom: 10rem;
    h1 {
     margin-top: 0.75rem;
