@@ -105,14 +105,7 @@ const Landing = ({ videoSrc }) => {
  return (
   <>
    <Wrapper>
-    <video
-     autoPlay
-     muted
-     playsInline
-     loop
-     controls="false"
-     id="background-video"
-    >
+    <video autoPlay loop muted  id="background-video">
      <source
       src="https://res.cloudinary.com/elpawl-llc/video/upload/v1679865257/production_ID_4686761_wgtnc3.mp4"
       type="video/mp4"
@@ -401,7 +394,7 @@ const Landing = ({ videoSrc }) => {
 const PracticeAreas = styled.main`
  width: 100%;
  margin-top: 50px;
-  background-color: whitesmoke;
+ background-color: whitesmoke;
  .card-holder {
   width: 100%;
   margin-top: 20%;
@@ -547,9 +540,9 @@ const PracticeAreas = styled.main`
 `
 
 const Wrapper = styled.main`
-display: grid;
-justify-content: center;
-align-items: center;
+ display: grid;
+ justify-content: center;
+ align-items: center;
  #background-video {
   position: fixed;
   top: 0;
@@ -758,9 +751,8 @@ align-items: center;
  }
 
  @media only screen and (max-width: 600px) {
-
-    height: 100vh;
-    margin-top: 10rem;
+  height: 100vh;
+  margin-top: 10rem;
   .page {
    min-height: calc(70vh - var(--nav-height));
    border-radius: 4%;
@@ -768,7 +760,7 @@ align-items: center;
    display: flex;
    justify-content: center;
    align-items: center;
-  margin-top: 8rem;
+   margin-top: 8rem;
   }
   .page1 {
    /* display: flex;
@@ -786,7 +778,6 @@ align-items: center;
 
    height: 540px;
    width: 300px;
-
 
    h1 {
     margin-bottom: 2.75rem;
