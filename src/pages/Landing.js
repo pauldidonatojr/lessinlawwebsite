@@ -761,6 +761,9 @@ const Wrapper = styled.main`
  @media only screen and (max-width: 600px) {
   height: 60vh;
   margin-top: 20rem;
+  #background-video {
+   display: none;
+  }
   @media (max-width: 767px) {
    margin-top: 14rem;
   }
@@ -772,19 +775,6 @@ const Wrapper = styled.main`
    justify-content: center;
    align-items: center;
    margin-top: 15rem;
-   @media (max-width: 767px) {
-    /* Apply styles for mobile devices with a screen width of 767px or less */
-    height: 65vh;
-    margin-top: 1rem;
-    width: 50vh;
-    background-image: url('https://res.cloudinary.com/elpawl-llc/video/upload/v1679865257/production_ID_4686761_wgtnc3.mp4');
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-    #background-video {
-     display: none;
-    }
-   }
   }
   .page1 {
    /* display: flex;
@@ -919,7 +909,18 @@ const Wrapper = styled.main`
    font-size: 1rem;
   }
  }
+ @media (max-width: 767px) {
+  /* Apply styles for mobile devices with a screen width of 767px or less */
+  .page {
+   height: 65vh;
+   margin-top: 1.8rem;
 
+   width: 50.3vh;
+   background-image: url('https://res.cloudinary.com/elpawl-llc/video/upload/v1679873411/pexels-kelly-lacy-6606214_1_gcflle.mp4');
+   background-size: cover;
+   background-position: center;
+  }
+ }
  @media only screen and (min-width: 768px) {
   .container {
   }

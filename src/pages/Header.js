@@ -17,7 +17,7 @@ import { useModalContext } from '../context/modal_context'
 import { FaWindowClose } from 'react-icons/fa'
 import RainbowChat from '../components/RainbowChat.js'
 const TopHeader = styled.div`
- background-color: #14274f;
+ background-color: #333333;
  width: 100%;
  height: 70px;
  display: flex;
@@ -26,8 +26,6 @@ const TopHeader = styled.div`
  position: fixed;
  top: 0;
  z-index: 9999; /* Adjust this value as needed */
-
-
 
  @media only screen and (min-width: 768px) {
   justify-content: space-around;
