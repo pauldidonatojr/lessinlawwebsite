@@ -547,6 +547,7 @@ const PracticeAreas = styled.main`
 `
 
 const Wrapper = styled.main`
+ border: 5px solid black;
  #background-video {
   position: fixed;
   top: 0;
@@ -693,7 +694,6 @@ const Wrapper = styled.main`
  }
  .info1 {
   text-align: center;
-  background-color: whitesmoke;
   border-radius: 10%;
  }
  .bio {
@@ -788,7 +788,6 @@ const Wrapper = styled.main`
   }
   .info1 {
    border-radius: 10%;
-   background-color: whitesmoke;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
    height: 450px;
@@ -1055,7 +1054,7 @@ const Wrapper = styled.main`
   place-items: center;
   grid-template-columns: 1fr 1fr;
   gap: 8rem;
-
+  height: 80vh;
   .page {
    min-height: calc(70vh - var(--nav-height));
    display: flex;
@@ -1064,7 +1063,7 @@ const Wrapper = styled.main`
    margin-top: -3rem;
   }
   .page1 {
-   min-height: calc(100vh - var(--nav-height));
+   min-height: calc(70vh - var(--nav-height));
    display: flex;
    justify-content: center;
    align-items: center;
@@ -1077,7 +1076,7 @@ const Wrapper = styled.main`
 
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 650px;
+   height: 600px;
    width: 600px;
    margin-left: 2rem;
    margin-right: 0.5rem;
@@ -1092,7 +1091,7 @@ const Wrapper = styled.main`
 
    transition: var(--transition);
    box-shadow: var(--shadow-3);
-   height: 650px;
+   height: 600px;
    width: 600px;
    margin-left: 2rem;
    margin-right: 0.5rem;

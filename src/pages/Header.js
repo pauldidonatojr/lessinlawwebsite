@@ -73,7 +73,7 @@ const Header = () => {
  const [contentIndex, setContentIndex] = useState(0)
 
  const content = [
-  ['Click here to chat', '215 594 1400'],
+  ['Click here to chat', '(215) 599-1400'],
   ['We are here to help!', 'Call us now'],
   ['Live support available', 'Contact us'],
  ]
@@ -121,7 +121,7 @@ const Header = () => {
          <div> Phone</div>
         </div>
 
-        <div style={{ marginTop: '5px' }}>+215591400</div>
+        <div style={{ marginTop: '5px' }}>+(215) 599-1400</div>
        </a>
       </div>
       <div className="nameHolder2">
@@ -366,7 +366,7 @@ const Wrapper = styled.main`
 
  .bottom {
   width: 100%;
-  height: 30%;
+  height: 45%;
   background-color: rgb(20, 39, 79);
  }
 
@@ -391,7 +391,7 @@ const Wrapper = styled.main`
     border-color: transparent;
     text-transform: capitalize;
     letter-spacing: 0.1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0 2rem;
     transition: var(--transition);
     cursor: pointer;
