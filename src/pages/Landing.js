@@ -401,7 +401,7 @@ const Landing = ({ videoSrc }) => {
 const PracticeAreas = styled.main`
  width: 100%;
  margin-top: 50px;
-
+  background-color: whitesmoke;
  .card-holder {
   width: 100%;
   margin-top: 20%;
@@ -547,7 +547,9 @@ const PracticeAreas = styled.main`
 `
 
 const Wrapper = styled.main`
- border: 5px solid black;
+display: grid;
+justify-content: center;
+align-items: center;
  #background-video {
   position: fixed;
   top: 0;
@@ -756,13 +758,17 @@ const Wrapper = styled.main`
  }
 
  @media only screen and (max-width: 600px) {
+
+    height: 100vh;
+    margin-top: 10rem;
   .page {
-   min-height: calc(85vh - var(--nav-height));
+   min-height: calc(70vh - var(--nav-height));
    border-radius: 4%;
    width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
+  margin-top: 8rem;
   }
   .page1 {
    /* display: flex;
@@ -780,8 +786,8 @@ const Wrapper = styled.main`
 
    height: 540px;
    width: 300px;
-   margin-bottom: 4rem;
-   margin-top: 8.5rem;
+
+
    h1 {
     margin-bottom: 2.75rem;
    }

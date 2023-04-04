@@ -14,9 +14,9 @@ import MenuItem from '@mui/material/MenuItem'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 const TopHeader = styled.div`
- background-color: black;
+ background-color: #14274f;
  width: 100%;
- height: 35px;
+ height: 70px;
  display: flex;
  justify-content: center;
  align-items: center;
@@ -25,7 +25,7 @@ const TopHeader = styled.div`
  z-index: 9999; /* Adjust this value as needed */
  @media only screen and (min-width: 768px) {
   justify-content: space-around;
-  height: 50px;
+  height: 80px;
  }
 `
 
@@ -147,7 +147,7 @@ const Header = () => {
          href="mailto:info@lessinlaw.com"
         >
          <div className="callButtonHolderInner">
-          <EmailIcon
+          <EmailIcon className='emailIcon'
            style={{ fontSize: '1.5rem', marginRight: '5px', marginTop: '5px' }}
           />
           <div> Email</div>
@@ -162,14 +162,14 @@ const Header = () => {
         style={{ textDecoration: 'none', color: 'black' }}
         href="mailto:info@lessinlaw.com"
        >
-        <EmailIcon style={{ fontSize: 30, marginRight: '10px' }} />
+        <EmailIcon style={{ fontSize: 50, marginRight: '20px' }} />
        </a>
 
        <a
         style={{ textDecoration: 'none', color: 'black' }}
         href="tel:+2155991400"
        >
-        <CallIcon style={{ fontSize: 30, marginLeft: '10px' }} />
+        <CallIcon style={{ fontSize: 50, marginLeft: '20px' }} />
        </a>
       </div>
      </div>
@@ -210,7 +210,8 @@ const Header = () => {
        onClick={handleClick}
        style={{
         color: 'white',
-        fontWeight: 'bold',
+           fontWeight: 'bold',
+           fontSize: '2rem'
        }}
       >
        Menu
@@ -269,7 +270,7 @@ const Header = () => {
 }
 
 const Wrapper = styled.main`
- height: 140px;
+ height: 250px;
  width: 100%;
  background-color: whitesmoke;
  .top-header {
@@ -289,8 +290,6 @@ const Wrapper = styled.main`
  }
 
  .top {
-  width: 100%;
-  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -326,8 +325,6 @@ const Wrapper = styled.main`
  }
 
  .contactButtons {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -372,7 +369,7 @@ const Wrapper = styled.main`
 
  .div-1 {
   flex: 1;
-  height: 100%;
+  height: 80%;
   width: 100%;
   place-content: center;
   text-align: center;
@@ -391,7 +388,7 @@ const Wrapper = styled.main`
     border-color: transparent;
     text-transform: capitalize;
     letter-spacing: 0.1rem;
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin: 0 2rem;
     transition: var(--transition);
     cursor: pointer;
@@ -423,8 +420,12 @@ const Wrapper = styled.main`
   .top {
    display: grid;
    background-color: whitesmoke;
-   height: 20vh;
+   width: 100%;
+   height: 30vh;
+   margin-top: 4rem;
   }
+
+
   .nameHolder1 {
    width: 100%;
    display: block;
@@ -433,7 +434,7 @@ const Wrapper = styled.main`
    display: none;
   }
   .companyName {
-   font-size: 30px;
+   font-size: 35px;
    height: 100%;
    place-content: center;
    display: grid;
@@ -447,6 +448,7 @@ const Wrapper = styled.main`
   }
   .contactButtons {
    width: 100%;
+
    place-content: center;
   }
   .callButtonHolder {
@@ -477,7 +479,10 @@ const Wrapper = styled.main`
  }
  @media (min-width: 1280px) {
   .nameHolder1 {
- display: none;
+   display: none;
+  }
+  .companyName {
+    font-size: 55px;
   }
   .nameHolder2 {
    width: 100%;
@@ -486,10 +491,13 @@ const Wrapper = styled.main`
    margin-top: 2rem;
   }
   .contactButtons {
-   margin-right: 1rem;
+   color: whitesmoke;
+   height: 20vh;
+   width: 100%;
+   margin-top: 4rem;
   }
   .top {
-   height: 50%;
+   height: 90%;
   }
  }
 `
