@@ -13,6 +13,9 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+import { useModalContext } from '../context/modal_context'
+import { FaWindowClose } from 'react-icons/fa'
+import RainbowChat from '../components/RainbowChat.js'
 const TopHeader = styled.div`
  background-color: #14274f;
  width: 100%;
@@ -23,6 +26,9 @@ const TopHeader = styled.div`
  position: fixed;
  top: 0;
  z-index: 9999; /* Adjust this value as needed */
+
+
+
  @media only screen and (min-width: 768px) {
   justify-content: space-around;
   height: 80px;
@@ -37,7 +43,6 @@ const TextP = styled.p`
  @media only screen and (min-width: 768px) {
   display: block;
   font-size: 2.55rem;
-
  }
 `
 
@@ -71,6 +76,8 @@ const Header = () => {
  }
 
  const [contentIndex, setContentIndex] = useState(0)
+    const { isChatOpen, closeChat } = useModalContext()
+     const { openChat } = useModalContext()
 
  const content = [
   ['Click here to chat', '(215) 599-1400'],
@@ -87,8 +94,26 @@ const Header = () => {
  return (
   <Wrapper>
    <TopHeader>
-    <TextP>{content[contentIndex][0]}</TextP>
-    <TextZ>{content[contentIndex][1]}</TextZ>
+    <TextP onClick={openChat}>{content[contentIndex][0]}</TextP>
+    <TextZ onClick={openChat}>{content[contentIndex][1]}</TextZ>
+
+    <div
+     className={`${isChatOpen ? 'chat-overlay show-chat' : 'chat-overlay'}`}
+    >
+     <div className="modal-container">
+      <button className="close-chat-btn" onClick={closeChat}>
+       <FaWindowClose
+        style={{
+         position: 'relative',
+         zIndex: '999990',
+         top: '0',
+         right: '0',
+        }}
+       ></FaWindowClose>
+      </button>
+      <RainbowChat />
+     </div>
+    </div>
    </TopHeader>
    <div className="dekstop">
     <div className="top">
@@ -147,7 +172,8 @@ const Header = () => {
          href="mailto:info@lessinlaw.com"
         >
          <div className="callButtonHolderInner">
-          <EmailIcon className='emailIcon'
+          <EmailIcon
+           className="emailIcon"
            style={{ fontSize: '1.5rem', marginRight: '5px', marginTop: '5px' }}
           />
           <div> Email</div>
@@ -210,8 +236,8 @@ const Header = () => {
        onClick={handleClick}
        style={{
         color: 'white',
-           fontWeight: 'bold',
-           fontSize: '2rem'
+        fontWeight: 'bold',
+        fontSize: '2rem',
        }}
       >
        Menu
@@ -425,7 +451,6 @@ const Wrapper = styled.main`
    margin-top: 4rem;
   }
 
-
   .nameHolder1 {
    width: 100%;
    display: block;
@@ -482,7 +507,7 @@ const Wrapper = styled.main`
    display: none;
   }
   .companyName {
-    font-size: 55px;
+   font-size: 55px;
   }
   .nameHolder2 {
    width: 100%;
