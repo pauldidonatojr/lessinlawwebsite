@@ -263,7 +263,7 @@ const Landing = ({ videoSrc }) => {
     </div>
    </Wrapper>
 
-   <PracticeAreas>
+   {/* <PracticeAreas>
     <div className="transparentBackground"></div>
     <div className="textHolder">
      <div className="header">Practice Areas</div>
@@ -393,7 +393,7 @@ const Landing = ({ videoSrc }) => {
       </div>
      </div>
     </div>
-   </PracticeAreas>
+   </PracticeAreas> */}
   </>
  )
 }
