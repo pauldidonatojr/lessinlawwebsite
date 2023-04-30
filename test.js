@@ -121,35 +121,34 @@ const Landing = ({ videoSrc }) => {
 
     <div className=" page1">
      <div className="info1">
-      <div className="bio1">
-       <div className="btn-group1">
-        {data.map((info, infoIndex) => {
-         const { id, text } = info
-         let position = 'nextSlide'
-         if (infoIndex === index) {
-          position = 'activeSlide'
-         }
-         if (
-          infoIndex === index - 1 ||
-          (index === 0 && infoIndex === data.length - 1)
-         ) {
-          position = 'lastSlide'
-         }
+      <div className="btn-groups">
+       {data.map((info, infoIndex) => {
+        const { id, text } = info
+        let position = 'nextSlide'
+        if (infoIndex === index) {
+         position = 'activeSlide'
+        }
+        if (
+         infoIndex === index - 1 ||
+         (index === 0 && infoIndex === data.length - 1)
+        ) {
+         position = 'lastSlide'
+        }
 
-         return (
-          <div className="articleDiv">
-           <article className={position} key={id}>
-            <div className="video-top"></div>
-            <i>
-             {' '}
-             <p className="text">{text}</p>
-            </i>
-           </article>
-          </div>
-         )
-        })}
-       </div>
+        return (
+         <div className="articleDiv">
+          <article className={position} key={id}>
+           <div className="video-top"></div>
+           <i>
+            {' '}
+            <p className="text">{text}</p>
+           </i>
+          </article>
+         </div>
+        )
+       })}
       </div>
+
       <div
        className={`${
         isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
@@ -191,11 +190,11 @@ const Landing = ({ videoSrc }) => {
       </h1>
       <div className="bio">
        <div className="btn-groups">
-        {/* <Button variant="contained" className="btn btn-hero">
+        <Button variant="contained" className="btn btn-hero">
          <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
           enter
          </Link>
-        </Button> */}
+        </Button>
         <Button
          variant="contained"
          onClick={handleShow}
@@ -704,13 +703,86 @@ const Wrapper = styled.main`
  }
 
  @media (min-width: 992px) {
+  .container {
+  }
+  .page {
+   /* min-height: calc(100vh - var(--nav-height)); */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: -3rem;
+  }
+  .page1 {
+   /* min-height: calc(100vh - var(--nav-height)); */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: -3rem;
+  }
+  .info {
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   border-radius: 10%;
+   background-color: blue;
+
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 550px;
+   width: 300px;
+   margin-left: 2rem;
+   margin-right: 0.5rem;
+   h1 {
+    margin-top: 0.75rem;
+   }
+  }
+  .info1 {
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   border-radius: 10%;
+   background-color: blue;
+   transition: var(--transition);
+   box-shadow: var(--shadow-3);
+   height: 550px;
+   width: 300px;
+   margin-left: 2rem;
+   margin-right: 0.5rem;
+   h1 {
+    margin-top: 0.75rem;
+   }
+  }
+  .bio {
+   transition: var(--transition);
+   font-size: 0.75rem;
+   background-color: blue;
+   height: 175px;
+   width: 150px;
+   max-width: 800px;
+   font-weight: 500px;
+   margin: 0 auto;
+   text-align: center;
+   position: relative;
+   display: grid;
+   overflow: hidden;
+   justify-content: center;
+  }
+  .btn-groups {
+   display: grid;
+   grid-gap: 1rem;
+   text-align: center;
+   height: 10px;
+  }
+  .btn-hero {
+   font-size: 1rem;
+  }
+ }
+ @media (min-width: 1280px) {
   display: grid;
   place-items: center;
   grid-template-columns: 1fr 1fr;
   gap: 8rem;
   height: 65vh;
   .page {
-   min-height: calc(100vh - var(--nav-height));
+   min-height: calc(70vh - var(--nav-height));
    display: flex;
    justify-content: center;
    align-items: center;
@@ -727,7 +799,7 @@ const Wrapper = styled.main`
    transition: var(--transition);
    box-shadow: var(--shadow-3);
    border-radius: 10%;
-   background-color: lightblue;
+   background-color: beige;
    margin-top: rem;
    transition: var(--transition);
    box-shadow: var(--shadow-3);
@@ -769,234 +841,7 @@ const Wrapper = styled.main`
    overflow: hidden;
    justify-content: center;
   }
-  .bio1 {
-   transition: var(--transition);
-   font-size: 1.34rem;
-
-   height: 300px;
-   width: 365px;
-   max-width: 800px;
-   font-weight: 500px;
-   margin: 0 auto;
-   text-align: center;
-   position: relative;
-   display: grid;
-   overflow: hidden;
-   justify-content: center;
-  }
   .btn-groups {
-   display: grid;
-   grid-gap: 1rem;
-   text-align: center;
-   height: 10px;
-   margin-top: 5rem;
-  }
-  .btn-groups1 {
-   display: grid;
-   grid-gap: 1rem;
-   text-align: center;
-   height: 10px;
-   margin-top: 5rem;
-  }
-  .btn-hero {
-   font-size: 1.5rem;
-   width: 15rem;
-  }
- }
- @media (min-width: 576px) {
-  display: grid;
-  grid-template-rows: auto auto; /* define two rows */
-  grid-template-columns: 1fr; /* define one column */
-
-  height: 170vh;
-  .page {
-   min-height: calc(60vh - var(--nav-height));
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  }
-  .page1 {
-   min-height: calc(70vh - var(--nav-height));
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  }
-  .info {
-   transition: var(--transition);
-   box-shadow: var(--shadow-3);
-   border-radius: 10%;
-   background-color: red;
-   margin-top: rem;
-   transition: var(--transition);
-   box-shadow: var(--shadow-3);
-   height: 500px;
-   width: 600px;
-   margin-left: 2rem;
-   margin-right: 0.5rem;
-   margin-bottom: 10rem;
-   h1 {
-    margin-top: 3.75rem;
-   }
-  }
-  .info1 {
-   transition: var(--transition);
-   box-shadow: var(--shadow-3);
-   border-radius: 10%;
-   background-color: orange;
-   transition: var(--transition);
-   box-shadow: var(--shadow-3);
-   height: 350px;
-   width: 600px;
-   margin-left: 2rem;
-   margin-right: 0.5rem;
-   margin-top: 15rem;
-   h1 {
-    margin-top: 3.75rem;
-   }
-  }
-  .bio {
-   transition: var(--transition);
-   font-size: 1.34rem;
-
-   height: 300px;
-   width: 365px;
-   max-width: 800px;
-   font-weight: 500px;
-   margin: 0 auto;
-   text-align: center;
-   position: relative;
-   display: grid;
-   overflow: hidden;
-   justify-content: center;
-  }
-  .bio1 {
-   transition: var(--transition);
-   font-size: 1.34rem;
-
-   height: 300px;
-   width: 365px;
-   max-width: 800px;
-   font-weight: 500px;
-   margin: 0 auto;
-   text-align: center;
-   position: relative;
-   display: grid;
-   overflow: hidden;
-   justify-content: center;
-  }
-  .btn-groups {
-   display: grid;
-   grid-gap: 1rem;
-   text-align: center;
-   height: 10px;
-   margin-top: 5rem;
-  }
-  .btn-groups1 {
-   display: grid;
-   grid-gap: 1rem;
-   text-align: center;
-   height: 10px;
-   margin-top: 5rem;
-  }
-  .btn-hero {
-   font-size: 1.5rem;
-   width: 15rem;
-  }
- }
-
- @media (min-width: 1280px) {
-  display: grid;
-  place-items: center;
-  grid-template-columns: 1fr 1fr;
-
-  gap: 8rem;
-  height: 85vh;
-  .page {
-   min-height: calc(100vh - var(--nav-height));
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-top: -3rem;
-  }
-  .page1 {
-   min-height: calc(70vh - var(--nav-height));
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-top: -3rem;
-  }
-  .info {
-   transition: var(--transition);
-   box-shadow: var(--shadow-3);
-   border-radius: 10%;
-   background-color: #14274f;
-   margin-top: rem;
-   transition: var(--transition);
-   box-shadow: var(--shadow-3);
-   height: 500px;
-   width: 600px;
-   margin-left: 2rem;
-   margin-right: 0.5rem;
-   margin-top: 25rem;
-   h1 {
-    margin-top: 3.75rem;
-    color: #7a7a7a;
-   }
-  }
-  .info1 {
-   transition: var(--transition);
-   box-shadow: var(--shadow-3);
-   border-radius: 10%;
-   background-color: #14274f;
-   transition: var(--transition);
-   box-shadow: var(--shadow-3);
-   height: 500px;
-   width: 600px;
-   margin-left: 2rem;
-   margin-right: 0.5rem;
-   margin-bottom: 2rem;
-   h1 {
-    margin-top: 3.75rem;
-   }
-  }
-  .bio {
-   transition: var(--transition);
-   font-size: 1.34rem;
-
-   height: 300px;
-   width: 365px;
-   max-width: 800px;
-   font-weight: 500px;
-   margin: 0 auto;
-   text-align: center;
-   position: relative;
-   display: grid;
-   overflow: hidden;
-   justify-content: center;
-  }
-  .bio1 {
-   transition: var(--transition);
-   font-size: 1.34rem;
-
-   height: 300px;
-   width: 365px;
-   max-width: 800px;
-   font-weight: 500px;
-   margin: 0 auto;
-   text-align: center;
-   position: relative;
-   display: grid;
-   overflow: hidden;
-   justify-content: center;
-  }
-  .btn-groups {
-   display: grid;
-   grid-gap: 1rem;
-   text-align: center;
-   height: 10px;
-   margin-top: 5rem;
-  }
-  .btn-groups1 {
    display: grid;
    grid-gap: 1rem;
    text-align: center;
@@ -1243,5 +1088,32 @@ const ContactCard = styled.div`
   }
  }
 `
+//  @media (min-width: 576px) {
+//   .page {
+//    /* min-height: calc(100vh - var(--nav-height)); */
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//    margin-top: -3rem;
+//   }
+//   .info {
+//    padding: 10rem;
+//    background-color: red;
+//   }
+//   .bio {
+//    font-size: 2rem;
+//    transition: var(--transition);
+//   }
+//   .btn-groups {
+//    padding: 2rem;
+//    display: grid;
 
+//    grid-gap: 2rem;
+//    text-align: center;
+//   }
+
+//   .btn-hero {
+//    font-size: 1.5rem;
+//   }
+//  }
 export default Landing

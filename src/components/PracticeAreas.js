@@ -26,12 +26,26 @@ const PracticeAreas = () => {
     <div className="textHolder">
      <div className="header">Practice Areas</div>
      <div className="innerData">
-      Our attorneys are dedicated to helping people obtain compensation after
-      experiencing violations of their constitutionally protected rights. Many
-      of these cases are complex, involving multiple areas of constitutional
-      law. At the law firm of Jeffrey R. Lessin & Associates, P.C., we have both
-      the knowledge and the determination to pursue your case as far as
-      necessary to obtain justice.
+      At the law firm of Jeffrey R. Lessin & Associates, P.C., we're proud to
+      serve clients in Philadelphia and the surrounding areas within a 20-mile
+      radius. We understand that accidents can happen anywhere, whether you're
+      on the road, using public transportation, or simply going about your daily
+      routine. That's why our experienced personal injury attorneys are here to
+      help if you've been injured due to someone else's negligence. If you're in
+      Philadelphia, SEPTA is a common mode of transportation. Unfortunately,
+      accidents can happen on SEPTA buses, trains, and trolleys. If you've been
+      injured while using SEPTA, our attorneys can help you navigate the complex
+      legal process and obtain the compensation you deserve. We also understand
+      the serious impact that getting hit and injured can have on your life.
+      Whether you've been hit by a car while crossing the street, involved in a
+      workplace accident, or suffered any other type of personal injury, we're
+      here to help. Our attorneys have the knowledge and experience to represent
+      clients in a wide range of personal injury cases and are dedicated to
+      fighting for your rights. When you're injured and need help, the law firm
+      of Jeffrey R. Lessin & Associates, P.C. is here for you. Contact us today
+      to schedule a consultation with one of our experienced personal injury
+      attorneys. We'll work tirelessly to help you obtain the compensation you
+      need to recover from your injuries and move forward with your life.
      </div>
     </div>
 
@@ -187,6 +201,7 @@ const PracticeAreas = () => {
 export default PracticeAreas
 
 const Wrapper = styled.section`
+
  height: 100%;
  width: 100%;
  background-color: whitesmoke;
@@ -201,7 +216,7 @@ const Wrapper = styled.section`
 
  .transparentBackground {
   width: 100%;
-  height: 75vh;
+  height: 100%;
   background-color: black;
   opacity: 0.5;
   position: absolute;
@@ -217,7 +232,7 @@ const Wrapper = styled.section`
 
  .textHolder {
   width: 100%;
-  height: 75vh;
+  height: 100%;
   display: grid;
   place-content: center;
  }
@@ -243,6 +258,7 @@ const Wrapper = styled.section`
   color: white;
   font-style: italic;
   padding: 20px;
+
  }
 
  .textHolder2 {
@@ -412,8 +428,10 @@ const Wrapper = styled.section`
   display: flex;
   place-content: center;
  }
-
- @media only screen and (max-width: 600px) {
+ @media only screen and (max-width: 575.98px) {
+  /* Styles for extra small devices */
+ }
+ @media only screen and (min-width: 576px) and (max-width: 767.98px) {
   .transparentBackground {
    opacity: 0.6;
   }
@@ -424,5 +442,15 @@ const Wrapper = styled.section`
   .cardsHolder {
    display: grid;
   }
+ }
+ @media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  /* Styles for medium devices */
+ }
+ @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  /* Styles for large devices */
+ }
+ @media only screen and (min-width: 1200px) {
+  /* Styles for extra large devices */
+
  }
 `

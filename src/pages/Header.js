@@ -74,8 +74,8 @@ const Header = () => {
  }
 
  const [contentIndex, setContentIndex] = useState(0)
-    const { isChatOpen, closeChat } = useModalContext()
-     const { openChat } = useModalContext()
+ const { isChatOpen, closeChat } = useModalContext()
+ const { openChat } = useModalContext()
 
  const content = [
   ['Click here to chat', '(215) 599-1400'],
@@ -186,14 +186,14 @@ const Header = () => {
         style={{ textDecoration: 'none', color: 'black' }}
         href="mailto:info@lessinlaw.com"
        >
-        <EmailIcon style={{ fontSize: 50, marginRight: '20px' }} />
+        <EmailIcon style={{ fontSize: 40, marginRight: '20px' }} />
        </a>
 
        <a
         style={{ textDecoration: 'none', color: 'black' }}
         href="tel:+2155991400"
        >
-        <CallIcon style={{ fontSize: 50, marginLeft: '20px' }} />
+        <CallIcon style={{ fontSize: 40, marginLeft: '20px' }} />
        </a>
       </div>
      </div>
@@ -333,7 +333,6 @@ const Wrapper = styled.main`
  .companyName {
   display: grid;
   place-content: center;
-  font-size: 45px;
   font-family: sans;
   line-height: 150%;
   text-align: center;
@@ -387,13 +386,13 @@ const Wrapper = styled.main`
 
  .bottom {
   width: 100%;
-  height: 45%;
+  height: 40%;
   background-color: rgb(20, 39, 79);
  }
 
  .div-1 {
   flex: 1;
-  height: 80%;
+  height: 130%;
   width: 100%;
   place-content: center;
   text-align: center;
@@ -412,7 +411,7 @@ const Wrapper = styled.main`
     border-color: transparent;
     text-transform: capitalize;
     letter-spacing: 0.1rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin: 0 2rem;
     transition: var(--transition);
     cursor: pointer;
@@ -434,19 +433,16 @@ const Wrapper = styled.main`
   visibility: hidden;
  }
 
- @media (min-width: 576px) {
- }
-
  @media only screen and (max-width: 600px) {
   height: 100px;
+
   .dekstop {
   }
   .top {
    display: grid;
-   background-color: whitesmoke;
+   background-color: grey;
    width: 100%;
-   height: 30vh;
-   margin-top: 4rem;
+   height: 100%;
   }
 
   .nameHolder1 {
@@ -457,7 +453,8 @@ const Wrapper = styled.main`
    display: none;
   }
   .companyName {
-   font-size: 35px;
+   margin-top: 2.4rem;
+   font-size: 33px;
    height: 100%;
    place-content: center;
    display: grid;
@@ -495,12 +492,37 @@ const Wrapper = styled.main`
   }
  }
 
- @media only screen and (max-width: 768px) {
+ @media (min-width: 576px) {
+  .nameHolder1 {
+   display: none;
+  }
+  .companyName {
+   font-size: 30px;
+  }
+  .nameHolder2 {
+   width: 100%;
+   height: 100%;
+   margin-left: 2rem;
+   margin-right: 4rem;
+   margin-top: 0.5rem;
+  }
+  .contactButtons {
+   color: whitesmoke;
+   height: 20vh;
+   width: 100%;
+   margin-top: 4rem;
+  }
+  .top {
+   height: 140%;
+   background-color: #7a7a7a;
+  }
+ }
+ @media only screen and (min-width: 600px) {
+ }
+ @media screen and (min-width: 768px) and (max-width: 991px) {
  }
 
- @media (min-width: 992px) {
- }
- @media (min-width: 1280px) {
+ @media screen and (min-width: 992px) {
   .nameHolder1 {
    display: none;
   }
@@ -520,7 +542,33 @@ const Wrapper = styled.main`
    margin-top: 4rem;
   }
   .top {
-   height: 90%;
+   height: 135%;
+   background-color: #7a7a7a;
+  }
+ }
+
+ @media screen and (min-width: 1200px) {
+  .nameHolder1 {
+   display: none;
+  }
+  .companyName {
+   font-size: 55px;
+  }
+  .nameHolder2 {
+   width: 100%;
+   height: 100%;
+   margin-left: 2rem;
+   margin-top: 2rem;
+  }
+  .contactButtons {
+   color: whitesmoke;
+   height: 20vh;
+   width: 100%;
+   margin-top: 4rem;
+  }
+  .top {
+   height: 135%;
+   background-color: #7a7a7a;
   }
  }
 `
